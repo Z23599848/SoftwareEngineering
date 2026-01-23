@@ -52,6 +52,6 @@ The Scrum Master will conduct Weekly meeting at library. These updates will focu
 
 By following this code of conduct, we aim to create a respectful, inclusive, and efficient working environment where every team member feels supported and valued.
 
-Signed:
-A G_Z23599848
-Lan G.M_A00019111
+### Signed:
+- A G_Z23599848
+- Lan G.M_A00019111
