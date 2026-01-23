@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Software Development 2 Lab 03 – Fundamentals of Javascript | Roehampton</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Software Development 2 Lab 03 – Fundamentals of Javascript" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Hosts module content for computing at Roehampton." />
+<meta property="og:description" content="Hosts module content for computing at Roehampton." />
+<link rel="canonical" href="https://roehampton.github.io/module-content/software-engineering/week-01/lab/starting-javascript.html" />
+<meta property="og:url" content="https://roehampton.github.io/module-content/software-engineering/week-01/lab/starting-javascript.html" />
+<meta property="og:site_name" content="Roehampton" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Software Development 2 Lab 03 – Fundamentals of Javascript" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Hosts module content for computing at Roehampton.","headline":"Software Development 2 Lab 03 – Fundamentals of Javascript","url":"https://roehampton.github.io/module-content/software-engineering/week-01/lab/starting-javascript.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/module-content/assets/css/style.css?v=ea56b5ca3cc64b80129c924758c62c92b98b36d5">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/module-content/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+
+      <h1 id="software-development-2-lab-03--fundamentals-of-javascript">Software Development 2 Lab 03 – Fundamentals of Javascript</h1>
+
+<h2 id="introduction-to-javascript">Introduction to JavaScript</h2>
+
+<p>HTML isn’t programming. There is no execution – sequence, selection, or iteration. HTML describes a document structure and CSS adds styling to it: its a way of publishing content, similar to a book or magazine.</p>
+
+<p>So how do we make web pages dynamic - responding to the user and providing personalised content?</p>
+
+<p>JavaScript is that main way that the ‘front end’ web is programmed ie, that dynamic and user-interactive features are implemented (eg. complex animations, clickable buttons, popup menus). Truly dynamic features such as personalisation rely on the communication between the frontend (browser) and backend (server).
+. ‘Backend’ programming languages used extensively for the web include PHP, Java and Python.</p>
+
+<p>Javascript is commonly seen as a progaramming langauge for the front-end, ie. the code is executed in the browser.  However, this module focuses on using JavaScript for both front-end (web page or client-side) and back-end (server-side) programming - a combination that is becoming increasingly common.</p>
+
+<h2 id="beginning-javascript">Beginning Javascript</h2>
+
+<p>Let us look at an example of some JavaScript on a web page:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello, world!</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>This simply adds the text <code class="language-plaintext highlighter-rouge">Hello, world!</code> to a web page. <code class="language-plaintext highlighter-rouge">document</code> is the web page that the JavaScript is running on.  The dot denotes that we will method that we will run on the document and the “Hello World!” is the parameters we pass to the write function.</p>
+
+<p>JavaScript is similar to Python and other C like languages. As we start building some web pages with JavaScript code you will see what we mean.</p>
+
+<p>The HTML DOM (Document Object Model)</p>
+
+<p>Front-end javascript works by identifying a part of the DOM structure of an HTML page, and acting on that.  Thats why we need the reference to ‘document’ which is the top-level element in the DOM.</p>
+
+<p>Having a good understanding of the DOM, ie. the heirachical structure of an HTML page will help you with Javascript.</p>
+
+<p><img src="https://www.w3schools.com/js/pic_htmltree.gif" alt="image" /></p>
+
+<p>Image from W3 Schools</p>
+
+<h3 id="your-first-javascript-enabled-web-page">Your First JavaScript Enabled Web Page</h3>
+
+<p>There are various ways to use JavaScript in your web page. We are going to split our JavaScript code into a separate file from our HTML document. You can embed JavaScript into a web page, but it does not allow easy reuse of JavaScript.</p>
+
+<blockquote>
+  <p><strong>Create a new file called <code class="language-plaintext highlighter-rouge">script1.js</code> and save it in the same folder as your HTML files.</strong> 
+<strong>Copy the JavaScript code below into this file.</strong></p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello, world!</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>To add the script to a HTML file we use the <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> element. Create an html file with the following.  Note that the script tag goes in the ‘head’ section of the document.  Note also the relative path, as we discussed in lab 1.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>My Changing Web Page!<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"script1.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p><strong>Make sure you have saved the changes to all files.</strong> Then open the HTML file  in your browser and you should see <code class="language-plaintext highlighter-rouge">Hello, world!</code> displayed on the page - this is being generated by the javascript file - there is no ‘hello world’ in your HTML file.</p>
+
+<blockquote>
+  <h4 id="more-about-the-script-tag">More about the <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> Tag</h4>
+
+  <p>We use <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> to import a script into our web page. There are two main ways we can do this.</p>
+
+  <ol>
+    <li>Setting the <code class="language-plaintext highlighter-rouge">src</code> attribute to point to the file we want to import.</li>
+    <li>Putting the code between the opening and closing <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> tags.</li>
+  </ol>
+
+  <p>For example, in the example above, we could have written the following directly into our HTML page:</p>
+
+  <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello, world!</span><span class="dl">"</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div>  </div>
+
+  <p><code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> tags can be placed anywhere in your HTML document. As we’ve placed our <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> tag at the top of the page, it is processed there, which means <code class="language-plaintext highlighter-rouge">Hello, world!</code> appears at the top of the page.</p>
+
+  <p><strong>EXERCISE</strong> Add some text and markup to the body section of your html file, and try putting the code above in the <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> tag in the body of the page and see what happens.</p>
+
+  <p>Your HTML document can also have multiple <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> tags.</p>
+
+  <p><strong>EXERCISE</strong> Try adding the <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> tag in multiple places in your HTML file to see what happens.</p>
+</blockquote>
+
+<h3 id="more-on-javascript-code">More on JavaScript Code</h3>
+
+<p>JavaScript has many similarities to Python. It is an interpreted language (you don’t have to compile code) and it is dynamically typed (variables can change type). As such, many of ideas you know from Python will work in JavaScript. Let us look at various elements in JavaScript here as a reference point.</p>
+
+<h4 id="variables">Variables</h4>
+
+<p>Variables in JavaScript are declared with the <code class="language-plaintext highlighter-rouge">var</code> keyword.</p>
+
+<p>(You may also see the ‘let’ keyword used.  They differ in how the variable has scope - see <a href="https://stackoverflow.com/questions/762011/whats-the-difference-between-using-let-and-var">Link</a> for an explanation.)</p>
+
+<p>For example:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Lisa</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">teacher</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// Notice all lowercase true</span>
+</code></pre></div></div>
+
+<p>Apart from requiring the <code class="language-plaintext highlighter-rouge">var</code> keyword, variables in JavaScript work much the same as Python.</p>
+
+<h4 id="sequence">Sequence</h4>
+
+<p>As Python and any <em>imperative</em> language, JavaScript statements are executed in order.</p>
+
+<h4 id="syntax">Syntax</h4>
+
+<p>Unlike Python which has stripped out a lot of constructs like semi colons, brackets and braces, and have replaced these markers with whitespace, JavaScript statements all end in a semi-colon – <code class="language-plaintext highlighter-rouge">;</code>, and curly braces {} are used to delineate code ‘blocks’.</p>
+
+<p><strong>Exercise</strong> - Javascript variables and syntax</p>
+
+<p>Write your own code about yourself, along the lines of the following. Add some additional attributes and change the output.  Notice how we are concatentating strings and also how to ouput text we need to specify where in the DOM we are writing to, in this case, its the document.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>My Changing Web Page!<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+        <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Lisa</span><span class="dl">"</span><span class="p">;</span>  <span class="c1">// string type</span>
+        <span class="kd">var</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span>  <span class="c1">//Number type</span>
+        <span class="kd">var</span> <span class="nx">teacher</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// Boolean type: Notice all lowercase true</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">'</span><span class="s1">Name </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">&lt;br&gt;</span><span class="dl">'</span><span class="p">);</span>  <span class="c1">// + is used for string concatentation</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">'</span><span class="s1">Age </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">age</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">&lt;br&gt;</span><span class="dl">'</span><span class="p">);</span>  <span class="c1">// Try using + with another number and see what happens!</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">'</span><span class="s1">Is teacher? </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">teacher</span><span class="p">);</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+<h4 id="debugging">Debugging</h4>
+
+<p><strong>Exercise</strong>  Javascript debugging - the console
+Add the following line anywhere INSIDE the script tags:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+</code></pre></div></div>
+<p>Run the code, open developer tools, click the console tag and you should see the value of your name variable shown.  Use <code class="language-plaintext highlighter-rouge">console.log()</code> throughout your code for debugging.</p>
+
+<h4 id="targetting-parts-of-the-html-page">Targetting parts of the HTML page</h4>
+
+<p>One of the main reasons we use javascript in web pages is that it can find and interact with HTML elements on the page.  Javascript builds a tree-like model of your html page and your code can use this to dynamically change elements.</p>
+
+<p><strong>Exercise</strong> Target an element in the DOM</p>
+
+<p>Add the following to the body section of the HTML page you have created above.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span>page heading<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"content"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;script&gt;</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">content</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span><span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+<p>Here we are dynamically adding our variable value to the div we have defined with our id of content.</p>
+
+<p>See if you can get the name to be added into the heading instead (HINT: You will need to use <code class="language-plaintext highlighter-rouge">document.getElementsByTagName("h1")[0].innerHTML = name;</code>  to target the H1 HTML - Can you guess why the array index [0] is needed?</p>
+
+<h3 id="your-second-javascript-enabled-web-page--event-driven-programming">Your Second JavaScript Enabled Web Page – Event driven programming</h3>
+
+<p>Javascript is good for creating interactive user interfaces, ie. it can respond to user actions</p>
+
+<p>In this example we will add a button to our page. Unlike in our HTML forms example the click on the button fires a javascript function.</p>
+
+<p>Save the following HTML code as <code class="language-plaintext highlighter-rouge">second.html</code>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Buttons!<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"script2.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>
+      Click the button!
+    <span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">value=</span><span class="s">"Click Me!"</span> <span class="na">onclick=</span><span class="s">"msg()"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>As covered in the HTML forms tutorial, we are using the <code class="language-plaintext highlighter-rouge">&lt;input&gt;</code> element to get information from the user. We have defined three attributes:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">type</code> is the type of input element. We are using a button, so we set this to <code class="language-plaintext highlighter-rouge">button</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">value</code> is the text on the button. We’ve set this to <code class="language-plaintext highlighter-rouge">Click Me!</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">onclick</code> is the code that will be run when we click the button. This is an <em>event</em> that our JavaScript will respond to. It will execute the <code class="language-plaintext highlighter-rouge">msg</code> function.</li>
+</ul>
+
+<p>We need to implement the <code class="language-plaintext highlighter-rouge">msg</code> function. This can be done in a seperate file, or in the head section of our HTML document.  To make it easy, add it to the head section of the second.html file.  Remember to surround it in script tags.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">msg</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">You clicked the button!</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Save everything and then open the HTML document in your browser.</strong> When you click the button the web page will be replaced with <code class="language-plaintext highlighter-rouge">You clicked the button!</code></p>
+
+<blockquote>
+  <p><strong>EXERCISE</strong> add a second button to the HTML page. When this button is clicked, it should display the message <code class="language-plaintext highlighter-rouge">Not that button!</code></p>
+</blockquote>
+
+<h3 id="manipulating-html-elements">Manipulating HTML Elements</h3>
+
+<p>OK, so far we’ve done the following:</p>
+
+<ul>
+  <li>Displayed a message in the window.</li>
+  <li>Reacted to a button press.</li>
+</ul>
+
+<p>Let’s go back to what we know about manipulating an HTML element that exists on the web page so that we can make our page more dynamic and interactive.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;title&gt;</span>My Changing Web Page!<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+
+    <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>
+      Click the button!
+    <span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">value=</span><span class="s">"Click me!"</span> <span class="na">onclick=</span><span class="s">"change()"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"my_text"</span><span class="nt">&gt;</span>
+      Hello, world!
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+
+</code></pre></div></div>
+<h5 id="understanding-the-id-attribute">Understanding the id attribute</h5>
+
+<p>Javascript uses the ‘id’ attribute in HTML to identify a unique part of a page that it should act upon or ‘target’.</p>
+
+<p>In the above example, our <code class="language-plaintext highlighter-rouge">&lt;p&gt;</code> element has the attribute <code class="language-plaintext highlighter-rouge">id</code> set to <code class="language-plaintext highlighter-rouge">my_text</code>.</p>
+
+<p>To show how Javascript can target this part of the page by using the id, add this function to your document head section, in between the empty ‘script’ tags.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">change</span><span class="p">()</span> <span class="p">{</span>
+     <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">my_text</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">You clicked me</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In your body section, double-check that your button is calling the ‘change’ function.</p>
+
+<p><strong>Save all the files and open the HTML document in your browser.</strong> You can click the button and the text of the <code class="language-plaintext highlighter-rouge">&lt;p&gt;</code> element will change.</p>
+
+<p>To recap: our function is looking at the HTML page structure, finding the element with ID my_text, and then setting the HTML value of the element found to the string “you clicked me”.  Note that you can include more HTML tags in the string - try and put the word ‘clicked’ in bold.</p>
+
+<h2 id="save-your-work-into-git">Save your work into GIT</h2>
+
+<p>Save everything from the lab into your git repository (make sure you have one for the labs, separate from your groupwork)
+Try:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add &lt;names of your files&gt;
+git commit <span class="nt">-m</span> <span class="s2">"starting javascript"</span>
+git push
+</code></pre></div></div>
+
+<h2 id="programming-constructs-in-javascript">Programming constructs in Javascript</h2>
+
+<p>Lets find out more about how to write programs in Javascript - you will find it similar but different to Python.  You will especially notice that Javascript uses punctuation (curly braces, brackets, semicolons) to delineate blocks of code, whereas Python uses indentation.  Visual studio code will help you ensure that you have correct syntax - matching brackets and braces, for example.</p>
+
+<h4 id="conditionals--selection">Conditionals – Selection</h4>
+
+<p>JavaScript provides <code class="language-plaintext highlighter-rouge">if</code> conditional statements that operate the same as Python. The general structure of a JavaScript <code class="language-plaintext highlighter-rouge">if</code> statement is as follows:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// block of code to run when condition is true</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>There are two things to note that are different to Python:</p>
+
+<ul>
+  <li>The condition <strong>must</strong> be surrounded by parentheses, e.g., <code class="language-plaintext highlighter-rouge">(age == 21)</code> not <code class="language-plaintext highlighter-rouge">age == 21</code>.</li>
+  <li>JavaScript requires curly brackets <code class="language-plaintext highlighter-rouge">{ ... }</code> to denote which code to execute if the <code class="language-plaintext highlighter-rouge">if</code> statement is <code class="language-plaintext highlighter-rouge">true</code>. This is different to Python’s use of indentation.</li>
+</ul>
+
+<p>An <code class="language-plaintext highlighter-rouge">else</code> branch can also be defined:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// block of code to run when condition is true</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+  <span class="c1">// block of code to run when condition is false</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>JavaScript doesn’t have <code class="language-plaintext highlighter-rouge">elif</code> as Python, and so the <code class="language-plaintext highlighter-rouge">else if</code> must be written out in full.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// block of code to run when first condition is true</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// block of code to run when second condition is true</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+  <span class="c1">// block of code to run when both conditions are false</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>JavaScript also supports a <code class="language-plaintext highlighter-rouge">switch</code> statement. If you’ve not used a <code class="language-plaintext highlighter-rouge">switch</code> statement, it checks the value of a variable and then runs the appropriate code block. For example:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">switch</span> <span class="p">(</span><span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="mi">20</span><span class="p">:</span>
+    <span class="c1">// block of code to run when age == 20</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="mi">21</span><span class="p">:</span>
+    <span class="c1">// block of code to run when age == 21</span>
+   	<span class="k">break</span><span class="p">;</span>
+  <span class="nl">default</span><span class="p">:</span>
+    <span class="c1">// block of code to run when otherwise</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>You can find out more about JavaScript <code class="language-plaintext highlighter-rouge">switch</code> statements <a href="https://www.w3schools.com/js/js_switch.asp">here</a>.</p>
+
+<p><strong>Exercise</strong> Conditionals in Javascript</p>
+
+<p>Write javascript code for the following.  First use if, else if, else. Then rewrite using a switch.  (Set up a single variable for the student year, and change its value to test the code - we will make this more complicated later)</p>
+
+<p>A student can be in year 1, 2, or 3.
+Write your code such that if the student year is 1, the output is ‘You are in year 1’, if 2, you are in year 2 and so on.</p>
+
+<h4 id="loops--iteration">Loops – Iteration</h4>
+
+<p>JavaScript supports a number of different loops (ie. programming constructs that allow you to do the same action repeatedly).  Lets concentrate on the for and the while.</p>
+
+<p>(Full details here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration)</p>
+
+<h5 id="for-loops"><code class="language-plaintext highlighter-rouge">for</code> Loops</h5>
+
+<p>JavaScript has three different for loops. The first one is normally used to iterate across a range of numbers, ie to run a specified number of times.  This is a typical construction in most imperitive programming languages.</p>
+
+<p>The for loop has three parts (in the brackets)</p>
+
+<ol>
+  <li>The starting state (var i=0)</li>
+  <li>The condition or test to see if the loop should run (i &lt; 10)</li>
+  <li>The ‘post statement’ that is run at the end of the code block, usually an incremented value that will control the loop.</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// block of code to run 10 times</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Exercise</strong> For loop
+Write a for loop that outputs numbers 1 to 20.</p>
+
+<p>The second type of <code class="language-plaintext highlighter-rouge">for</code> loop allows you to iterate over a ‘collection’ ie. a data structure of many elements, It is the same as Python’s <code class="language-plaintext highlighter-rouge">for value in collection</code> loop. For example:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">names</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">Lisa</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Arturo</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Kimia</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Kevin</span><span class="dl">"</span><span class="p">];</span> <span class="c1">// Creating an array of strings</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">name</span> <span class="k">of</span> <span class="nx">names</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">name</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br&gt;</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This will add each name to the HTML document. <code class="language-plaintext highlighter-rouge">&lt;br&gt;</code> is the HTML tag for inserting a new line.</p>
+
+<p>Finally, JavaScript has a <code class="language-plaintext highlighter-rouge">for (var in object)</code> loop. This loop iterates through the properties of an object. We’re going to examine object-orientation in this module, and will return to this <code class="language-plaintext highlighter-rouge">for</code> loop then.</p>
+
+<h5 id="while-loops"><code class="language-plaintext highlighter-rouge">while</code> Loops</h5>
+
+<p>JavaScript provides two <code class="language-plaintext highlighter-rouge">while</code> loops. The first one you will be familiar with:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="p">(</span><span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// block of code to run while condition is true.</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Exercise</strong>  While loop
+Output numbers 1 to 20, this time using a while loop</p>
+
+<h4 id="functions">Functions</h4>
+
+<p>As we have seen, functions in JavaScript are also similar to Python:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">myfunction</span><span class="p">(</span><span class="nx">parameters</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// code to execute</span>
+  <span class="k">return</span> <span class="nx">value</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Apart from using <code class="language-plaintext highlighter-rouge">function</code> to declare a function, and using curly brackets to define the start and end of the function, everything is the same in JavaScript and Python.</p>
+
+<h4 id="comments">Comments</h4>
+
+<p>Comments in JavaScript start with <code class="language-plaintext highlighter-rouge">//</code>. Anything prefaced with this will not be executed. But bear in mind that HTML comments are different, so make sure javascript comments are all within the ‘script’ tags</p>
+
+<p>Comments in HTML are as follows…</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!--  comment here   --&gt;</span>
+</code></pre></div></div>
+
+<h3 id="save-your-work-into-git-1">Save your work into GIT</h3>
+
+<p>Save everything from the lab into your git repository.
+Try:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add &lt;names of your files&gt;
+git commit <span class="nt">-m</span> <span class="s2">"starting javascript"</span>
+git push
+</code></pre></div></div>
+
+<h3 id="objects-and-properties">Objects and properties</h3>
+
+<p>You may have wondered about the dot syntax throughout this lab sheet, for example:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello world</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>We will do more about object orientated programming in a few weeks, but its good to start building your understanding now.</p>
+
+<p>In this example:</p>
+
+<p><code class="language-plaintext highlighter-rouge">document</code> is an object, and Javascript under the hood has defined a ‘method’, ie a function that can act upon that project that takes a string parameter - in this case ‘hello world’.</p>
+
+<p>An object can also have ‘properties’ which are variables inside the object may also be able to be accessed via the dot syntax.</p>
+
+<p>Objects can be understood as custom data structures that both hold values AND may also have functionality via their methods. Objects are defined by what we call ‘classes’.  Understanding objects and how to define them is a fundamental part of good code design.</p>
+
+<h3 id="summary">Summary</h3>
+
+<p>Well done! You’ve actually covered a good amount of how we can program web pages:</p>
+
+<ul>
+  <li>Setting events.</li>
+  <li>Getting elements by their <code class="language-plaintext highlighter-rouge">id</code>.</li>
+  <li>Changing elements.</li>
+  <li>Understanding how variables, conditionals and loops are implemented in Python</li>
+  <li>Understanding objects, properties and methods</li>
+</ul>
+
+<h3 id="homework">Homework</h3>
+
+<h4 id="1-more-javascript">1. More javascript</h4>
+
+<p>This exercise combines the parts we’ve learned so far. Create a web page with some text in a paragraph element and with a button. When the user clicks the button, it should change the colour of the text in the paragraph to red.</p>
+
+<p>HINTS:
+Locate the HTML element in the DOM using the same method you used above.</p>
+
+<p>Then, you can use this code to change the <em>style</em> of an HTML element to set its colour to <code class="language-plaintext highlighter-rouge">red</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">element</span><span class="p">.</span><span class="nx">style</span><span class="p">[</span><span class="dl">'</span><span class="s1">color</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Now add a second button that will change the text colour to blue.</p>
+
+<h4 id="2-git">2. Git</h4>
+
+<p>Save everything from the homework into your git repository.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add &lt;names of your files&gt;
+git commit <span class="nt">-m</span> <span class="s2">"homework exercise"</span>
+git push
+</code></pre></div></div>
+
+<h3 id="so-you-want-to-know-more">So you want to know more</h3>
+
+<p>This module focuses on JavaScript, so we will cover much more code. But if you want to do more, <a href="https://www.tutorialspoint.com/javascript/index.htm">Tutorialspoint</a> also has a JavaScript tutorial.</p>
+
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>

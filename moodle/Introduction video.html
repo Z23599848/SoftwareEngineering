@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Software Engineering Week 1 Lab 2 – GIT Version Control | Roehampton</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Software Engineering Week 1 Lab 2 – GIT Version Control" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Hosts module content for computing at Roehampton." />
+<meta property="og:description" content="Hosts module content for computing at Roehampton." />
+<link rel="canonical" href="https://roehampton.github.io/module-content/software-engineering/week-01/lab/Week1-lab2.html" />
+<meta property="og:url" content="https://roehampton.github.io/module-content/software-engineering/week-01/lab/Week1-lab2.html" />
+<meta property="og:site_name" content="Roehampton" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Software Engineering Week 1 Lab 2 – GIT Version Control" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Hosts module content for computing at Roehampton.","headline":"Software Engineering Week 1 Lab 2 – GIT Version Control","url":"https://roehampton.github.io/module-content/software-engineering/week-01/lab/Week1-lab2.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/module-content/assets/css/style.css?v=ea56b5ca3cc64b80129c924758c62c92b98b36d5">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/module-content/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+
+      <h1 id="software-engineering-week-1-lab-2--git-version-control">Software Engineering Week 1 Lab 2 – GIT Version Control</h1>
+
+<blockquote>
+  <h2 id="pre-class-task-creating-a-github-account-and-a-new-repository">Pre-class task: Creating a GitHub Account and a new repository</h2>
+</blockquote>
+
+<blockquote>
+  <p>Version control software (CVS, Mercurial and SVN are other examples) maintain your code somewhere backed-up and shareable with your team.  Crucially, they give you ways to work independently on code and then ‘merge’ and ‘resolve conflicts’ with other team members’ code.  Nothing is ever forgotten by the repository!</p>
+</blockquote>
+
+<blockquote>
+  <p>We will use <em>GitHub</em> as an online repository for this module.  First, you will need to create an account on GitHub if you haven’t already.  Go to <a href="https://github.com/">GitHub</a> and <strong>Sign Up</strong>.  Two things to note:</p>
+</blockquote>
+
+<blockquote>
+  <ol>
+    <li>You do not need a paid for account.</li>
+    <li>If you are a student, GitHub will give you <a href="https://education.github.com/pack">unlimited private repositories</a>.</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p>Once you have an account, you need to create a repository.  In GitHub, you will see a <strong>+</strong> near the top of the page, which you can select <strong>New repository</strong> from:</p>
+</blockquote>
+
+<blockquote>
+  <p><img src="/module-content/software-engineering/week-01/lab/github-new-repo.png" alt="GitHub New Repository" /></p>
+</blockquote>
+
+<blockquote>
+  <p>This will open a new window.  You need to enter the name for the repository (for example, <code class="language-plaintext highlighter-rouge">sd2</code>), make sure the repository is <strong>Public</strong> and then select the <strong>Apache 2.0</strong> license type.  <strong>Ensure that a README is added</strong>.  The details are illustrated below:</p>
+</blockquote>
+
+<blockquote>
+  <p><img src="/module-content/software-engineering/week-01/lab/image-20201227112452665.png" alt="image-20201227112452665" /></p>
+</blockquote>
+
+<blockquote>
+  <p>Click on <strong>Create repository</strong> and you will be presented with the following:</p>
+</blockquote>
+
+<blockquote>
+  <h2 id="installing-git--mainly-for-windows">Installing Git – Mainly for Windows</h2>
+</blockquote>
+
+<blockquote>
+  <p>You need to have the git software on your local computer. Git is normally installed on MacOS and Linux by default. For Windows do the following:</p>
+</blockquote>
+
+<blockquote>
+  <ol>
+    <li>Go to Git home page https://git-scm.com/**.</li>
+    <li>Download Git**.</li>
+    <li>Install Git. During install make sure you select to use Visual Studio Code as the default editor.**</li>
+    <li>All other settings can remain as default.**</li>
+    <li>Once installed continue with the rest of the lab.**</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <h2 id="set-up-git-with-your-identity">Set up git with your identity</h2>
+</blockquote>
+
+<blockquote>
+  <p>Git commits have a collection of information attached to them, including who &gt; created the commit – their name and email address. We must set this information up when we start using Git. Enter the two following lines into your terminal:</p>
+</blockquote>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--global</span> user.email <span class="s2">"you@example.com"</span>
+git config <span class="nt">--global</span> user.name <span class="s2">"Your Name"</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Replacing <code class="language-plaintext highlighter-rouge">you@example.com</code> with the email you used for your GitHub account, and <code class="language-plaintext highlighter-rouge">Your Name</code> with your name.</p>
+</blockquote>
+
+<h2 id="revise-the-main-concepts-of-version-control">Revise the main concepts of version control</h2>
+
+<ol>
+  <li><strong>Origin</strong>  : The centralised repository holding everything, probably ‘remote’ ie. on a server or service somewhere eg. github</li>
+  <li><strong>Clone</strong>  : PUll down an entire copy of the repository</li>
+  <li><strong>Branch</strong> : Independent opies of the main codebase that you can alter and work on</li>
+  <li><strong>Stage</strong>:  Get files ready to commit</li>
+  <li><strong>Commit</strong>: Saving a batch of your new work onto your branch with a comment</li>
+  <li><strong>Pull or fetch</strong> : Bringing down others changes to your local repository</li>
+  <li><strong>Push</strong> : Pushing your changes back into the origin repository</li>
+  <li><strong>Merge</strong>: The process of merging your code (probably a branch) with others code</li>
+</ol>
+
+<h2 id="other-useful-terms">Other useful terms</h2>
+
+<ol>
+  <li><strong>Working copy</strong>: The files you are working on right now, probably your branch</li>
+  <li><strong>Master branch</strong>: (or Main branch) Usually the name of the branch everything merges into in the end</li>
+  <li><strong>Fork</strong> : a copy of the master branch that has divergent, unmerged code.</li>
+  <li><strong>Hooks</strong> : we won’t be using hooks for a while but its good to know they exist. These are actions such as triggering a build on your server that you can program in response to an action in git for example a push to the master branch.  This is the core of ‘continuous integration’.</li>
+</ol>
+
+<h2 id="lab">Lab</h2>
+
+<h2 id="introduction-and-getting-ready">Introduction and getting ready</h2>
+
+<ol>
+  <li>You will this lab in PAIRS.  Please swap frequently between the ‘driver’ and ‘navigator’. (see https://en.wikipedia.org/wiki/Pair_programming)</li>
+  <li><strong>You need ONE repository for this lab Choose the repo of ONE of the members of your pair to to on today</strong>. Follow the instructions at the start of this lab to create a repository if you have not already done so.</li>
+</ol>
+
+<p>You will also have to add your partner/group as collaborators to allow them to push. For this</p>
+
+<ul>
+  <li>Go to your repository in github</li>
+  <li>Click ‘settings’ in the top menu</li>
+  <li>Click ‘collaborators’ in the left menu</li>
+  <li>Add the usernames of your collaborators.</li>
+  <li>Your collaborators will have to ‘accept’ the invitation via email or through github</li>
+</ul>
+
+<h2 id="cloning-a-project-in-visual-studio-code">Cloning a Project in Visual Studio Code</h2>
+
+<p><em>All members of your group should clone the same project.</em></p>
+
+<p>Now we need to clone the chosen GitHub project in Visual Studio Code.</p>
+
+<ol>
+  <li><strong>Open Visual Studio Code.</strong></li>
+  <li><strong>Make sure no folder is currently open and you are not in any project.  You can ensure this by choosing file-&gt;new window from the top menu</strong></li>
+  <li><strong>Click on the Source Control button on the left-hand side of the Visual Studio Code window.</strong></li>
+  <li><strong>Your window should now look like this.</strong></li>
+</ol>
+
+<p><img src="/module-content/software-engineering/week-01/lab/image-20201227134347876.png" alt="image-20201227134347876" /></p>
+
+<p>We need the the location of our repository.  Find it by going the the github page for the repository, click the down arrow on the green ‘code’ button, and copy the https:// format URL to your clipboard, as below…</p>
+
+<p><img src="/module-content/software-engineering/week-01/lab/git-clone.png" alt="git-clone" /></p>
+
+<p><strong>Click the Clone Repository button and Visual Studio Code will ask for the repository URL at the top of the window</strong>.  Paste in the URL you obtained from Github as above.</p>
+
+<p><img src="/module-content/software-engineering/week-01/lab/image-20201227134725482.png" alt="image-20201227134725482" /></p>
+
+<ol>
+  <li>
+    <p>**Press return, and Visual Studio Code will ask you where you want to save the repository. A new directory within your documents directory is a good idea.  Make sure NOT to save onto a ounted onedrive directory.</p>
+  </li>
+  <li>
+    <p><strong>Visual Studio Code will ask you if you want to open the repository. Choose to do so.</strong></p>
+  </li>
+</ol>
+
+<p>You now have your GitHub repository cloned to the local machine and opened in Visual Studio Code. Let us add some files to the repository.</p>
+
+<ol>
+  <li>
+    <p>**Create a new file called <yourname>.txt**  (where yourname is your own name. Put any content in that you want to)</yourname></p>
+  </li>
+  <li><strong>Open the Source Control panel in Visual Studio Code using the button on the left-hand side.</strong></li>
+  <li><strong>You will now see a list of changes. We will just add all of them just now. Click the three dots at the top of the Source Control panel and select Changes then Stage All Changes as shown below.</strong></li>
+</ol>
+
+<p>As an alternative, do the same thing in a terminal window.  From the top menu, ‘terminal’, click ‘new terminal’. This will open a terminal in VS code.</p>
+
+<p>Use the following command to check if there are new files that need to be ‘staged’ (ie. made ready for the next commit)</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+git status
+</code></pre></div></div>
+
+<p>NB: The git status command is your go-to command to figure out the relationship of files you have in your local ‘working’ diretory, and the current state of your repository.</p>
+
+<p>You should at this point see the new ‘unstaged’ files, or be told if there are ‘modified’ files in your working tree.</p>
+
+<p>To add the files…</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add &lt;name of file&gt;
+</code></pre></div></div>
+
+<p><img src="/module-content/software-engineering/week-01/lab/image-20201227141135038.png" alt="image-20201227141135038" /></p>
+
+<p>You have now added your existing files to the <em>Staging Area</em> of the local Git repository. Next we need to create a commit from these changes. <strong>Click the three dots again and select Commit then Commit. Visual Studio will ask you for a commit message. Enter <code class="language-plaintext highlighter-rouge">First commit, adding initial files.</code></strong></p>
+
+<p>To do the same thing via the terminal:</p>
+
+<p>Check that your file has been staged</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit <span class="nt">-m</span> <span class="s1">'My meaningful message as this will persist forever!'</span>
+</code></pre></div></div>
+
+<p>HINT: A good commit message will help others understand what you did and why. 
+ANOTHER HINT: if you forget the -m, a text editor will open where you can type a longer message, but this can get complicated if you are not familiar with CLI text editors, so better to ctr C and start again remembering the -m and putting the message inline.</p>
+
+<p><img src="/module-content/software-engineering/week-01/lab/image-20201227141500721.png" alt="image-20201227141500721" /></p>
+
+<p>We have now created a checkpoint in our code that we can <strong>always</strong> return to.  This is the power of version control.  We are check-pointing our code so we can rewind to previous versions.  As long as you commit often, you can always revert back to a previous version.</p>
+
+<p>Now we need to push these changes to GitHub. <strong>Click the three dots again, and select Push</strong>. You will be asked to log into GitHub. Do so and follow the instructions given. This will keep you authenticated with Github when you use visual studio code.</p>
+
+<p>To do the same thing via the terminal:</p>
+
+<p>Check that your file has been staged</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push
+</code></pre></div></div>
+
+<p>NOTE: if you do this via VS code terminal or UI, VS code will helpfully authenticate you.  Make sure to find any pop-up windows that open to help you athenticate and follow the instructions.</p>
+
+<p>Refresh the GitHub page.  You should see your files there:</p>
+
+<p><img src="/module-content/software-engineering/week-01/lab/image-20201227143113032.png" alt="image-20201227143113032" /></p>
+
+<p>We have now defined our core workflow with Git using Visual Studio Code. To summarise the command you have learned:</p>
+
+<ol>
+  <li>Add the files to the commit – <strong>Changes then Stage All Changes.</strong></li>
+  <li>Commit the changes – <strong>Commit then Commit.</strong></li>
+  <li>Push the changes – <strong>Push</strong>.</li>
+  <li>When everyone has pushed, each team member should be able to copy all the new files to their own machine with:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull
+</code></pre></div></div>
+
+<p>. <strong>HINT</strong> – if someone has already committed a change before you, you will need to pull the changes first before you can push yours.</p>
+<ol>
+  <li>Once everyone on the team has created their files, make sure everyone pulls the current version of the repository so they are up to date.</li>
+</ol>
+
+<p><strong>Get used to this process - it will save your code from disaster!</strong>.  We have created a checkpoint where we know our code is working and doing what we expect.  Whenever you do a change – and make your changes small – and tested the build works, commit and push.</p>
+
+<p>Now you should continue with the lab, in pairs, commiting each time you complete a task.  Remember to swap driver and navigator frequently.</p>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>

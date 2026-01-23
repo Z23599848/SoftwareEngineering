@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Software Development 2 Code extras - Option list, bootstrap, css and images in static directory | Roehampton</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Software Development 2 Code extras - Option list, bootstrap, css and images in static directory" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Hosts module content for computing at Roehampton." />
+<meta property="og:description" content="Hosts module content for computing at Roehampton." />
+<link rel="canonical" href="https://roehampton.github.io/module-content/msc-software-development-2/week-10/lab/code-extras.html" />
+<meta property="og:url" content="https://roehampton.github.io/module-content/msc-software-development-2/week-10/lab/code-extras.html" />
+<meta property="og:site_name" content="Roehampton" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Software Development 2 Code extras - Option list, bootstrap, css and images in static directory" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Hosts module content for computing at Roehampton.","headline":"Software Development 2 Code extras - Option list, bootstrap, css and images in static directory","url":"https://roehampton.github.io/module-content/msc-software-development-2/week-10/lab/code-extras.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/module-content/assets/css/style.css?v=ea56b5ca3cc64b80129c924758c62c92b98b36d5">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/module-content/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+
+      <h1 id="software-development-2-code-extras---option-list-bootstrap-css-and-images-in-static-directory">Software Development 2 Code extras - Option list, bootstrap, css and images in static directory</h1>
+
+<h2 id="how-to-build-an-options-list">How to build an options list</h2>
+
+<p>There are three stages to this task:</p>
+
+<ol>
+  <li>Retrieve the valid options from the database</li>
+  <li>Render an option list in the PUG template, in the context of a form with a ‘submit’ button</li>
+  <li>Create a route in app.js that can receive the request with the option appended and know what to do with it.</li>
+</ol>
+
+<p>To provide and example using the students, modules and programmes example, lets create a drop-down list of students, such that when we select a student, we are sent to the relevant single-student page.</p>
+
+<p>Lets add this list to the front page of our app, ie the ‘root route’, /.</p>
+
+<h3 id="task-1-retrieve-the-valid-options-from-the-database">Task 1: Retrieve the valid options from the database</h3>
+
+<p>To create our dropdown list, we need to have a list of student names and their id’s.</p>
+
+<p>We know how to do this, we can simply query the database with:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">from</span> <span class="n">Students</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>We could put this query directly into our app.js file but lets keep some compliance with our MVC design, and instead add a new async function to the student.js file to get all students, and inside it, make use of our Student class so we know what to expect.</p>
+
+<p>1 We will need a ‘setter’ function in our Student class so that we can set the name once created.  ‘getters’ and ‘setters’ are a foundational part of OOP design.  Here we will write our setter using s a simple syntax that you could find in any language that supports OOP, though FYI Javascript has its own custom getter and setter behaviour described eg. here: https://www.javascripttutorial.net/es6/javascript-getters-and-setters/</p>
+
+<p>For now - <strong>within your student class definition</strong> add the following:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">setStudentName</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+</code></pre></div></div>
+
+<ol>
+  <li>Now we have that available, we can add a neat getAllStudents() method OUTSIDE of the class, but which makes use of the student class and returns an array of student objects.  This is nice, because when we send this data to the template, we can neatly and predictably access its properties….</li>
+</ol>
+
+<p>Add the following AFTER the student class definition (in student.js) but before the module.exports:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">getAllStudents</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">sql</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">SELECT id, name from Students</span><span class="dl">"</span>
+    <span class="kd">const</span> <span class="nx">results</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">db</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sql</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">students</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">row</span> <span class="k">of</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Use our Student class to neatly format the object going to the template</span>
+        <span class="kd">var</span> <span class="nx">student</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Student</span><span class="p">(</span><span class="nx">row</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+        <span class="c1">// Set the student name</span>
+        <span class="nx">student</span><span class="p">.</span><span class="nx">setStudentName</span><span class="p">(</span><span class="nx">row</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+        <span class="c1">// Push the student class onto the students array</span>
+        <span class="nx">students</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">student</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Return the array of all students</span>
+    <span class="k">return</span> <span class="nx">students</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Add this new function to the module.exports so that the rest of our app can use it.</li>
+</ol>
+
+<p>(In student.js), makes sure your module exports includes the new function as follows:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">Student</span><span class="p">,</span>
+    <span class="nx">getAllStudents</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Finally, write some code in app.js that will test to see if our new function works well.  Remove any existing code in your root route definition (ie. in app.get(‘/’) {} ) and replace with the following:</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">// Create a route for root - /</span>
+<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">,</span> <span class="k">async</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">students</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getAllStudents</span><span class="p">();</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">students</span><span class="p">);</span>  
+<span class="p">});</span>
+
+</code></pre></div></div>
+
+<p>Test that you are getting the students array correctly by going to</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>localhost:3000
+</code></pre></div></div>
+
+<p>You should see an ouput of the student objects.</p>
+
+<h3 id="task-2-render-an-option-list-in-the-pug-template-in-the-context-of-a-form-with-a-submit-button">Task 2: Render an option list in the PUG template, in the context of a form with a ‘submit’ button</h3>
+
+<p>Now lets look at how to create an option list in PUG.</p>
+
+<p>We are working on the home page, so lets make our changes in index.pug which will currently have some test content.</p>
+
+<p>Lets start by injecting our array of student objects into the template.</p>
+
+<p>In app.js, amend the root route as follows, to call the index template and inject the students array into it, to appear in the template as a variable called students</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Create a route for root - /
+app.get("/", async function(req, res) {
+    var students = await getAllStudents();
+    res.render('index', {students: students});
+});
+</code></pre></div></div>
+
+<p>Check that it works, by deleting the existing contents of index.pug and replacing it as follows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>extends layout
+block content
+    h1 Students list 
+    - console.log(students)
+
+
+</code></pre></div></div>
+
+<p>Load localhost:3000.  Are you getting what you expect?  You should at this point only see the heading ‘Students list’, but in your VS code console you should see the students list outputted.</p>
+
+<p>Once thats working well, lets add the options and form to the index.pug template. The whole thing should look like this - note the explanatory comments.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>extends layout
+block content
+    h1 Students list 
+    //- Define a form whose data will be passed to the /student-select route via a POST request
+    form(action='/student-select', method='POST')
+        //- The POST parameter will be called student
+        select(name='studentParam')
+            //- We loop through the students array, extracting a variable called student
+            for student in students
+                //- we build the option list from the id and name properties on the student object
+                option(value=student.id) #{student.name}
+        &lt;div&gt;
+        //- render the submit button
+        input(type='submit' value='Submit')
+
+</code></pre></div></div>
+
+<p>Go to localhost:3000.</p>
+
+<p>You should see your options list rendered on the page.  Inspect the list wtih developer tools.  You should see something like this:</p>
+
+<p><img src="/module-content/msc-software-development-2/week-10/lab/option-list-output.png" alt="image:" />.</p>
+
+<p>Notice that the ‘value’ attribute is the student ID.  Its this id that we will use in the next task.</p>
+
+<h3 id="task-3-create-a-route-in-appjs-that-can-receive-the-request-with-the-option-appended-and-know-what-to-do-with-it">Task 3: Create a route in app.js that can receive the request with the option appended and know what to do with it.</h3>
+
+<p>Finally, we need to create a route which can handle the POST parameter from the form submission.</p>
+
+<p>In this case, we will simply create a new ‘post’ route in express, capture the id and redirect on to the single-student/:id page we have already created.</p>
+
+<p>In app.js, do the following:</p>
+
+<ol>
+  <li>Add this line below where the express app variable is created.  This will allow us to read POST parameters send via HTML forms:</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Make sure we get the POST parameters</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nx">urlencoded</span><span class="p">({</span> <span class="na">extended</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}))</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Add the new POST route:</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Create a post route to handle the form submission of the option list</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">/student-select</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Retrieve the parameter and redirect to the single student page</span>
+    <span class="nx">id</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">studentParam</span><span class="p">;</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="dl">'</span><span class="s1">/single-student/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">id</span><span class="p">);</span>
+<span class="p">});</span>
+
+</code></pre></div></div>
+
+<p>Now, when you go to localhost:3000, you should be able to choose a student, press submit and be redirected to the relevant student page.</p>
+
+<h2 id="bootstrap-with-your-express-app">Bootstrap with your express app</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install bootstrap
+
+docker-compose up --build
+</code></pre></div></div>
+
+<p>Add this line to app.js</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="dl">'</span><span class="s1">/bootstrap</span><span class="dl">'</span><span class="p">,</span> <span class="nx">express</span><span class="p">.</span><span class="kd">static</span><span class="p">(</span><span class="dl">'</span><span class="s1">node_modules/bootstrap/dist</span><span class="dl">'</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p>Add these lines so that layout.pug looks like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>html 
+    head    
+        title #{title}
+        script(language="javascript" src="/bootstrap/js/bootstrap.min.js")
+        link(rel="stylesheet" href="/bootstrap/css/bootstrap.min.css")
+        link(rel="stylesheet" href="/css/style.css")
+    body 
+        block content
+
+
+</code></pre></div></div>
+
+<h2 id="images-in-your-express-app">Images in your express app</h2>
+
+<p>Check that you have this line already in your app.js file AND a directory called <code class="language-plaintext highlighter-rouge">static</code>  in the top level of your app ie. in the same directory level as your docker-compose.yml and index.js file.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Add static files location</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="kd">static</span><span class="p">(</span><span class="dl">"</span><span class="s2">static</span><span class="dl">"</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p>Create an images directory INSIDE the static directory.  Upload your images inside it.</p>
+
+<p>Include images in your templates along the lines of:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//- Example of an image: the actual image should be in /static/images 
+img(src='/images/cat.jpeg' width='500px' height='200px')
+
+</code></pre></div></div>
+
+<h2 id="a-custom-stylesheet-in-your-express-app">A custom stylesheet in your express app</h2>
+
+<p>Check you have the static directory as above.
+Create a directory inside it called css.
+Create a file inside called style.css
+Include this in your pug templates by adding another line in your layout.pug template, in the head section, as follows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        link(rel="stylesheet" href="/css/style.css")
+
+</code></pre></div></div>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>

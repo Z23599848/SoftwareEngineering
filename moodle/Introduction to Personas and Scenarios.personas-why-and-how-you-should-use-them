@@ -1,0 +1,2773 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <title>Personas – A Simple Introduction | IxDF</title>
+                <link rel="preconnect" href="https://public-media.interaction-design.org">
+<link rel="preconnect" href="https://public-images.interaction-design.org">
+<link rel="preconnect" href="https://assets.interaction-design.org">
+<link rel="preconnect" href="https://assets.interaction-design.org" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ 
+            
+    <script src="https://d2wy8f7a9ursnm.cloudfront.net/v8/bugsnag.min.js" async onload="setupBugsnag()"></script>
+                    <script>
+        window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({"user":{"country":"GB"}});
+            </script>
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src= 'https://t.interaction-design.org/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KJ8XGB');
+    </script>
+        <script>
+    window.csrfToken = "X3kRe2XbKgLV6x9oGycXbP6gEWEB1VGhahAq7Xmg";
+    window.termsOfUseRevision = "2025-01-15";
+    window.privacyContentRevision = "2024-03-12";
+
+    window.currentVisitor = {"id":null,"email":null,"name":"Guest","slug":null,"guard":null};
+    window.currentVisitor.isGuest = () => true;
+
+    window.flash = [];
+</script>
+    
+    
+    <script>
+        function setupBugsnag() {
+            window.bugsnagClient = Bugsnag.start({
+                apiKey: "4fc40517cdca4f44ae67a2e4fbe64d04",
+                appVersion: "4.668.3-1-g1f197e22",
+                appType: "browser",
+                user: {id: window.currentVisitor.id},
+                onError: function(event) {
+                    if (window.location.protocol.indexOf('file') > -1) { 
+                        return false;
+                    }
+                    
+                    const error = event.errors[0];
+                    for (const frame in error.stacktrace) {
+                        const file = frame.file || error.stacktrace[frame].file;
+                        if (file && file.indexOf('moz-extension://') > -1) {
+                            return false;
+                        }
+                    }
+                    
+                }
+            });
+        }
+    </script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700|Source+Code+Pro|Source+Sans+Pro:400,400i,700&display=swap">
+<link rel="stylesheet" href="https://assets.interaction-design.org/build/assets/app-Fq5rvKDx.css">
+        <link rel="preload" as="style" href="https://assets.interaction-design.org/build/assets/uxArticle-Ds3Cv27t.css" /><link rel="stylesheet" href="https://assets.interaction-design.org/build/assets/uxArticle-Ds3Cv27t.css" />    
+                
+          
+               
+        
+        
+        <link rel="icon" type="image/png" sizes="48x48" href="https://assets.interaction-design.org/build/assets/favicon--48-Q_lJw1G2.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://assets.interaction-design.org/build/assets/favicon--32-Bf0vQDz6.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://assets.interaction-design.org/build/assets/favicon--16-BFlAiy0t.png">
+<link rel="icon" href="/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon">
+<link rel="apple-touch-icon" href="https://assets.interaction-design.org/build/assets/apple-touch-icon-D34iMvlS.png">
+<link rel="manifest" href="/web-app-manifest.json">
+<link rel="mask-icon" href="https://assets.interaction-design.org/build/assets/favicon__icon--white-D1NzZKPx.svg" color="#404040">
+<meta name="apple-mobile-web-app-title" content="UX courses">
+<meta name="application-name" content="UX courses">
+<meta name="theme-color" content="#404040">
+<meta name="msapplication-config" content="/ms-app-browserconfig.xml"/>
+
+        <link rel="image_src" href="https://public-images.interaction-design.org/og-images/article/f1f86e7e835328acb88c2fada1ac9329.jpg"/>
+<meta property="fb:app_id" content="142481353231314"/>
+<meta property="fb:page_id" content="19975077227"/>
+<link rel="alternate" type="application/rss+xml" title="Interaction Design Foundation - UX Feed" href="https://www.interaction-design.org/rss/site_news.xml"/>
+<link rel="canonical" href="https://www.interaction-design.org/literature/article/personas-why-and-how-you-should-use-them"/>
+<meta name="description" content="Creating personas helps you understand your users’ needs, experiences, behaviours and goals. Learn more about how they help you create great user experiences."/>
+
+
+    <meta property="og:type" content="article">
+            <meta property="article:author" content="Rikke Friis Dam">
+            <meta property="article:author" content="Teo Yu Siang">
+                <meta name="twitter:label1" value="Topics"/>
+        <meta name="twitter:data1" value="Design Thinking, Problem Statements"/>
+    <meta name="robots" content="max-image-preview:large">
+<meta property="og:site_name" content="The Interaction Design Foundation"/>
+<meta property="og:title" content="Personas – A Simple Introduction"/>
+<meta property="og:description" content="Creating personas helps you understand your users’ needs, experiences, behaviours and goals. Learn more about how they help you create great user experiences."/>
+<meta property="og:image" content="https://public-images.interaction-design.org/og-images/article/f1f86e7e835328acb88c2fada1ac9329.jpg"/>
+<meta property="og:url" content="https://www.interaction-design.org/literature/article/personas-why-and-how-you-should-use-them"/>
+
+<meta name="twitter:title" content="Personas – A Simple Introduction"/>
+<meta name="twitter:description" content="Creating personas helps you understand your users’ needs, experiences, behaviours and goals. Learn more about how they help you create great user experiences."/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@ixdf_org"/>
+<meta name="twitter:creator" content="@ixdf_org"/>
+        <meta name="csrf-token" content="X3kRe2XbKgLV6x9oGycXbP6gEWEB1VGhahAq7Xmg">
+    </head>
+    <!-- —————————————————————————————————————————————————————————————————————————————————————————————————————————————————>
+
+    Want to help us write even better code? Then come work with us: https://www.interaction-design.org/about/careers
+
+ —————————————————————————————————————————————————————————————————————————————————————————————————————————————————— -->
+    <body class="js-layout--default"
+            >
+    <script>
+        function gtmPush() {
+                        window.dataLayer.push({"event":"view_item_list","ecommerce":{"items":[{"item_id":"course::58","item_name":"Design Thinking: The Ultimate Guide","item_category":"Course","item_variant":"Open","quantity":1}],"item_list_name":"CourseCardsOnArticlePage"}});
+                    }
+        addEventListener("load", gtmPush);
+    </script>
+    <noscript>
+        <iframe
+            src="https://t.interaction-design.org/ns.html?id=GTM-KJ8XGB"
+            height="0"
+            width="0"
+            style="display:none;visibility:hidden"
+        ></iframe>
+    </noscript>
+
+
+
+    <div class="hidden icon-sprite-container" id="SVGSpriteWrap" data-url="https://assets.interaction-design.org/build/assets/icon-sprite-HJEF8DUm.svg"></div>
+
+<script>
+    (function(){const e=document.getElementById("SVGSpriteWrap");fetch(e.getAttribute("data-url")).then(t=>{if(!t||!t.ok)return;const n=document.getElementById("SVGSpriteWrap");t.text().then(r=>{n.innerHTML=r})})})();
+//# sourceMappingURL=/build/assets/spriteLoadingScript-_6veLIra.js.map
+
+</script>
+
+<link href="https://assets.interaction-design.org/build/assets/video-poster-ChXkhu1R.css" rel="stylesheet" media="print" id="videoPosterCssPath">
+
+    
+    <div class="pageContainer">
+        <header data-secondary-navigation-header class="navigationHeader__secondaryNavigationBar sm:hide print:hidden">
+    <div class="gridContainer">
+        <div class="gridContent">
+            <ul class="inlineList navigationHeader__linksList" aria-label="Accessory navigation">
+                <li class="inlineList__item"><a tabindex="-1" href="https://www.interaction-design.org/turn-passion-into-paycheck">Reviews / Why Join Our Community?</a></li>
+<li class="inlineList__item"><a tabindex="-1" href="https://www.interaction-design.org/corporate">For Companies</a></li>
+
+<li class="inlineList__item inlineList__item--right"><a tabindex="-1" href="https://www.interaction-design.org/faq">FAQs</a></li>
+<li class="inlineList__item"><a tabindex="-1" href="https://www.interaction-design.org/about/contact">Contact</a></li>
+
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+<nav class="navigationHeader js-navigationHeader sm:hide" aria-label="Main Navigation">
+    <div class="navigationHeader__primaryNavigationBar gridContainer">
+        <div class="gridContent">
+            <div class="primaryNavigationBar">
+                <a class="primaryNavigationBar__logo" href="https://www.interaction-design.org" title="Interaction Design Foundation logo" aria-label="Home">
+                    <picture>
+                        <source media="(min-width: 768px) and (max-width: 1055px)" srcset="https://assets.interaction-design.org/build/assets/ixdf-logo-CLGQqQ8t.svg">
+                        <img width="200" height="65" class="navigationHeaderLogo__image"
+                            src="https://assets.interaction-design.org/build/assets/ixdf-logo-full-expanded-P3oiNsMU.svg"
+                            alt="Interaction Design Foundation logo"
+                            fetchpriority="high"
+                        />
+                    </picture>
+                </a>
+
+                <div class="primaryNavigationBar__navigation">
+                    <ul class="inlineList text-sans-serif">
+                        <li class="navigationHeader__listItem">
+            <a 
+           class="navigationHeader__link link--noUnderline link--animated"
+           href="https://www.interaction-design.org/courses"
+           title="User Experience (UX) Courses">UX Courses
+        </a>
+    </li>
+<li class="navigationHeader__listItem">
+            <a 
+           class="navigationHeader__link link--noUnderline link--animated"
+           href="https://www.interaction-design.org/master-classes"
+           title="User Experience (UX) Master Classes">Master Classes
+        </a>
+    </li>
+<li class="navigationHeader__listItem">
+            <a 
+           class="navigationHeader__link link--noUnderline link--animated"
+           href="https://www.interaction-design.org/community"
+           title="User Experience (UX) Community">Community
+        </a>
+    </li>
+<li class="navigationHeader__listItem">
+            <a 
+           class="navigationHeader__link link--noUnderline link--animated"
+           href="https://www.interaction-design.org/literature"
+           title="User Experience (UX) Literature">Literature
+        </a>
+    </li>
+<li class="navigationHeader__listItem">
+            <a 
+           class="navigationHeader__link link--noUnderline link--animated"
+           href="https://www.interaction-design.org/blog"
+           title="User Experience (UX) Literature">Blog
+        </a>
+    </li>
+
+
+    <li class="navigationHeader__listItem sm:hide">
+                    <a href="/search"
+               class="navigationHeader__link flex items-center link--noUnderline link--animated js-modalSearchButton ">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" style="width: 18px; height: 18px;" 
+>
+    <use xlink:href="#magnifying-glass"></use>
+</svg>
+                <span class="visually-hidden">Search</span>
+            </a>
+            </li>
+                    </ul>
+                    <div class="primaryNavigationBar__searchbar"></div>
+                </div>
+
+                <div class="primaryNavigationBar__accountDetails">
+                    <div class="accountDetails
+    accountDetails--isGuest
+    accountDetails--right
+    
+    "
+>
+    <div class="accountDetails__inner">
+                    <ul class="text-sans-serif accountDetails__loginList inlineList">
+    <li>
+        <a href="https://www.interaction-design.org/login" class="link link--noUnderline accountDetails__login">
+            Log in
+        </a>
+    </li>
+    <li class="not-flexible">
+                    <a
+    class="button button--primary button--withArrow"
+    href="/join"
+    data-gtm-cta="headerButton"
+>
+        <span class="md:hide">Join our community</span>
+        <span class="md:show">Join us</span>
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon button__arrowIcon ml-tiny" 
+>
+    <use xlink:href="#chevron-right-bold"></use>
+</svg>
+</a>
+            </li>
+</ul>
+            </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="pageAnnouncements sm:hide">
+        <!--ixdf-announcements-bar-start--><div
+    data-page-announcement
+    data-importance="3"
+    style="margin: 0;"
+     data-dismissible-id="yCIQ0knyh0I7XOkc"     class="gridContainer pageAnnouncement ui-type-style"
+>
+    <div class="gridContent">
+        <div class="pageAnnouncement__message text-neutral-01 flex justify-center text-left font-bold" role="status">
+            <span class="line-clamp-1"><div>
+<span class="sm:show"><a href="https://www.interaction-design.org/master-classes/accessible-typography-design-uis-all-your-users-will-love-to-use" target="_blank" rel="noopener noreferrer" data-gtm-cta="announcementBar">New Live Master Class! Accessible Typography</a>&nbsp;</span>
+<span class="sm:hide"><a href="https://www.interaction-design.org/master-classes/accessible-typography-design-uis-all-your-users-will-love-to-use" target="_blank" rel="noopener noreferrer" data-gtm-cta="announcementBar">Live Master Class! Accessible Typography: Design UIs All Your Users Will Love to Use</a>&nbsp;</span>
+</div></span>
+                            <button type="button" class="pageAnnouncement__button shrink-0 ml-small" data-page-announcement-close-button aria-label="Hide message">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon pageAnnouncementButton__icon" width="20" height="20"
+>
+    <use xlink:href="#x"></use>
+</svg>
+                </button>
+                    </div>
+    </div>
+</div>
+<!--ixdf-announcements-bar-end-->
+
+        
+        <div
+    data-page-announcement
+    data-importance="8"
+    style="margin: 0;"
+     data-dismissible-id="outdatedBrowser"     class="gridContainer pageAnnouncement ui-type-style pageAnnouncement--vital hidden-on-supported-browsers"
+>
+    <div class="gridContent">
+        <div class="pageAnnouncement__message text-neutral-01 flex justify-center text-left font-bold" role="status">
+            <span class="line-clamp-1"><div class="sm:hide">
+            Please <a href="https://updatemybrowser.org/browser" target="_blank" rel="noopener noreferrer nofollow">upgrade your browser</a>
+            as it's outdated. You'll reduce security risks and help make the internet better.
+        </div>
+        <div class="sm:show">
+            Your browser is outdated—<a href="https://updatemybrowser.org/browser" target="_blank" rel="noopener noreferrer nofollow">upgrade it now</a>.
+        </div></span>
+                            <button type="button" class="pageAnnouncement__button shrink-0 ml-small" data-page-announcement-close-button aria-label="Hide message">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon pageAnnouncementButton__icon" width="20" height="20"
+>
+    <use xlink:href="#x"></use>
+</svg>
+                </button>
+                    </div>
+    </div>
+</div>
+    </header>
+</nav>
+<div class="mobileHeader js-mobileHeader">
+
+    <div class="mobileHeaderMainNav">
+        <button class="btn-offcanvas js-openOffCanvas">
+            <span class="js-openSmallScreenMenu">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon align-middle" width="32" height="32"
+>
+    <use xlink:href="#hamburger"></use>
+</svg>
+                <span class="visually-hidden">Open menu</span>
+            </span>
+            <span class="js-closeSmallScreenMenu hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon align-middle" width="32" height="32"
+>
+    <use xlink:href="#x"></use>
+</svg>
+                <span class="visually-hidden">Close menu</span>
+            </span>
+        </button>
+
+        <div class="mobileHeaderMainNav__logo">
+            <a href="/" title="Interaction Design Foundation"
+               tabindex="-1">
+                <img src="https://assets.interaction-design.org/build/assets/ixdf-logo-full-expanded-P3oiNsMU.svg"
+                     alt="Interaction Design Foundation logo"
+                     width="128"
+                     height="42"/>
+            </a>
+        </div>
+                    <div class="mobileHeaderMainNav__searchMenu">
+                                    <a href="/search"
+                       class="navigationHeader__link flex items-center link--noUnderline link--animated js-modalSearchButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" style="width: 22px; height: 22px;" 
+>
+    <use xlink:href="#magnifying-glass"></use>
+</svg>
+                        <span class="visually-hidden">Search</span>
+                    </a>
+                            </div>
+                <div class="mobileHeaderMainNav__userMenu">
+                                                <a
+                        class="button button--primary"
+                        href="/join"
+                        data-gtm-cta="headerButton"
+                    >
+                        Join us
+                    </a>
+                                    </div>
+
+    </div>
+    <div class="pageAnnouncements--mobileHeader" data-page-announcements-mobile>
+        <!--ixdf-announcements-on-mobile-start--><div
+    data-page-announcement
+    data-importance="3"
+    style="margin: 0;"
+     data-dismissible-id="yCIQ0knyh0I7XOkc"     class="gridContainer pageAnnouncement ui-type-style"
+>
+    <div class="gridContent">
+        <div class="pageAnnouncement__message text-neutral-01 flex justify-center text-left font-bold" role="status">
+            <span class="line-clamp-1"><div>
+<span class="sm:show"><a href="https://www.interaction-design.org/master-classes/accessible-typography-design-uis-all-your-users-will-love-to-use" target="_blank" rel="noopener noreferrer" data-gtm-cta="announcementBar">New Live Master Class! Accessible Typography</a>&nbsp;</span>
+<span class="sm:hide"><a href="https://www.interaction-design.org/master-classes/accessible-typography-design-uis-all-your-users-will-love-to-use" target="_blank" rel="noopener noreferrer" data-gtm-cta="announcementBar">Live Master Class! Accessible Typography: Design UIs All Your Users Will Love to Use</a>&nbsp;</span>
+</div></span>
+                            <button type="button" class="pageAnnouncement__button shrink-0 ml-small" data-page-announcement-close-button aria-label="Hide message">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon pageAnnouncementButton__icon" width="20" height="20"
+>
+    <use xlink:href="#x"></use>
+</svg>
+                </button>
+                    </div>
+    </div>
+</div>
+<!--ixdf-announcements-on-mobile-end-->
+    </div>
+</div>
+
+<div class="offCanvasWrapper">
+    <nav class="offCanvasMenu" aria-label="Main Navigation for small screens">
+        <ul class="offCanvasMenu__list text-sans-serif">
+            <li class="navigationHeader__listItem">
+            <a tabindex="-1"
+           class="navigationHeader__link "
+           href="https://www.interaction-design.org/courses"
+           title="User Experience (UX) Courses">UX Courses
+        </a>
+    </li>
+<li class="navigationHeader__listItem">
+            <a tabindex="-1"
+           class="navigationHeader__link "
+           href="https://www.interaction-design.org/master-classes"
+           title="User Experience (UX) Master Classes">Master Classes
+        </a>
+    </li>
+<li class="navigationHeader__listItem">
+            <a tabindex="-1"
+           class="navigationHeader__link "
+           href="https://www.interaction-design.org/community"
+           title="User Experience (UX) Community">Community
+        </a>
+    </li>
+<li class="navigationHeader__listItem">
+            <a tabindex="-1"
+           class="navigationHeader__link "
+           href="https://www.interaction-design.org/literature"
+           title="User Experience (UX) Literature">Literature
+        </a>
+    </li>
+<li class="navigationHeader__listItem">
+            <a tabindex="-1"
+           class="navigationHeader__link "
+           href="https://www.interaction-design.org/blog"
+           title="User Experience (UX) Literature">Blog
+        </a>
+    </li>
+
+
+    <li class="navigationHeader__listItem sm:hide">
+                    <a href="/search"
+               class="navigationHeader__link flex items-center  js-modalSearchButton ">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" style="width: 18px; height: 18px;" 
+>
+    <use xlink:href="#magnifying-glass"></use>
+</svg>
+                <span class="visually-hidden">Search</span>
+            </a>
+            </li>
+        </ul>
+
+                    <div class="offCanvas__loginButton">
+                <a class="button button--ghostDark" href="/login">Log in</a>
+            </div>
+        
+        <ul class="offCanvasMenu__list offCanvasMenu__list--links text-sans-serif">
+            <li class="inlineList__item"><a tabindex="-1" href="https://www.interaction-design.org/turn-passion-into-paycheck">Reviews / Why Join Our Community?</a></li>
+<li class="inlineList__item"><a tabindex="-1" href="https://www.interaction-design.org/corporate">For Companies</a></li>
+
+<li class="inlineList__item inlineList__item--right"><a tabindex="-1" href="https://www.interaction-design.org/faq">FAQs</a></li>
+<li class="inlineList__item"><a tabindex="-1" href="https://www.interaction-design.org/about/contact">Contact</a></li>
+
+
+        </ul>
+
+        <div class="socialLinks justify-between flex-no-wrap">
+                            <a href="https://www.linkedin.com/company/ixdf-interaction-design-foundation"
+                    target="_blank" rel="noopener" tabindex="-1" aria-label="LinkedIn page">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon fill-neutral-01" width="44" height="44" 
+>
+    <use xlink:href="#brand-linkedin"></use>
+</svg>
+                </a>
+                            <a href="https://www.instagram.com/ixdf_org/"
+                    target="_blank" rel="noopener" tabindex="-1" aria-label="Instagram page">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon fill-neutral-01" width="44" height="44" 
+>
+    <use xlink:href="#brand-instagram"></use>
+</svg>
+                </a>
+                            <a href="https://www.youtube.com/user/InteractionDesignOrg"
+                    target="_blank" rel="noopener" tabindex="-1" aria-label="YouTube page">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon fill-neutral-01" width="44" height="44" 
+>
+    <use xlink:href="#brand-youtube"></use>
+</svg>
+                </a>
+                            <a href="https://x.com/ixdf_org"
+                    target="_blank" rel="noopener" tabindex="-1" aria-label="X page">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon fill-neutral-01" width="44" height="44" 
+>
+    <use xlink:href="#brand-x"></use>
+</svg>
+                </a>
+                            <a href="https://www.facebook.com/ixdf.interaction.design.foundation"
+                    target="_blank" rel="noopener" tabindex="-1" aria-label="Facebook page">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon fill-neutral-01" width="44" height="44" 
+>
+    <use xlink:href="#brand-facebook"></use>
+</svg>
+                </a>
+                    </div>
+    </nav>
+</div>
+
+        <main class="content-wrapper">
+                        <input type="hidden" id="js-showUpcomingCourses" value="show">
+        <input type="hidden" id="js-publicationType" value="article">
+    <input type="hidden" id="js-publicationId" value="130836">
+
+    <section class="uxArticle"
+        data-reasons-number="8
+">
+                    <div class="gridContainer">
+                <div class="uxArticle__hero">
+                    <picture>
+    <source srcset="https://public-images.interaction-design.org/literature/articles/heros/582daf7b3bcdd.jpg?tr=w-1200,c-at_max"
+            media="(min-width: 767px)"/>
+    <source srcset="https://public-images.interaction-design.org/literature/articles/heros/582daf7b3bcdd.jpg?tr=w-612"
+            media="(max-width: 766px)"/>
+    <img src="https://public-images.interaction-design.org/literature/articles/heros/582daf7b3bcdd.jpg"
+         alt="Illustration of four different persona profile pictures.">
+</picture>
+                </div>
+            </div>
+        
+        <div class="gridContainer">
+            <div class="gridContent uxArticleWithSidebar__content js-publicationContent">
+                <h1 class="uxArticle__title">
+                    Personas – A Simple Introduction
+                                    </h1>
+                
+                <div class="uxArticle__main-meta">
+                                            by
+                                                    <a href="https://www.interaction-design.org/literature/author/rikke-1">Rikke Friis Dam</a>                                and
+                                                                                <a href="https://www.interaction-design.org/literature/author/teo">Teo Yu Siang</a>                                                |
+                    
+                    <time datetime="2025-08-19T15:00:00+00:00">5 months ago</time>
+
+                                            |
+                        <span>18 min read</span>
+                                    </div>
+
+                <div class="print:hidden">
+                    <div class="sharingPanel">
+            <div class="sharingPanel__shares">
+            <div class="sharingPanel__sharesTotalCount">
+                <span
+                    class="sharingPanel__sharesTotalCountNumber">1,616</span>
+                <span class="sharingPanel__sharesTotalMessage">shares</span>
+            </div>
+        </div>
+        <div class="sharingPanel__services">
+        <button class="button button--ghost button--withIcon button--inline" data-dialog="sharingModal">
+            <span>Share<span class="lg:show"> this article</span></span>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" 
+>
+    <use xlink:href="#share"></use>
+</svg>
+        </button>
+                    <button class="button button--ghost button--withIcon button--inline js-citationButton" data-dialog="citationWidget">
+                <span>Cite<span class="lg:show"> this article</span></span>
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" 
+>
+    <use xlink:href="#blockquote-outline"></use>
+</svg>
+            </button>
+                    </div>
+</div>
+
+
+            <div class="pop hidden js-pop" role="tooltip">
+    <div class="pop__popper">
+        <button class="popper__citationButton" data-dialog="citationWidget">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" width="32" height="32"
+>
+    <use xlink:href="#block-quote"></use>
+</svg>
+            Cite this article
+        </button>
+        <div class="popper__arrow" data-popper-arrow></div>
+    </div>
+</div>
+    
+    <link rel="preload" as="style" href="https://assets.interaction-design.org/build/assets/sharingPanel-BFKoktr3.css" /><link rel="stylesheet" href="https://assets.interaction-design.org/build/assets/sharingPanel-BFKoktr3.css" />                </div>
+
+                
+                <div class="uxArticle__contentContainer">
+                    <article
+                        class="uxArticle__rteContent rteContent rteContent--imageFit rteContent--headingSpacing break-words js-courseAd-area js-citationWidget">
+                        <p><em><a href="/literature/topics/personas" title="What are Personas?">Personas</a> are fictional characters, which you create based upon your research to represent the different user types that might use your service, product, site, or brand in a similar way. Creating personas will help you understand your users’ needs, experiences, behaviors and goals. Creating personas can help you step out of yourself. It can help you recognize that different people have different needs and expectations, and it can also help you identify with the user you’re designing for. Personas make the design task at hand less complex, they guide your <a href="/literature/topics/ideation" title="What is Ideation?">ideation</a> processes, and they can help you to achieve the goal of creating a good user experience for your target user group.</em></p><p>As opposed to designing products, services, and solutions based upon the preferences of the design team, it has become standard practice within many <a href="/literature/topics/human-centered-design" title="What is Human-Centered Design (HCD)?">human-centered design</a> disciplines to collate research and personify specific trends and patterns in the data as personas. Hence, personas do not describe real people, but you compose your personas based on actual data collected from multiple individuals. Personas add the human touch to what would largely remain cold facts in your research. Creating persona profiles of typical or atypical (extreme) users will help you understand patterns in your research, which synthesizes the types of people you seek to design for. Personas are also known as model characters or composite characters.</p><p>Personas provide meaningful archetypes which you can use to assess your design development against. Constructing personas will help you ask the right questions and answer those questions in line with the users you are designing for. For example, “How would Peter, Joe, and Jessica experience, react, and behave in relation to feature X or change Y within the given context?” and “What do Peter, Joe, and Jessica think, feel, do and say?” and “What are their underlying needs we are trying to fulfill?”</p><h2>Personas in Design Thinking</h2><p>In the <a href="/literature/topics/design-thinking" title="What is Design Thinking?">design thinking</a> process, designers will often start creating personas during the second phase, the Define phase. In the Define phase, Design Thinkers synthesize their research and findings from the very first phase, the <a href="/literature/topics/empathize" title="What is Empathize in UX/UI Design?">Empathise</a> phase. Using personas is just one method, among others, that can help designers move on to the third phase, the Ideation phase. The personas will be used as a guide for ideation sessions such as <a href="/literature/topics/brainstorming" title="What is Brainstorming?">Brainstorm</a>, Worst Possible Idea and <a href="/literature/topics/scamper" title="What is SCAMPER?">SCAMPER</a>.</p><h2>Four Different Types of Personas</h2><p>In her <a href="/literature/topics/interaction-design" title="What is Interaction Design (IxD)?">Interaction Design</a> Foundation <a href="/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/personas#heading_Four_different_perspectives_page_12414">encyclopedia article, Personas,</a> Ph.D. and specialist in personas, Lene Nielsen, describes four perspectives that your personas can take to ensure that they add the most value to your design project and the fiction-based perspective. Let’s take a look at each of them:</p><h3>1. Goal-directed Personas</h3><p>This persona cuts straight to the nitty-gritty. “It focusses on: What does my typical user want to do with my product?”. The objective of a goal-directed persona is to examine the process and workflow that your user would prefer to utilize to achieve their goals in interacting with your product or service. There is an implicit assumption that you have already done enough <a href="/literature/topics/user-research" title="What is User Research?">user research</a> to recognize that your product has value to the user and that by examining their goals, you can bring their requirements to life. The goal-directed personas are based upon the perspectives of Alan Cooper, an American software designer and programmer who is widely recognized as the “Father of Visual Basic.”</p><p><img data-src="https://public-media.interaction-design.org/images/uploads/9b41e7956f74eb1629d4c189f193097b.jpg" alt="Relationship between a Persona, Scenario and Goal"></p><small class="copyright"><em>© Smashing Magazine, All rights reserved. <a href="https://www.smashingmagazine.com/wp-content/uploads/2014/06/04-running-persona-opt.jpg">Image Source</a></em></small><h3>2. Role-Based Personas</h3><p>The role-based perspective is also goal-directed, and it also focuses on <a href="/literature/topics/user-behavior" title="What is User Behavior?">behavior</a>. The personas of the role-based perspectives are massively data-driven and incorporate data from both <a href="/literature/topics/qualitative-research" title="What is Qualitative Research?">qualitative</a> and <a href="/literature/topics/quantitative-research" title="What is Quantitative Research?">quantitative</a> sources. The role-based perspective focuses on the user’s role in the organization. In some cases, our designs need to reflect upon the part that our users play in their organizations or wider lives. An examination of the roles that our users typically play in real life can help inform better <a href="/literature/topics/product-design" title="What is Product Design?">product design</a> decisions. Where will the product be used? What’s this role’s purpose? What business objectives are required of this role? Who else is impacted by the duties of this role? What functions are served by this role? Jonathan Grudin, John Pruitt, and Tamara Adlin are advocates for the role-based perspective.</p><h3>3. Engaging Personas</h3><blockquote><p>“The engaging perspective is rooted in the ability of stories to produce involvement and insight. Through an understanding of characters and stories, it is possible to create a vivid and realistic description of fictitious people. The purpose of the engaging perspective is to move from designers seeing the user as a stereotype with whom they are unable to identify and whose life they cannot envision, to designers actively involving themselves in the lives of the personas. The other persona perspectives are criticized for causing a risk of stereotypical descriptions by not looking at the whole person, but instead focusing only on behavior.” <br>– Lene Nielsen</p></blockquote><p>Engaging personas can incorporate both <strong>goal</strong> and <strong>role-directed</strong> personas, as well as the more <strong>traditional</strong> rounded personas. These engaging personas are designed so that the designers who use them can become more engaged with them. The idea is to create a 3D rendering of a user through the use of personas. The more people engage with the persona and see them as ’real’, the more likely they will be to consider them during the process design and want to serve them with the best product. These personas examine the<strong> emotions</strong> of the user, their <strong>psychology</strong>, <strong>backgrounds</strong> and make them relevant to the task at hand. The perspective emphasizes how <strong>stories</strong> can engage and bring the personas to life. One of the advocates for this perspective is Lene Nielsen.</p><p>One of the main difficulties of the persona method is getting participants to use it (Browne, 2011). In a short while, we’ll let you in on Lene Nielsen’s model, which sets out to cover this problem through a 10‑step process of creating an engaging persona.</p><p><img data-src="https://public-media.interaction-design.org/images/uploads/8f9de451987dcf58884332b56b51a62f.jpg" alt="Example of a simple persona"></p><small class="copyright"><em>© Terri Phillips, All rights reserved. <a href="https://s-media-cache-ak0.pinimg.com/564x/3e/0c/e4/3e0ce4476c17804999921a610dd7c896.jpg">Image Source</a></em></small><p>You can download and print the “Engaging Persona” template, which you and your team can use as a guide:</p><p><!-- widget__template--start: engaging-personas -->
+   <section class="panel rteContent__isolatedBlock templateWidget">
+    <div class="h3 mb-medium mt-none">Get your free template for “Engaging Personas”</div>
+    <div class="row">
+        <div class="col-md-4">
+            <img height="191" width="260" data-src="https://public-images.interaction-design.org/templates/thumbnails/template_4a75c8df-e83a-428f-970c-663e24ce98e5.png" alt="Engaging Personas" style="max-width: 100%" class="sm:hide image__height--auto">
+            <img height="191" width="260" data-src="https://public-images.interaction-design.org/templates/thumbnails/template_4a75c8df-e83a-428f-970c-663e24ce98e5.png" alt="Engaging Personas" style="max-height:200px; width:auto;" class="sm:show image__height--auto">
+        </div>
+        <div class="col-md-8">
+            <form class="form" method="POST" action="/templates/engaging-personas" target="_blank">
+                <input type="hidden" name="_token" value="X3kRe2XbKgLV6x9oGycXbP6gEWEB1VGhahAq7Xmg" autocomplete="off">                <div class="form__formNote">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon align-middle" width="20" height="20"
+>
+    <use xlink:href="#lock"></use>
+</svg>
+                    <span class="align-middle">Secure form</span>
+                </div>
+                <div class="form__field">
+                    <label for="ZW5nYWdpbmctcGVyc29uYXM=__name">Name</label>
+                    <input type="text" id="ZW5nYWdpbmctcGVyc29uYXM=__name" name="name" autocomplete="name" pattern="^(?!www.|http:|https:)(.*)$" required>
+                    <small class="error">Please provide your name.</small>
+                </div>
+
+                <div class="form__field">
+                    <label for="ZW5nYWdpbmctcGVyc29uYXM=__email">Email</label>
+                    <input type="email" id="ZW5nYWdpbmctcGVyc29uYXM=__email" name="email" autocomplete="email" value="" required maxlength="100">
+                    <div class="form__microCopy">We respect your privacy</div>
+                    <small class="error">Please provide a valid email address.</small>
+                </div>
+
+                <input type="hidden" name="subscribe_newsletter" value="0">
+<div class="checkboxWithHint">
+    <input type="checkbox" class="checkboxWithHint__checkbox" name="subscribe_newsletter" value="1" id="ZW5nYWdpbmctcGVyc29uYXM="
+    checked
+    />
+    <label for="ZW5nYWdpbmctcGVyc29uYXM=">Get free UX design learning material every week</label>
+    <div class="arrowPointingMessage checkboxWithHint__message">
+        
+        <img class="p-none image image--tiny" data-src="https://assets.interaction-design.org/build/assets/checkbox-arrow-CU1HsvUn.svg" loading="lazy" alt="">
+        <div class="arrowPointingMessage__message">
+            <i class="text-serif">
+            <strong>329,171 designers</strong>
+            enjoy our newsletter—sure you don't want to receive it?
+        </i>
+        </div>
+    </div>
+</div>
+
+                <button type="submit" class="button button--primary sm:hide">
+                    Download free template
+                </button>
+                <button type="submit" class="button button--primary button--block sm:show">
+                    Download free template
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- widget__template--end: engaging-personas -->
+</p><h3>4. Fictional Personas</h3><p>The fictional persona does not emerge from user research (unlike the other personas), but it emerges from the experience of the <a href="/literature/topics/ux-design" title="What is User Experience Design?">UX design</a> team. It requires the team to make assumptions based upon past interactions with the user base and products to deliver a picture of what, perhaps, typical users look like. There’s no doubt that these personas can be deeply flawed (and there are endless debates on just how flawed). You may be able to use them as an initial <a href="/literature/topics/sketch" title="What are Sketches in UX/UI Design?">sketch</a> of <a href="/literature/topics/user-needs" title="What are User Needs?">user needs</a>. They allow for early involvement with your users in the <a href="/literature/topics/ux-design-processes" title="What are UX Design Processes?">UX design process</a>, but they should not, of course, be trusted as a guide for your development of products or services.</p><h2>10 steps to Creating Your Engaging Personas and Scenarios</h2><p>As described above, engaging personas can incorporate both goal and role-directed personas, as well as the more traditional rounded personas. Engaging personas emphasize how stories can engage and bring the personas to life. This 10-step process covers the entire process from preliminary data collection, through active use, to the continued development of personas. There are four main parts:</p><ul><li><p><strong>Data collection</strong> and <strong>analysis of data</strong> (steps 1, 2),</p></li><li><p>Persona <strong>descriptions</strong> (steps 4, 5),</p></li><li><p><strong><a href="/literature/topics/user-scenarios" title="What are User Scenarios?">Scenarios</a></strong> for problem analysis and idea development (steps 6, 9),</p></li><li><p><strong>Acceptance</strong> from the organization and<strong> involvement</strong> of the design team (steps 3, 7, 8, 10).</p></li></ul><p>The 10 steps are an ideal process, but sometimes it is not possible to include all the steps in the project. Here we outline the 10-step process as described by Lene Nielsen in her Interaction Design Foundation <a href="/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/personas#heading_Four_different_perspectives_page_12414">encyclopedia article, Personas.</a></p><ol><li><p><em><strong>Collect data.</strong> </em>Collect as much knowledge about the users as possible. Perform high-quality user research of actual users in your target user group. In Design Thinking, the research phase is the first phase, also known as the Empathise phase.</p></li><li><p><em><strong>Form a hypothesis</strong>.</em> Based upon your initial research, you will form a general idea of the various users within the focus area of the project, including the ways users differ from one another – For instance, you can use <a href="/literature/topics/affinity-diagrams" title="What are Affinity Diagrams?">Affinity Diagrams</a> and <a href="/literature/topics/empathy" title="What is Empathy in UX/UI Design?">Empathy</a> Maps.</p></li><li><p><em><strong>Everyone accepts the hypothesis</strong>.</em> The goal is to support or reject the first hypothesis about the differences between the users. You can do this by confronting project participants with the hypothesis and comparing it to existing knowledge.</p></li><li><p><em><strong>Establish a number.</strong></em> You will decide upon the final number of personas, which it makes sense to create. Most often, you would want to create more than one persona for each product or service, but you should always choose just one persona as your primary focus.</p></li><li><p><em><strong>Describe the personas.</strong></em> The purpose of working with personas is to be able to develop solutions, products and services based upon the needs and goals of your users. Be sure to describe personas in such a way as to express enough understanding and empathy to understand the users.</p><ol><li><p>You should include details about the user’s education, lifestyle, interests, values, goals, needs, limitations, desires, attitudes, and patterns of behavior.</p></li><li><p>Add a few <strong>fictional personal details</strong> to make the persona a realistic character.</p></li><li><p>Give each of your personas a <strong>name</strong>.</p></li><li><p>Create 1–2 pages of descriptions for each persona.</p></li></ol></li><li><p><em><strong>Prepare situations or scenarios for your personas.</strong></em> This engaging persona method is directed at creating scenarios that describe solutions. For this purpose, you should describe a number of specific situations that could trigger the use of the product or service you are designing. In other words, situations are the basis of a scenario. You can give each of your personas life by creating scenarios that feature them in the role of a user. Scenarios usually start by placing the persona in a specific context with a problem they want to or have to solve.</p></li><li><p><em><strong>Obtain acceptance from the organization.</strong></em> It is a common thread throughout all 10 steps that the goal of the method is to involve the project participants. As such, as many team members as possible should participate in the development of the personas, and it is important to obtain the acceptance and recognition of the participants of the various steps. In order to achieve this, you can choose between two strategies: You can ask the participants for their opinion, or you can let them participate actively in the process.</p></li><li><p><em><strong>Disseminate knowledge.</strong></em> In order for the participants to use the method, the persona descriptions should be disseminated to all. It is important to decide early on how you want to disseminate this knowledge to those who have not participated directly in the process, to future new employees, and to possible external partners. The dissemination of knowledge also includes how the project participants will be given access to the underlying data.</p></li><li><p><em><strong>Everyone prepares scenarios.</strong></em> Personas have no value in themselves. Until the persona becomes part of a scenario – the story about how the persona uses a future product – it does not have real value.</p></li><li><p><em><strong>Make ongoing adjustments.</strong></em> The last step is the future life of the persona descriptions. You should revise the descriptions on a regular basis. New information and new aspects may affect the descriptions. Sometimes you would need to rewrite the existing persona descriptions, add new personas, or eliminate outdated personas.</p></li></ol><figure><img data-src="https://public-images.interaction-design.org/literature/articles/materials/gWFgwgwtHxivlIA21akeBT1c2pbCJXS2RXRxDDMw.jpg" alt="10 Steps to Engaging Personas" loading="lazy" width="1920" height="2541"></figure><small class="copyright"><em>© Lene Nielsen, All Rights Reserved. Reproduced with permission. See section "Exceptions" in the <a href="/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/personas#copyrightNotice">copyright terms.</a></em></small><h2>Example of How to Make a Persona Description – Step 5</h2><small class="copyright"><img data-src="https://public-media.interaction-design.org/images/uploads/0bdc52574de4549e2921b4afdaf6f9bd.jpg"><em>© phot0geek, CC BY-SA 2.0</em></small><p>We will let you in on the details about our persona’s education, lifestyle, interests, values, goals, needs, limitations, desires, attitudes, and patterns of behavior. We’ve added a few fictional personal details to make our persona a realistic character and given her a name.</p><h3>Hard Facts</h3><p>Christie is living in a small apartment in Toronto, Canada. She’s 23 years old, single, studies <a href="/literature/topics/ethnographic-research" title="What is Ethnographic Research?">ethnography</a>, and works as a waiter during her free time.</p><h3>Interests and Values</h3><p>Christie loves to travel and experience other cultures. She recently spent her summer holiday working as a volunteer in Rwanda.</p><p>She loves to read books at home at night as opposed to going out to bars. She does like to hang out with a small group of friends at home or at quiet coffee shops. She doesn’t care too much about looks and fashion. What matters to her are values and <a href="/literature/topics/motivation" title="What is Motivation in UX/UI Design?">motivations</a>.</p><p>On an average day, she tends to drink many cups of tea, and she usually cooks her own healthy dishes. She prefers organic food; however, she’s not always able to afford it.</p><h3>Computer, Internet and TV Use</h3><p>Christie owns a MacBook Air, an iPad and an iPhone. She uses the internet for her studies to conduct the majority of her preliminary research and studies user reviews to help her decide upon which books to read and buy. Christie also streams all of her music, and she watches movies online since she does not want to own a TV. She thinks TV’s are outdated, and she does not want to waste her time watching TV shows, entertainment, documentaries, or news that she has not chosen and finds 100% interesting herself.</p><h3>A Typical Day</h3><ul><li><p>Christie gets up at 7 am. She eats breakfast at home and leaves for university at 8.15 every morning.</p></li><li><p>Depending on her schedule, she studies by herself or attends a class. She has 15 hours of classes at Masters level every week, and she studies for 20 hours on her own.</p></li><li><p>She eats her lunch with a study friend or a small group.</p></li><li><p>She continues to study.</p></li><li><p>She leaves for home at 3 <a href="/literature/topics/product-management" title="What is Product Management?">pm</a>. Sometimes she continues to study for 2-3 hours at home.</p></li><li><p>Three nights a week, she works as a waitress at a small eco-restaurant from 6 pm to 10 pm.</p></li></ul><h3>Future Goals</h3><p>Christie dreams of a future where she can combine work and travel. She wants to work in a third-world country, helping others who have not had the same luck of being born into a wealthy society. She’s not sure about having kids and a husband. At least it’s not on her radar just yet.</p><h2>Know Your History</h2><p>The method of developing personas stems from IT system development during the late 1990s, where researchers had begun reflecting on how you could best communicate an understanding of the users. Various concepts emerged, such as user archetypes, user models, lifestyle snapshots, and model users. In 1999, Alan Cooper published his successful book, <em>The Inmates are Running the Asylum,</em> where he, as the first person ever, described personas as a method we can use to describe fictitious users. There are a vast number of articles and books about personas. However, a unified understanding of one single way to apply the method doesn’t exist, nor does a definition of what a persona description should contain exactly.</p><h2>The Take Away</h2><p>Personas are fictional characters. You create personas based on your research to help you understand your users’ needs, experiences, behaviors and goals. Creating personas will help you identify with and understand the user you’re designing for. Personas make the design task at hand less complex, they will guide your ideation processes, and they will help you to achieve the goal of creating a good user experience for your target user group. Engaging personas emphasize how stories can engage and bring the personas to life. The 10-step process covers the entire process from the preliminary data collection, through active use, to the continued development of personas.</p><h2>References & Where to Learn More</h2><p>Course: <a href="/courses/the-practical-guide-to-usability">“The Practical Guide to Usability”</a>.</p><p><a href="/references/authors/lene_nielsen.html">Nielsen</a>, Lene, <em>Personas</em>. In: <a href="/references/authors/mads_soegaard.html">Soegaard</a>, Mads and <a href="/references/authors/rikke_friis_dam.html">Dam</a>, Rikke Friis (eds.). The Encyclopedia of <a href="/literature/topics/human-computer-interaction" title="What is Human-Computer Interaction?">Human-Computer Interaction</a>, 2nd Ed. Aarhus, Denmark: The Interaction Design Foundation, 2013. See <a href="/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/personas">here</a>.</p><p>Alan Cooper, The Inmates Are Running the Asylum, 1999</p><p>Personas can be used in conjunction with <a href="/literature/topics/empathy-mapping" title="What is Empathy Mapping?">empathy mapping</a> to provide a snapshot of a Persona’s experience as described in a <a href="http://www.cooper.com/journal/2014/05/persona-empathy-mapping">Persona Empathy Mapping</a> article by Nikki Knox on the <a href="http://cooper.com/">Cooper.com</a> Design & Strategy Agency’s Journal.</p><p>Atlanta-based photographer <a href="http://www.jasontravisphoto.com/about/">Jason Travis</a> has created a series of <a href="https://www.flickr.com/photos/jasontravis/sets/72157603258446753/with/1994506578/" rel="noopener noreferrer" target="_blank">Persona Portraits</a> with their artifacts which illustrates the power of visually representing archetypal users, customers or personalities.</p><p>Hero Image: © Teo Yu Siang and Interaction Design Foundation, CC BY-NC-SA 3.0</p>
+                    </article>
+
+                    <div class="uxArticleWithSidebar__sidebar print:hidden">
+                        <div class="ux-stick-to-article">
+                                                            <div class="uxArticle__upcomingCourses">
+                                    <div
+        class="card--isLink card card--course card--clearerHeader"
+        title="Design Thinking: The Ultimate Guide"
+        data-course-id="58"
+                    data-schedule-id="10916"
+        data-close-timestamp="1770422399"
+                data-location-pathname="/courses/design-thinking-the-ultimate-guide">
+
+            <a class="card__link" href="/courses/design-thinking-the-ultimate-guide" data-gtm-click><h3>Design Thinking: The Ultimate Guide</h3></a>
+    
+    <div class="card__header">
+        <picture class="card__picture">
+                            <source media="(max-width: 768px)" data-srcset="https://public-media.interaction-design.org/images/courses/hds/course_58--square_thumbnail.jpg?tr=w-232,fo-auto"/>
+                            <source media="(min-width: 767px)" data-srcset="https://public-media.interaction-design.org/images/courses/hds/course_58--square_thumbnail.jpg?tr=w-464,fo-auto"/>
+                        <img data-src="https://public-media.interaction-design.org/images/courses/hds/course_58--square_thumbnail.jpg?tr=fo-auto" src=""
+                 class="w-full h-full object-cover object-position-top" alt="">
+        </picture>
+        <div
+            class="card__title js-cardTitle truncate-6"
+            aria-hidden="true">Design Thinking: The Ultimate Guide
+        </div>
+</div>
+
+    <div class="card__contents">
+        <div class="flex justify-between items-center">
+                            
+                <div class="countdown flex-auto pr-small">
+                    <div class="title">Closes in</div>
+                    <div class="js-countdownClock">
+                        <div class="flex items-stretch flex-no-wrap clock">
+    <div class="box clock-item day">
+        <div class="number">14</div>
+        <div class="unit">days</div>
+    </div>
+    </div>
+                    </div>
+                </div>
+            
+            
+            <div class="card__bookingProgress">
+                <div
+    class="progressCircular js-progressCircular
+        progressCircular--hidePercentage
+        
+        "
+    data-percentage="12"
+    data-latest-shown-progress="0">
+    
+    <svg class="progressCircular__indicatorContainer"
+         width="100%"
+         height="69.734"
+         viewBox="0 0 65 65"
+         xmlns="http://www.w3.org/2000/svg">
+        <circle class="progressCircular__potentialIndicator"
+                r=29
+                cx="50%"
+                cy="50%"
+                fill="transparent"
+                stroke-dasharray=182.12
+                stroke-dashoffset="0"></circle>
+        <circle class="progressCircular__filledOutIndicator js-filledOutIndicator"
+                r=29
+                cx="50%"
+                cy="50%"
+                fill="transparent"
+                stroke-dasharray=182.12
+                stroke-dashoffset="0"></circle>
+    </svg>
+</div>
+                <div class="card__bookingProgressValue" data-percentage="12"></div>
+                <div class="card__bookingProgressUnit">booked</div>
+            </div>
+        </div>
+    </div>
+
+<div class="card__footer" aria-hidden="true">
+            <div class="button button--primary cardFooter__button">
+            <div class="cardFooter__buttonText js-countdownDependentCardState">
+                View Course
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon cardFooter__icon" width="20" height="20"
+>
+    <use xlink:href="#chevron-right-bold"></use>
+</svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+                                </div>
+                            
+                                                            <section class="getWeeklyInsightsSidebar js-getWeeklyInsightsSidebar panel print:hidden js-nonSubscriberOnly" hidden>
+    <h2 class="h5 mt-0">Get Weekly Design Insights</h2>
+
+    <div class="getWeeklyInsightsSidebar__description">
+        Join <b>329,171</b>
+        designers who get useful UX / UI Design tips from our newsletter.
+    </div>
+
+    <form class="getWeeklyInsightsSidebar__form js-getWeeklyInsightsSidebar__form"
+        action="https://www.interaction-design.org/newsletter/subscribe"
+        method="POST"
+        onsubmit="this.querySelector('[name=timezone]').value = Intl?.DateTimeFormat()?.resolvedOptions()?.timeZone"
+    >
+        <input type="hidden" name="_token" value="X3kRe2XbKgLV6x9oGycXbP6gEWEB1VGhahAq7Xmg" autocomplete="off">        <label class="hidden" aria-hidden="true">Name
+    <input type="text" name="name" value="" aria-hidden="true" autocomplete="off">
+</label>
+        <input type="hidden" name="list_id" value="1">
+        <input type="hidden" name="timezone" value="">
+
+        <div class="getWeeklyInsightsSidebar__input">
+            <input type="email" name="email"
+                value=""
+                placeholder="Your email"
+                title="Get weekly insights form" autocomplete="email"
+                required minlength="5" maxlength="100">
+            <small class="error">A valid email address is required.</small>
+        </div>
+
+                    <div class="form__field">
+                <div
+    data-sitekey="0x4AAAAAABY_Hn_2YpySXd_5"
+            class="cf-turnstile" data-action="newsletter-sidebar"
+    ></div>
+
+                <span class="error"></span>
+            </div>
+        
+        <div class="getWeeklyInsightsSidebar__button">
+            <button type="submit" class="button button--primary getWeeklyInsightsSidebar__submit">
+                Go
+            </button>
+        </div>
+    </form>
+
+    
+</section>
+                                                    </div>
+                    </div>
+                </div>
+
+                <div class="tagsWidget">
+            <div class="mb-small print:hidden">
+            <h2 class="tagsWidget__heading">Topics in This Article</h2>
+            <div class="tagsWidget__taglist-items mt-medium">
+                                    <a class="tagsWidget__taglist-item"
+                       href="https://www.interaction-design.org/literature/topics/design-thinking">
+                        Design Thinking
+                    </a>
+                                    <a class="tagsWidget__taglist-item"
+                       href="https://www.interaction-design.org/literature/topics/problem-statements">
+                        Problem Statements
+                    </a>
+                            </div>
+        </div>
+    
+    </div>
+
+
+                <div class="ux-share-panel-bottom print:hidden mb-medium">
+                    <div class="ux-share-panel-bottom__panel">
+                        <div class="sharingPanel">
+            <div class="sharingPanel__shares">
+            <div class="sharingPanel__sharesTotalCount">
+                <span
+                    class="sharingPanel__sharesTotalCountNumber">1,616</span>
+                <span class="sharingPanel__sharesTotalMessage">shares</span>
+            </div>
+        </div>
+        <div class="sharingPanel__services">
+        <button class="button button--ghost button--withIcon button--inline" data-dialog="sharingModal">
+            <span>Share<span class="lg:show"> this article</span></span>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" 
+>
+    <use xlink:href="#share"></use>
+</svg>
+        </button>
+                    <button class="button button--ghost button--withIcon button--inline js-citationButton" data-dialog="citationWidget">
+                <span>Cite<span class="lg:show"> this article</span></span>
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" 
+>
+    <use xlink:href="#blockquote-outline"></use>
+</svg>
+            </button>
+                    </div>
+</div>
+
+
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="gridContainer relatedArticles background-neutral-03">
+        <section class="gridContent ux-related-articles print:hidden">
+    <h2 class="ux-related--articles__title m-none">What You Should Read Next</h2>
+    <div class="ux-related-articles__items-with-sidebar">
+        <div class="uxDaily__content mb-large">
+            <div class="row">
+                                                                                                                                                        <div class="card-wrapper col-md-8">
+                                                                                                        
+                    <article class="card  card--isLink card--isLink">
+            <a class="card__link" href="https://www.interaction-design.org/literature/article/5-stages-in-the-design-thinking-process" ><h3>The 5 Stages in the Design Thinking Process</h3></a>
+        
+    <div class="card__header">
+        <picture class="card__picture">
+                        <img data-src="https://public-images.interaction-design.org/literature/articles/heros/article_130798_hero_6284cbba0530b4.18444542.jpg?tr=w-1000"
+                src="https://assets.interaction-design.org/build/assets/ixdf-lazy-placeholder-T9lGXJ41.png"
+                class="w-full h-full object-cover"
+                alt="">
+        </picture>
+        <div class="card__title js-cardTitle truncate-6" aria-hidden="true">The 5 Stages in the Design Thinking Process</div>
+    </div>
+
+    
+            <div class="card__contents">
+                            <span
+            class="card__copy card__description truncate-2">Design thinking is a methodology that provides a solution-based approach to solving problems. It’s extremely useful when</span>
+    <ul class="card__copy inlineList inlineList--withSeparator text-sans-serif">
+        <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon mr-tiny" width="16" height="16"
+>
+    <use xlink:href="#arrow-share"></use>
+</svg>
+            2k shares
+        </li>
+        <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon mr-tiny" width="16" height="16"
+>
+    <use xlink:href="#clock"></use>
+</svg>
+            6 mths ago
+        </li>
+    </ul>
+                    </div>
+    
+    
+    <div class="card__footer">
+                     <div class="button button--primary cardFooter__button">
+                <div class="cardFooter__buttonText js-countdownDependentCardState">
+                    Read article
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon cardFooter__icon" width="20" height="20"
+>
+    <use xlink:href="#chevron-right-bold"></use>
+</svg>
+                </div>
+            </div>
+            </div>
+</article>
+                    </div>
+                                                                                                                                    <div class="card-wrapper col-md-4">                    
+                    <article class="card  card--isLink card--isLink">
+            <a class="card__link" href="https://www.interaction-design.org/literature/article/what-is-design-thinking-and-why-is-it-so-popular" ><h3>What is Design Thinking and Why Is It So Popular?</h3></a>
+        
+    <div class="card__header">
+        <picture class="card__picture">
+                        <img data-src="https://public-images.interaction-design.org/literature/articles/heros/article_130794_hero_6256d891661f06.39964597.jpg?tr=w-1000"
+                src="https://assets.interaction-design.org/build/assets/ixdf-lazy-placeholder-T9lGXJ41.png"
+                class="w-full h-full object-cover"
+                alt="">
+        </picture>
+        <div class="card__title js-cardTitle truncate-6" aria-hidden="true">What is Design Thinking and Why Is It So Popular?</div>
+    </div>
+
+    
+            <div class="card__contents">
+                            <span
+            class="card__copy card__description truncate-2">Design Thinking is not an exclusive property of designers—all great innovators in literature, art, music, science, engin</span>
+    <ul class="card__copy inlineList inlineList--withSeparator text-sans-serif">
+        <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon mr-tiny" width="16" height="16"
+>
+    <use xlink:href="#arrow-share"></use>
+</svg>
+            1.6k shares
+        </li>
+        <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon mr-tiny" width="16" height="16"
+>
+    <use xlink:href="#clock"></use>
+</svg>
+            5 mths ago
+        </li>
+    </ul>
+                    </div>
+    
+    
+    <div class="card__footer">
+                     <div class="button button--primary cardFooter__button">
+                <div class="cardFooter__buttonText js-countdownDependentCardState">
+                    Read article
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon cardFooter__icon" width="20" height="20"
+>
+    <use xlink:href="#chevron-right-bold"></use>
+</svg>
+                </div>
+            </div>
+            </div>
+</article>
+                    </div>
+                                                                                                                                                <div class="card-wrapper col-md-4">                                            
+                    <article class="card  card--isLink card--isLink">
+            <a class="card__link" href="https://www.interaction-design.org/literature/article/stage-2-in-the-design-thinking-process-define-the-problem-and-interpret-the-results" ><h3>Stage 2 in the Design Thinking Process: Define the Problem and Interpret the Results</h3></a>
+        
+    <div class="card__header">
+        <picture class="card__picture">
+                        <img data-src="https://public-images.interaction-design.org/literature/articles/heros/5808bcd2bf44a.jpg?tr=w-1000"
+                src="https://assets.interaction-design.org/build/assets/ixdf-lazy-placeholder-T9lGXJ41.png"
+                class="w-full h-full object-cover"
+                alt="">
+        </picture>
+        <div class="card__title js-cardTitle truncate-6" aria-hidden="true">Stage 2 in the Design Thinking Process: Define the Problem and Interpret the Results</div>
+    </div>
+
+    
+            <div class="card__contents">
+                            <span
+            class="card__copy card__description truncate-2">An integral part of the Design Thinking process is the definition of a meaningful and actionable problem statement, whic</span>
+    <ul class="card__copy inlineList inlineList--withSeparator text-sans-serif">
+        <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon mr-tiny" width="16" height="16"
+>
+    <use xlink:href="#arrow-share"></use>
+</svg>
+            1.4k shares
+        </li>
+        <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon mr-tiny" width="16" height="16"
+>
+    <use xlink:href="#clock"></use>
+</svg>
+            5 mths ago
+        </li>
+    </ul>
+                    </div>
+    
+    
+    <div class="card__footer">
+                     <div class="button button--primary cardFooter__button">
+                <div class="cardFooter__buttonText js-countdownDependentCardState">
+                    Read article
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon cardFooter__icon" width="20" height="20"
+>
+    <use xlink:href="#chevron-right-bold"></use>
+</svg>
+                </div>
+            </div>
+            </div>
+</article>
+                    </div>
+                                                                                                                                                        <div class="card-wrapper col-md-8">
+                                                                        
+                    <article class="card  card--isLink card--isLink">
+            <a class="card__link" href="https://www.interaction-design.org/literature/article/what-is-ideation-and-how-to-prepare-for-ideation-sessions" ><h3>What is Ideation – and How to Prepare for Ideation Sessions</h3></a>
+        
+    <div class="card__header">
+        <picture class="card__picture">
+                        <img data-src="https://public-images.interaction-design.org/literature/articles/heros/583881aca2fd2.jpg?tr=w-1000"
+                src="https://assets.interaction-design.org/build/assets/ixdf-lazy-placeholder-T9lGXJ41.png"
+                class="w-full h-full object-cover"
+                alt="">
+        </picture>
+        <div class="card__title js-cardTitle truncate-6" aria-hidden="true">What is Ideation – and How to Prepare for Ideation Sessions</div>
+    </div>
+
+    
+            <div class="card__contents">
+                            <span
+            class="card__copy card__description truncate-2">Ideation is the process where you generate ideas and solutions through sessions such as Sketching, Prototyping, Brainsto</span>
+    <ul class="card__copy inlineList inlineList--withSeparator text-sans-serif">
+        <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon mr-tiny" width="16" height="16"
+>
+    <use xlink:href="#arrow-share"></use>
+</svg>
+            1.4k shares
+        </li>
+        <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon mr-tiny" width="16" height="16"
+>
+    <use xlink:href="#clock"></use>
+</svg>
+            3 mths ago
+        </li>
+    </ul>
+                    </div>
+    
+    
+    <div class="card__footer">
+                     <div class="button button--primary cardFooter__button">
+                <div class="cardFooter__buttonText js-countdownDependentCardState">
+                    Read article
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon cardFooter__icon" width="20" height="20"
+>
+    <use xlink:href="#chevron-right-bold"></use>
+</svg>
+                </div>
+            </div>
+            </div>
+</article>
+                    </div>
+                                                                                                                                                                            <div class="card-wrapper col-md-8">
+                                                                                                        
+                    <article class="card  card--isLink card--isLink">
+            <a class="card__link" href="https://www.interaction-design.org/literature/article/empathy-map-why-and-how-to-use-it" ><h3>Empathy Map – Why and How to Use It</h3></a>
+        
+    <div class="card__header">
+        <picture class="card__picture">
+                        <img data-src="https://public-images.interaction-design.org/literature/articles/heros/article_130835_hero_65f892293254d3.22231091.jpg?tr=w-1000"
+                src="https://assets.interaction-design.org/build/assets/ixdf-lazy-placeholder-T9lGXJ41.png"
+                class="w-full h-full object-cover"
+                alt="">
+        </picture>
+        <div class="card__title js-cardTitle truncate-6" aria-hidden="true">Empathy Map – Why and How to Use It</div>
+    </div>
+
+    
+            <div class="card__contents">
+                            <span
+            class="card__copy card__description truncate-2">Here’s an interesting fact you may—or may not—know: users are more likely to choose, buy, and use products that meet the</span>
+    <ul class="card__copy inlineList inlineList--withSeparator text-sans-serif">
+        <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon mr-tiny" width="16" height="16"
+>
+    <use xlink:href="#arrow-share"></use>
+</svg>
+            1.4k shares
+        </li>
+        <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon mr-tiny" width="16" height="16"
+>
+    <use xlink:href="#clock"></use>
+</svg>
+            1 mth ago
+        </li>
+    </ul>
+                    </div>
+    
+    
+    <div class="card__footer">
+                     <div class="button button--primary cardFooter__button">
+                <div class="cardFooter__buttonText js-countdownDependentCardState">
+                    Read article
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon cardFooter__icon" width="20" height="20"
+>
+    <use xlink:href="#chevron-right-bold"></use>
+</svg>
+                </div>
+            </div>
+            </div>
+</article>
+                    </div>
+                                                                                                                                    <div class="card-wrapper col-md-4">                    
+                    <article class="card  card--isLink card--isLink">
+            <a class="card__link" href="https://www.interaction-design.org/literature/article/affinity-diagrams-learn-how-to-cluster-and-bundle-ideas-and-facts" ><h3>Affinity Diagrams: How to Cluster Your Ideas and Reveal Insights</h3></a>
+        
+    <div class="card__header">
+        <picture class="card__picture">
+                        <img data-src="https://public-images.interaction-design.org/literature/articles/heros/582da684bff80.jpg?tr=w-1000"
+                src="https://assets.interaction-design.org/build/assets/ixdf-lazy-placeholder-T9lGXJ41.png"
+                class="w-full h-full object-cover"
+                alt="">
+        </picture>
+        <div class="card__title js-cardTitle truncate-6" aria-hidden="true">Affinity Diagrams: How to Cluster Your Ideas and Reveal Insights</div>
+    </div>
+
+    
+            <div class="card__contents">
+                            <span
+            class="card__copy card__description truncate-2">Affinity diagrams are a great method to use when you want to make sense of a large volume of mixed information and data—</span>
+    <ul class="card__copy inlineList inlineList--withSeparator text-sans-serif">
+        <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon mr-tiny" width="16" height="16"
+>
+    <use xlink:href="#arrow-share"></use>
+</svg>
+            1.3k shares
+        </li>
+        <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon mr-tiny" width="16" height="16"
+>
+    <use xlink:href="#clock"></use>
+</svg>
+            3 years ago
+        </li>
+    </ul>
+                    </div>
+    
+    
+    <div class="card__footer">
+                     <div class="button button--primary cardFooter__button">
+                <div class="cardFooter__buttonText js-countdownDependentCardState">
+                    Read article
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon cardFooter__icon" width="20" height="20"
+>
+    <use xlink:href="#chevron-right-bold"></use>
+</svg>
+                </div>
+            </div>
+            </div>
+</article>
+                    </div>
+                                                                                                                                                <div class="card-wrapper col-md-4">                                            
+                    <article class="card  card--isLink card--isLink">
+            <a class="card__link" href="https://www.interaction-design.org/literature/article/stage-4-in-the-design-thinking-process-prototype" ><h3>Stage 4 in the Design Thinking Process: Prototype</h3></a>
+        
+    <div class="card__header">
+        <picture class="card__picture">
+                        <img data-src="https://public-images.interaction-design.org/literature/articles/heros/5808dba1829e4.jpg?tr=w-1000"
+                src="https://assets.interaction-design.org/build/assets/ixdf-lazy-placeholder-T9lGXJ41.png"
+                class="w-full h-full object-cover"
+                alt="">
+        </picture>
+        <div class="card__title js-cardTitle truncate-6" aria-hidden="true">Stage 4 in the Design Thinking Process: Prototype</div>
+    </div>
+
+    
+            <div class="card__contents">
+                            <span
+            class="card__copy card__description truncate-2">One of the best ways to gain insights in a Design Thinking process is to carry out some form of prototyping. This method</span>
+    <ul class="card__copy inlineList inlineList--withSeparator text-sans-serif">
+        <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon mr-tiny" width="16" height="16"
+>
+    <use xlink:href="#arrow-share"></use>
+</svg>
+            1.3k shares
+        </li>
+        <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon mr-tiny" width="16" height="16"
+>
+    <use xlink:href="#clock"></use>
+</svg>
+            5 years ago
+        </li>
+    </ul>
+                    </div>
+    
+    
+    <div class="card__footer">
+                     <div class="button button--primary cardFooter__button">
+                <div class="cardFooter__buttonText js-countdownDependentCardState">
+                    Read article
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon cardFooter__icon" width="20" height="20"
+>
+    <use xlink:href="#chevron-right-bold"></use>
+</svg>
+                </div>
+            </div>
+            </div>
+</article>
+                    </div>
+                                                                                                                                                        <div class="card-wrapper col-md-8">
+                                                                        
+                    <article class="card  card--isLink card--isLink">
+            <a class="card__link" href="https://www.interaction-design.org/literature/article/design-thinking-get-a-quick-overview-of-the-history" ><h3>The History of Design Thinking</h3></a>
+        
+    <div class="card__header">
+        <picture class="card__picture">
+                        <img data-src="https://public-images.interaction-design.org/literature/articles/heros/5808e22cb87ef.jpg?tr=w-1000"
+                src="https://assets.interaction-design.org/build/assets/ixdf-lazy-placeholder-T9lGXJ41.png"
+                class="w-full h-full object-cover"
+                alt="">
+        </picture>
+        <div class="card__title js-cardTitle truncate-6" aria-hidden="true">The History of Design Thinking</div>
+    </div>
+
+    
+            <div class="card__contents">
+                            <span
+            class="card__copy card__description truncate-2">We need to appreciate the roots and origins of a concept to truly understand it—we need to know how it came to be. Let’s</span>
+    <ul class="card__copy inlineList inlineList--withSeparator text-sans-serif">
+        <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon mr-tiny" width="16" height="16"
+>
+    <use xlink:href="#arrow-share"></use>
+</svg>
+            1.3k shares
+        </li>
+        <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon mr-tiny" width="16" height="16"
+>
+    <use xlink:href="#clock"></use>
+</svg>
+            3 years ago
+        </li>
+    </ul>
+                    </div>
+    
+    
+    <div class="card__footer">
+                     <div class="button button--primary cardFooter__button">
+                <div class="cardFooter__buttonText js-countdownDependentCardState">
+                    Read article
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon cardFooter__icon" width="20" height="20"
+>
+    <use xlink:href="#chevron-right-bold"></use>
+</svg>
+                </div>
+            </div>
+            </div>
+</article>
+                    </div>
+                                                                                                                                                                            <div class="card-wrapper col-md-8">
+                                                                                                        
+                    <article class="card  card--isLink card--isLink">
+            <a class="card__link" href="https://www.interaction-design.org/literature/article/stage-1-in-the-design-thinking-process-empathise-with-your-users" ><h3>Stage 1 in the Design Thinking Process: Empathise with Your Users</h3></a>
+        
+    <div class="card__header">
+        <picture class="card__picture">
+                        <img data-src="https://public-images.interaction-design.org/literature/articles/heros/article_130799_hero_5aa02f2f6419a3.84370295.jpg?tr=w-1000"
+                src="https://assets.interaction-design.org/build/assets/ixdf-lazy-placeholder-T9lGXJ41.png"
+                class="w-full h-full object-cover"
+                alt="">
+        </picture>
+        <div class="card__title js-cardTitle truncate-6" aria-hidden="true">Stage 1 in the Design Thinking Process: Empathise with Your Users</div>
+    </div>
+
+    
+            <div class="card__contents">
+                            <span
+            class="card__copy card__description truncate-2">Design Thinking cannot begin without a deeper understanding of the people you are designing for. In order to gain those </span>
+    <ul class="card__copy inlineList inlineList--withSeparator text-sans-serif">
+        <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon mr-tiny" width="16" height="16"
+>
+    <use xlink:href="#arrow-share"></use>
+</svg>
+            1.3k shares
+        </li>
+        <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon mr-tiny" width="16" height="16"
+>
+    <use xlink:href="#clock"></use>
+</svg>
+            5 years ago
+        </li>
+    </ul>
+                    </div>
+    
+    
+    <div class="card__footer">
+                     <div class="button button--primary cardFooter__button">
+                <div class="cardFooter__buttonText js-countdownDependentCardState">
+                    Read article
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon cardFooter__icon" width="20" height="20"
+>
+    <use xlink:href="#chevron-right-bold"></use>
+</svg>
+                </div>
+            </div>
+            </div>
+</article>
+                    </div>
+                                                                                                                                    <div class="card-wrapper col-md-4">                    
+                    <article class="card  card--isLink card--isLink">
+            <a class="card__link" href="https://www.interaction-design.org/literature/article/stage-3-in-the-design-thinking-process-ideate" ><h3>Stage 3 in the Design Thinking Process: Ideate</h3></a>
+        
+    <div class="card__header">
+        <picture class="card__picture">
+                        <img data-src="https://public-images.interaction-design.org/literature/articles/heros/5808caa7ec64d.jpg?tr=w-1000"
+                src="https://assets.interaction-design.org/build/assets/ixdf-lazy-placeholder-T9lGXJ41.png"
+                class="w-full h-full object-cover"
+                alt="">
+        </picture>
+        <div class="card__title js-cardTitle truncate-6" aria-hidden="true">Stage 3 in the Design Thinking Process: Ideate</div>
+    </div>
+
+    
+            <div class="card__contents">
+                            <span
+            class="card__copy card__description truncate-2">In the Ideation stage, design thinkers spark off ideas — in the form of questions and solutions — through creative and c</span>
+    <ul class="card__copy inlineList inlineList--withSeparator text-sans-serif">
+        <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon mr-tiny" width="16" height="16"
+>
+    <use xlink:href="#arrow-share"></use>
+</svg>
+            1.3k shares
+        </li>
+        <li class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon mr-tiny" width="16" height="16"
+>
+    <use xlink:href="#clock"></use>
+</svg>
+            6 years ago
+        </li>
+    </ul>
+                    </div>
+    
+    
+    <div class="card__footer">
+                     <div class="button button--primary cardFooter__button">
+                <div class="cardFooter__buttonText js-countdownDependentCardState">
+                    Read article
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon cardFooter__icon" width="20" height="20"
+>
+    <use xlink:href="#chevron-right-bold"></use>
+</svg>
+                </div>
+            </div>
+            </div>
+</article>
+                    </div>
+                                                </div>
+        </div>
+
+        <aside class="ux-related-articles__sidebar">
+            <section class="sidebar-widget">
+    <h2 class="sidebar-widget__header heading heading--componentHeading">Top Articles</h2>
+    <ul class="list-none pl-none ">
+   <li class="genericList__listItem genericList__listItem--link">
+                <a class="linkStrip__link" href="/literature/article/5-stages-in-the-design-thinking-process"
+                        title="The 5 Stages in the Design Thinking Process">
+                    <div class="textItem">
+                        <span class="textItem__main">The 5 Stages in the Design Thinking Process</span>
+                        <span class="flex items-center textItem__complementary">
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" width="20" height="20"
+>
+    <use xlink:href="#arrow-share"></use>
+</svg>
+                            2k shares
+                        </span>
+                    </div>
+                </a>
+            </li>
+                    <li class="genericList__listItem genericList__listItem--link">
+                <a class="linkStrip__link" href="/literature/article/what-is-design-thinking-and-why-is-it-so-popular"
+                        title="What is Design Thinking and Why Is It So Popular?">
+                    <div class="textItem">
+                        <span class="textItem__main">What is Design Thinking and Why Is It So Popular?</span>
+                        <span class="flex items-center textItem__complementary">
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" width="20" height="20"
+>
+    <use xlink:href="#arrow-share"></use>
+</svg>
+                            1.6k shares
+                        </span>
+                    </div>
+                </a>
+            </li>
+                    <li class="genericList__listItem genericList__listItem--link">
+                <a class="linkStrip__link" href="/literature/article/bad-design-vs-good-design"
+                        title="Bad Design vs. Good Design: 5 Examples We Can Learn From">
+                    <div class="textItem">
+                        <span class="textItem__main">Bad Design vs. Good Design: 5 Examples We Can Learn From</span>
+                        <span class="flex items-center textItem__complementary">
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" width="20" height="20"
+>
+    <use xlink:href="#arrow-share"></use>
+</svg>
+                            1.5k shares
+                        </span>
+                    </div>
+                </a>
+            </li>
+                    <li class="genericList__listItem genericList__listItem--link">
+                <a class="linkStrip__link" href="/literature/article/what-is-interaction-design"
+                        title="What is Interaction Design?">
+                    <div class="textItem">
+                        <span class="textItem__main">What is Interaction Design?</span>
+                        <span class="flex items-center textItem__complementary">
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" width="20" height="20"
+>
+    <use xlink:href="#arrow-share"></use>
+</svg>
+                            1.4k shares
+                        </span>
+                    </div>
+                </a>
+            </li>
+                    <li class="genericList__listItem genericList__listItem--link">
+                <a class="linkStrip__link" href="/literature/article/apple-s-product-development-process-inside-the-world-s-greatest-design-organization"
+                        title="Apple’s Product Development Process – Inside the World’s Greatest Design Organization">
+                    <div class="textItem">
+                        <span class="textItem__main">Apple’s Product Development Process – Inside the World’s Greatest Design Organization</span>
+                        <span class="flex items-center textItem__complementary">
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" width="20" height="20"
+>
+    <use xlink:href="#arrow-share"></use>
+</svg>
+                            1.4k shares
+                        </span>
+                    </div>
+                </a>
+            </li>
+</ul>
+</section>
+            <section class="sidebar-widget">
+    <h2 class="sidebar-widget__header heading heading--componentHeading">Top Topics</h2>
+
+            <div class="genericList__listItem genericList__listItem--link">
+            <a class="linkStrip__link linkStrip__list--fullWidth"
+    href="https://www.interaction-design.org/literature/topics/design-thinking"
+    title="Design Thinking">
+    <div class="textItem">
+        <span>Design Thinking</span>
+
+        <span class="textItem__complementary mt-small">
+            <span>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon align-middle" width="20" height="20"
+>
+    <use xlink:href="#book"></use>
+</svg>
+                    <span class="align-middle">
+                        51 articles
+                    </span>
+                </span>
+
+                                    <span class="ml-small">
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon align-middle" width="20" height="20"
+>
+    <use xlink:href="#multimedia"></use>
+</svg>
+                        <span class="align-middle">
+                            10
+                            videos
+                        </span>
+                    </span>
+                            </span>
+        </span>
+    </div>
+</a>
+        </div>
+            <div class="genericList__listItem genericList__listItem--link">
+            <a class="linkStrip__link linkStrip__list--fullWidth"
+    href="https://www.interaction-design.org/literature/topics/ux-design"
+    title="User Experience Design">
+    <div class="textItem">
+        <span>User Experience Design</span>
+
+        <span class="textItem__complementary mt-small">
+            <span>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon align-middle" width="20" height="20"
+>
+    <use xlink:href="#book"></use>
+</svg>
+                    <span class="align-middle">
+                        157 articles
+                    </span>
+                </span>
+
+                                    <span class="ml-small">
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon align-middle" width="20" height="20"
+>
+    <use xlink:href="#multimedia"></use>
+</svg>
+                        <span class="align-middle">
+                            8
+                            videos
+                        </span>
+                    </span>
+                            </span>
+        </span>
+    </div>
+</a>
+        </div>
+            <div class="genericList__listItem genericList__listItem--link">
+            <a class="linkStrip__link linkStrip__list--fullWidth"
+    href="https://www.interaction-design.org/literature/topics/graphic-design"
+    title="Graphic Design">
+    <div class="textItem">
+        <span>Graphic Design</span>
+
+        <span class="textItem__complementary mt-small">
+            <span>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon align-middle" width="20" height="20"
+>
+    <use xlink:href="#book"></use>
+</svg>
+                    <span class="align-middle">
+                        19 articles
+                    </span>
+                </span>
+
+                                    <span class="ml-small">
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon align-middle" width="20" height="20"
+>
+    <use xlink:href="#multimedia"></use>
+</svg>
+                        <span class="align-middle">
+                            4
+                            videos
+                        </span>
+                    </span>
+                            </span>
+        </span>
+    </div>
+</a>
+        </div>
+            <div class="genericList__listItem genericList__listItem--link">
+            <a class="linkStrip__link linkStrip__list--fullWidth"
+    href="https://www.interaction-design.org/literature/topics/color-theory"
+    title="Color Theory">
+    <div class="textItem">
+        <span>Color Theory</span>
+
+        <span class="textItem__complementary mt-small">
+            <span>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon align-middle" width="20" height="20"
+>
+    <use xlink:href="#book"></use>
+</svg>
+                    <span class="align-middle">
+                        7 articles
+                    </span>
+                </span>
+
+                                    <span class="ml-small">
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon align-middle" width="20" height="20"
+>
+    <use xlink:href="#multimedia"></use>
+</svg>
+                        <span class="align-middle">
+                            5
+                            videos
+                        </span>
+                    </span>
+                            </span>
+        </span>
+    </div>
+</a>
+        </div>
+            <div class="genericList__listItem genericList__listItem--link">
+            <a class="linkStrip__link linkStrip__list--fullWidth"
+    href="https://www.interaction-design.org/literature/topics/ui-design"
+    title="User Interface (UI) Design">
+    <div class="textItem">
+        <span>User Interface (UI) Design</span>
+
+        <span class="textItem__complementary mt-small">
+            <span>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon align-middle" width="20" height="20"
+>
+    <use xlink:href="#book"></use>
+</svg>
+                    <span class="align-middle">
+                        65 articles
+                    </span>
+                </span>
+
+                                    <span class="ml-small">
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon align-middle" width="20" height="20"
+>
+    <use xlink:href="#multimedia"></use>
+</svg>
+                        <span class="align-middle">
+                            8
+                            videos
+                        </span>
+                    </span>
+                            </span>
+        </span>
+    </div>
+</a>
+        </div>
+    </section>
+        </aside>
+    </div>
+</section>
+
+
+        </div>
+
+    <section class="landingSection gridContainer pt-medium pb-large featureBanner">
+    <div class="gridContent">
+        <div class="featureBanner__content">
+            <h2>Open Access—Link to us!</h2>
+        <p>We believe in Open Access and the <b>democratization of knowledge</b>. Unfortunately, world-class educational materials such as this page are normally hidden behind paywalls or in expensive textbooks.</p>
+        <p><b>If you want this to change</b>,
+                            <button class="link text-neutral-06 js-citationButton" data-dialog="citationWidget">cite this article</button>, link to us, or <a class="text-neutral-06" href="https://www.interaction-design.org/join">join us</a>
+                        to help us <a class="text-neutral-06" href="https://www.interaction-design.org/help">democratize design knowledge</a>!</p>
+        </div>
+        <img src="https://assets.interaction-design.org/build/assets/ixdf-free-knowledge-logo-PaIPjBXU.svg" width="380" height="380" alt="" class="featureBanner__background sm:hide md:hide" loading="lazy"/>
+    </div>
+</section>
+    
+    
+            </main>
+
+        <nav id="modalSearch" class="modalSearch landingSection">
+    <h2 class="visually-hidden">Search</h2>
+    <div class="content-wrapper">
+        <div class="gridContainer">
+            <div class="gridContent">
+                <button class="searchToolbar__closeButton"><span class="visually-hidden">Close</span><span
+                        aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" style="width: 33px; height: 33px;" width="100%" height="100%" 
+>
+    <use xlink:href="#x"></use>
+</svg>
+                    </span></button>
+                <div id="searchbox" class="sm:show mb-large"></div>
+                <div class="searchToolbar">
+                    <div class="row">
+                        <div class="col-md-3 sm:hide">
+                            
+                            <div class="searchToolbar__content">
+                                <div class="searchToolbar__suggestions">
+                                    <h3 class="searchToolbar__heading mt-small">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" style="width: 22px; height: 22px;" 
+>
+    <use xlink:href="#magnifying-glass-bold"></use>
+</svg>
+                                        Popular related searches
+                                    </h3>
+                                    <div id="modalSearch-suggestions"></div>
+                                </div>
+                                <div class="searchToolbar__filters">
+                                    <h3 class="searchToolbar__heading">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" style="width: 22px; height: 22px;" 
+>
+    <use xlink:href="#tick-bold"></use>
+</svg>
+                                        Filters
+                                    </h3>
+                                    <div class="searchToolbar__filterList">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="visually-hidden">Search Results</h3>
+                        <div id="modalSearch-hits" class="col-md-9" style="order: -1;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<footer class="footer print:hidden">
+
+    <h2 class="visually-hidden">Footer navigation</h2>
+
+    <div class="gridContainer">
+        <div class="gridContent">
+
+            <div class="footer__inner">
+                                    <div class="text-center">
+    <img class="footer__logo" data-src="https://assets.interaction-design.org/build/assets/ixdf-logo-full-inverse-DRRNxntd.svg"
+         alt="Interaction Design Foundation Logo" width="320" height="110">
+    <div class="row mt-none mb-large">
+        <p class="centeredSmallContainer mt-medium text-left">
+            With 1,215,082 enrollments, the Interaction Design Foundation is the biggest
+            online design school globally. We were founded in 2002.
+        </p>
+    </div>
+</div>
+
+<div class="footer__separator"></div>
+
+<div class="row mb-large">
+    <div class="col-md-6">
+        <h3>Connect With Us</h3>
+<p>
+    Reach us at <a href="mailto:hello@interaction-design.org">hello@interaction-design.org</a>
+    or through our
+    <a class="whitespace-no-wrap" href="/about/contact"
+       title="Contact the Interaction Design Foundation"
+    >online contact form</a>.
+</p>
+
+<div class="socialLinks socialLinks--white ">
+            <a class="socialLinks__item" href="https://www.linkedin.com/company/ixdf-interaction-design-foundation" target="_blank" rel="noopener noreferrer">
+            <span class="visually-hidden">LinkedIn page</span>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" width="32" height="32"
+>
+    <use xlink:href="#brand-linkedin"></use>
+</svg>
+        </a>
+            <a class="socialLinks__item" href="https://www.instagram.com/ixdf_org/" target="_blank" rel="noopener noreferrer">
+            <span class="visually-hidden">Instagram page</span>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" width="32" height="32"
+>
+    <use xlink:href="#brand-instagram"></use>
+</svg>
+        </a>
+            <a class="socialLinks__item" href="https://www.youtube.com/user/InteractionDesignOrg" target="_blank" rel="noopener noreferrer">
+            <span class="visually-hidden">YouTube page</span>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" width="32" height="32"
+>
+    <use xlink:href="#brand-youtube"></use>
+</svg>
+        </a>
+            <a class="socialLinks__item" href="https://x.com/ixdf_org" target="_blank" rel="noopener noreferrer">
+            <span class="visually-hidden">X page</span>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" width="32" height="32"
+>
+    <use xlink:href="#brand-x"></use>
+</svg>
+        </a>
+            <a class="socialLinks__item" href="https://www.facebook.com/ixdf.interaction.design.foundation" target="_blank" rel="noopener noreferrer">
+            <span class="visually-hidden">Facebook page</span>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" width="32" height="32"
+>
+    <use xlink:href="#brand-facebook"></use>
+</svg>
+        </a>
+    </div>
+
+<p class="connectWithUs__faq">
+    Have questions? Check our <a href="/faq">frequently&nbsp;asked&nbsp;questions</a>.
+</p>
+    </div>
+    <div class="col-md-6">
+        <h3>Get Inspired Weekly</h3>
+<p>
+    Join <span
+            class="js-subscriberCount">329,171</span>
+    designers and get
+    <a class="whitespace-no-wrap" href="/newsletter"
+       title="Design Tips">weekly inspiration and design tips</a> in your inbox.
+</p>
+
+<form method="POST" data-test="newsletterSubscription" class="form"
+    onsubmit="this.querySelector('[name=timezone]').value = Intl?.DateTimeFormat()?.resolvedOptions()?.timeZone"
+    name="newsletter-subscription-form"
+    action="https://www.interaction-design.org/newsletter/subscribe">
+    <input type="hidden" name="_token" value="X3kRe2XbKgLV6x9oGycXbP6gEWEB1VGhahAq7Xmg" autocomplete="off">    <label class="hidden" aria-hidden="true">Name
+    <input type="text" name="name" value="" aria-hidden="true" autocomplete="off">
+</label>
+    <input type="hidden" name="list_id" value="1">
+    <input type="hidden" name="timezone" value="">
+    <div class="form__field">
+        <div class="inputGroup">
+            <label for="email-for-newsletter-subscription" class="visually-hidden">Email</label>
+            <input name="email" type="email" id="email-for-newsletter-subscription"
+                placeholder="Your email" autocomplete="off" title="Subscription form"
+                required maxlength="100" />
+
+            
+            <div class="inputGroup__addon inputGroup__addon--noBorder"
+                style="margin-left: -5px; border-radius: var(--border-radius-large)">
+                <button type="submit" class="button button--primary"
+                    style="border-radius: 0 var(--border-radius-large) var(--border-radius-large) 0">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+        <small class="error">Please write a valid email address.</small>
+    </div>
+
+            <div class="form__field">
+            <div
+    data-sitekey="0x4AAAAAABY_Hn_2YpySXd_5"
+            class="cf-turnstile" data-action="newsletter-subscription-inline"
+    ></div>
+
+            <span class="error"></span>
+        </div>
+    </form>
+
+    </div>
+</div>
+
+<div class="footer__separator footer__bottomSpacer"></div>
+
+<h3 class="mt-small">Browse UX / UI Design Topics</h3>
+<nav class="topicNavigator mb-huge">
+    <div class="topicNavigator__list">
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                     href="https://www.interaction-design.org/literature/topics#A"                >A</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                     href="https://www.interaction-design.org/literature/topics#B"                >B</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                     href="https://www.interaction-design.org/literature/topics#C"                >C</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                     href="https://www.interaction-design.org/literature/topics#D"                >D</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                     href="https://www.interaction-design.org/literature/topics#E"                >E</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                     href="https://www.interaction-design.org/literature/topics#F"                >F</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                     href="https://www.interaction-design.org/literature/topics#G"                >G</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                     href="https://www.interaction-design.org/literature/topics#H"                >H</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                     href="https://www.interaction-design.org/literature/topics#I"                >I</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                                    >J</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                     href="https://www.interaction-design.org/literature/topics#K"                >K</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                     href="https://www.interaction-design.org/literature/topics#L"                >L</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                     href="https://www.interaction-design.org/literature/topics#M"                >M</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                     href="https://www.interaction-design.org/literature/topics#N"                >N</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                     href="https://www.interaction-design.org/literature/topics#O"                >O</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                     href="https://www.interaction-design.org/literature/topics#P"                >P</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                     href="https://www.interaction-design.org/literature/topics#Q"                >Q</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                     href="https://www.interaction-design.org/literature/topics#R"                >R</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                     href="https://www.interaction-design.org/literature/topics#S"                >S</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                     href="https://www.interaction-design.org/literature/topics#T"                >T</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                     href="https://www.interaction-design.org/literature/topics#U"                >U</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                     href="https://www.interaction-design.org/literature/topics#V"                >V</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                     href="https://www.interaction-design.org/literature/topics#W"                >W</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                                    >X</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                                    >Y</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                                    >Z</a>
+            </div>
+                    <div class="topicNavigator__listItem">
+                <a class="topicNavigator__link"
+                     href="https://www.interaction-design.org/literature/topics#other"                >#</a>
+            </div>
+            </div>
+</nav>
+
+<div class="footer__separator footer__bottomSpacer"></div>
+<div class="row footer__sitemapLinks">
+    <div class="col-md-3">
+        <h3 class="mt-none">UX Courses</h3>
+        <ul class="list-none pl-none genericList__listItem--onDarkBackground">
+   <li class="genericList__listItem  genericList__listItem--link ">
+    
+            <a class="linkStrip__link" href="/courses#beginner-courses">
+    
+    Beginner UX Courses
+
+            </a>
+    </li>
+            <li class="genericList__listItem  genericList__listItem--link ">
+    
+            <a class="linkStrip__link" href="/courses#intermediate-courses">
+    
+    Intermediate UX Courses
+
+            </a>
+    </li>
+            <li class="genericList__listItem  genericList__listItem--link ">
+    
+            <a class="linkStrip__link" href="/courses#advanced-courses">
+    
+    Advanced UX Courses
+
+            </a>
+    </li>
+</ul>
+    </div>
+    <div class="col-md-3">
+        <h3 class="mt-none">Community</h3>
+        <ul class="list-none pl-none genericList__listItem--onDarkBackground">
+   <li class="genericList__listItem  genericList__listItem--link ">
+    
+            <a class="linkStrip__link" href="/master-classes">
+    
+    Master Classes
+
+            </a>
+    </li>
+            <li class="genericList__listItem  genericList__listItem--link ">
+    
+            <a class="linkStrip__link" href="/community">
+    
+    Local Groups
+
+            </a>
+    </li>
+            <li class="genericList__listItem  genericList__listItem--link ">
+    
+            <a class="linkStrip__link" href="/conversations">
+    
+    Conversations
+
+            </a>
+    </li>
+</ul>
+    </div>
+    <div class="col-md-3">
+        <h3 class="mt-none">Literature</h3>
+        <ul class="list-none pl-none genericList__listItem--onDarkBackground">
+   <li class="genericList__listItem  genericList__listItem--link ">
+    
+            <a class="linkStrip__link" href="/literature/article/overview">
+    
+    UX Daily Articles
+
+            </a>
+    </li>
+            <li class="genericList__listItem  genericList__listItem--link ">
+    
+            <a class="linkStrip__link" href="/literature/topics">
+    
+    UX Topics
+
+            </a>
+    </li>
+            <li class="genericList__listItem  genericList__listItem--link ">
+    
+            <a class="linkStrip__link" href="/literature/book/overview">
+    
+    UX Books
+
+            </a>
+    </li>
+</ul>
+    </div>
+    <div class="col-md-3">
+        <h3 class="mt-none">About</h3>
+        <ul class="list-none pl-none genericList__listItem--onDarkBackground">
+   <li class="genericList__listItem  genericList__listItem--link ">
+    
+            <a class="linkStrip__link" href="/about">
+    
+    About Us
+
+            </a>
+    </li>
+            <li class="genericList__listItem  genericList__listItem--link ">
+    
+            <a class="linkStrip__link" href="/about/people-behind">
+    
+    The People Behind
+
+            </a>
+    </li>
+            <li class="genericList__listItem  genericList__listItem--link ">
+    
+            <a class="linkStrip__link" href="/about/contact">
+    
+    Contact Us
+
+            </a>
+    </li>
+</ul>
+    </div>
+</div>
+                            </div>
+
+        </div>
+    </div>
+    <div class="footer__links gridContainer">
+    <div class="gridContent">
+        <ul class="inlineList footerLinks__list text-small">
+            <li class="footerLinks__listItem"><a href="/about" aria-label="About IxDF - Interaction Design Foundation">About IxDF</a></li>
+            <li class="footerLinks__listItem"><a href="/about/careers" aria-label="We're hiring! Visit our Contact Page">We're Hiring!</a></li>
+            <li class="footerLinks__listItem"><a href="/about/contact" aria-label="Contact Us!">Contact Us</a></li>
+            <li class="footerLinks__listItem"><a href="/corporate" aria-label="Company Membership">For Companies</a></li>
+            <li class="footerLinks__listItem"><a href="/gift-of-learning" aria-label="Give IxDF Membership as a gift">Give as a Gift</a></li>                        
+            <li class="footerLinks__listItem"><a href="/about/terms-of-use" aria-label="Terms of Use and Privacy Policy">Terms of Use / Privacy</a></li>
+        </ul>
+    </div>
+</div>
+</footer>
+
+
+    </div>
+
+    
+    <consent-banner
+    class="consentBanner"
+    aria-expanded="false"
+    tabindex="0"
+    data-current-revision="2024-03-12"
+    data-consents="[&quot;security_storage&quot;,&quot;functional_storage&quot;,&quot;referral_program&quot;,&quot;error_reporting&quot;,&quot;analytics_storage&quot;,&quot;google_bot&quot;,&quot;ad_storage&quot;,&quot;personalization_storage&quot;,&quot;ad_personalization&quot;,&quot;ad_user_data&quot;,&quot;meta_tag&quot;,&quot;meta_capi&quot;,&quot;linkedin_tag&quot;,&quot;linkedin_capi&quot;,&quot;google_ads_tag&quot;]"
+>
+    <button class="consentBanner__button">
+        <span class="visually-hidden">Open</span>
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon consentBanner__icon fill-neutral-01 shrink-0" width="24" height="24"
+>
+    <use xlink:href="#cookie"></use>
+</svg>
+    </button>
+    <div class="consentBanner__container">
+        <div class="consentBanner__content">
+            <div class="flex justify-between">
+                <div class="mt-none h5">Privacy Settings</div>
+                <button class="consentBanner__closeButton">
+                    <span class="visually-hidden">Close</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" width="24" height="24"
+>
+    <use xlink:href="#x"></use>
+</svg>
+                </button>
+            </div>
+            <div class="mt-small">
+                By using this site, you accept our
+                <a href="https://www.interaction-design.org/about/privacy">Cookie Policy</a> and
+                <a href="https://www.interaction-design.org/about/terms-of-use">Terms of Use</a>.
+            </div>
+        </div>
+        <form class="consentBanner__form" aria-expanded="false">
+            <div>
+                <label
+                    class="text-neutral-01 mt-small mb-small"
+                    aria-controls="consentBanner__settingsPanel"
+                >
+                    <input type="radio" value="customize" name="consentType">
+                    Customize
+                </label>
+                <div class="consentBanner__privacySettingContainer consentBanner__settingsPanel" id="consentBanner__settingsPanel">
+    <p class="text-small mb-none">
+        Our digital services use necessary tracking technologies, including third-party cookies,
+        for security, functionality, and to uphold user rights.
+        Optional cookies offer enhanced features, and analytics.
+    </p>
+
+            <accordion-list role="list">
+    <details class="accordionList__item overflow-hidden" role="listitem">
+    <summary class="summary--noStyle">
+        <div class="accordionItem__titleContent">
+            <div class="accordionItem__title ui-type-style m-none">
+                Essential
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon accordionItem__chevron" 
+>
+    <use xlink:href="#chevron-down"></use>
+</svg>
+        </div>
+    </summary>
+    <div class="accordionItem__content js-accordionItem__content ">
+        <p class="text-small">
+            Experience the full potential of our site that remembers your preferences and supports secure sign-in.
+        </p>
+        <div class="consentBanner__cookie">
+    <div class="flex justify-between mb-medium">
+        <h6 class="flex-1 font-bold mt-none items-center">Security</h6>
+        <label class="toggleInput consentBanner__cookieConsent ml-auto">
+    <input
+        type="checkbox"
+        aria-label="Security"
+         checked="checked"          disabled="disabled"         name="security_storage"
+    />
+    <span class="toggleInput__slider"></span>
+</label>
+    </div>
+    <p class="text-small mb-none">Governs the storage of data necessary for maintaining website security, user authentication, and fraud prevention mechanisms.</p>
+</div>
+                            <div class="consentBanner__cookie">
+    <div class="flex justify-between mb-medium">
+        <h6 class="flex-1 font-bold mt-none items-center">Enhanced Functionality</h6>
+        <label class="toggleInput consentBanner__cookieConsent ml-auto">
+    <input
+        type="checkbox"
+        aria-label="Enhanced Functionality"
+         checked="checked"          disabled="disabled"         name="functional_storage"
+    />
+    <span class="toggleInput__slider"></span>
+</label>
+    </div>
+    <p class="text-small mb-none">Saves your settings and preferences, like your location, for a more personalized experience.</p>
+</div>
+                            <div class="consentBanner__cookie">
+    <div class="flex justify-between mb-medium">
+        <h6 class="flex-1 font-bold mt-none items-center">Referral Program</h6>
+        <label class="toggleInput consentBanner__cookieConsent ml-auto">
+    <input
+        type="checkbox"
+        aria-label="Referral Program"
+         checked="checked"          disabled="disabled"         name="referral_program"
+    />
+    <span class="toggleInput__slider"></span>
+</label>
+    </div>
+    <p class="text-small mb-none">We use cookies to enable our referral program, giving you and your friends discounts.</p>
+</div>
+                            <div class="consentBanner__cookie">
+    <div class="flex justify-between mb-medium">
+        <h6 class="flex-1 font-bold mt-none items-center">Error Reporting</h6>
+        <label class="toggleInput consentBanner__cookieConsent ml-auto">
+    <input
+        type="checkbox"
+        aria-label="Error Reporting"
+         checked="checked"          disabled="disabled"         name="error_reporting"
+    />
+    <span class="toggleInput__slider"></span>
+</label>
+    </div>
+    <p class="text-small mb-none">We share user ID with Bugsnag and NewRelic to help us track errors and fix issues.</p>
+</div>
+    </div>
+</details>
+</accordion-list>
+
+                <accordion-list role="list">
+    <details class="accordionList__item overflow-hidden" role="listitem">
+    <summary class="summary--noStyle">
+        <div class="accordionItem__titleContent">
+            <div class="accordionItem__title ui-type-style m-none">
+                Analytics
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon accordionItem__chevron" 
+>
+    <use xlink:href="#chevron-down"></use>
+</svg>
+        </div>
+    </summary>
+    <div class="accordionItem__content js-accordionItem__content ">
+        <p class="text-small">
+            Optimize your experience by allowing us to monitor site usage. You&#039;ll enjoy a smoother, more personalized journey without compromising your privacy.
+        </p>
+        <div class="consentBanner__cookie">
+    <div class="flex justify-between mb-medium">
+        <h6 class="flex-1 font-bold mt-none items-center">Analytics Storage</h6>
+        <label class="toggleInput consentBanner__cookieConsent ml-auto">
+    <input
+        type="checkbox"
+        aria-label="Analytics Storage"
+         checked="checked"          disabled="disabled"         name="analytics_storage"
+    />
+    <span class="toggleInput__slider"></span>
+</label>
+    </div>
+    <p class="text-small mb-none">Collects anonymous data on how you navigate and interact, helping us make informed improvements.</p>
+</div>
+                            <div class="consentBanner__cookie">
+    <div class="flex justify-between mb-medium">
+        <h6 class="flex-1 font-bold mt-none items-center">Google</h6>
+        <label class="toggleInput consentBanner__cookieConsent ml-auto">
+    <input
+        type="checkbox"
+        aria-label="Google"
+         checked="checked"          disabled="disabled"         name="google_bot"
+    />
+    <span class="toggleInput__slider"></span>
+</label>
+    </div>
+    <p class="text-small mb-none">Differentiates real visitors from automated bots, ensuring accurate usage data and improving your website experience.</p>
+</div>
+    </div>
+</details>
+</accordion-list>
+
+            <accordion-list role="list">
+    <details class="accordionList__item overflow-hidden" role="listitem">
+    <summary class="summary--noStyle">
+        <div class="accordionItem__titleContent">
+            <div class="accordionItem__title ui-type-style m-none">
+                Personalization
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon accordionItem__chevron" 
+>
+    <use xlink:href="#chevron-down"></use>
+</svg>
+        </div>
+    </summary>
+    <div class="accordionItem__content js-accordionItem__content ">
+        <p class="text-small">
+            Lets us tailor your digital ads to match your interests, making them more relevant and useful to you.
+        </p>
+        <div class="consentBanner__cookie">
+    <div class="flex justify-between mb-medium">
+        <h6 class="flex-1 font-bold mt-none items-center">Advertising Storage</h6>
+        <label class="toggleInput consentBanner__cookieConsent ml-auto">
+    <input
+        type="checkbox"
+        aria-label="Advertising Storage"
+                        name="ad_storage"
+    />
+    <span class="toggleInput__slider"></span>
+</label>
+    </div>
+    <p class="text-small mb-none">Stores information for better-targeted advertising, enhancing your online ad experience.</p>
+</div>
+                            <div class="consentBanner__cookie">
+    <div class="flex justify-between mb-medium">
+        <h6 class="flex-1 font-bold mt-none items-center">Personalization Storage</h6>
+        <label class="toggleInput consentBanner__cookieConsent ml-auto">
+    <input
+        type="checkbox"
+        aria-label="Personalization Storage"
+         checked="checked"          disabled="disabled"         name="personalization_storage"
+    />
+    <span class="toggleInput__slider"></span>
+</label>
+    </div>
+    <p class="text-small mb-none">Permits storing data to personalize content and ads across Google services based on user behavior, enhancing overall user experience.</p>
+</div>
+                            <div class="consentBanner__cookie">
+    <div class="flex justify-between mb-medium">
+        <h6 class="flex-1 font-bold mt-none items-center">Advertising Personalization</h6>
+        <label class="toggleInput consentBanner__cookieConsent ml-auto">
+    <input
+        type="checkbox"
+        aria-label="Advertising Personalization"
+                        name="ad_personalization"
+    />
+    <span class="toggleInput__slider"></span>
+</label>
+    </div>
+    <p class="text-small mb-none">Allows for content and ad personalization across Google services based on user behavior. This consent enhances user experiences.</p>
+</div>
+                            <div class="consentBanner__cookie">
+    <div class="flex justify-between mb-medium">
+        <h6 class="flex-1 font-bold mt-none items-center">User Data</h6>
+        <label class="toggleInput consentBanner__cookieConsent ml-auto">
+    <input
+        type="checkbox"
+        aria-label="User Data"
+                        name="ad_user_data"
+    />
+    <span class="toggleInput__slider"></span>
+</label>
+    </div>
+    <p class="text-small mb-none">Enables personalizing ads based on user data and interactions, allowing for more relevant advertising experiences across Google services.</p>
+</div>
+    </div>
+</details>
+</accordion-list>
+
+            <accordion-list role="list">
+    <details class="accordionList__item overflow-hidden" role="listitem">
+    <summary class="summary--noStyle">
+        <div class="accordionItem__titleContent">
+            <div class="accordionItem__title ui-type-style m-none">
+                Advertising
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon accordionItem__chevron" 
+>
+    <use xlink:href="#chevron-down"></use>
+</svg>
+        </div>
+    </summary>
+    <div class="accordionItem__content js-accordionItem__content ">
+        <p class="text-small">
+            Receive more relevant advertisements by sharing your interests and behavior with our trusted advertising partners.
+        </p>
+        <div class="consentBanner__cookie">
+    <div class="flex justify-between mb-medium">
+        <h6 class="flex-1 font-bold mt-none items-center">Meta Pixel</h6>
+        <label class="toggleInput consentBanner__cookieConsent ml-auto">
+    <input
+        type="checkbox"
+        aria-label="Meta Pixel"
+                        name="meta_tag"
+    />
+    <span class="toggleInput__slider"></span>
+</label>
+    </div>
+    <p class="text-small mb-none">Enables better ad targeting and measurement on Meta platforms, making ads you see more relevant.</p>
+</div>
+                            <div class="consentBanner__cookie">
+    <div class="flex justify-between mb-medium">
+        <h6 class="flex-1 font-bold mt-none items-center">Meta CAPI</h6>
+        <label class="toggleInput consentBanner__cookieConsent ml-auto">
+    <input
+        type="checkbox"
+        aria-label="Meta CAPI"
+                        name="meta_capi"
+    />
+    <span class="toggleInput__slider"></span>
+</label>
+    </div>
+    <p class="text-small mb-none">Allows for improved ad effectiveness and measurement through Meta&amp;#039;s Conversions API, ensuring privacy-compliant data sharing.</p>
+</div>
+                            <div class="consentBanner__cookie">
+    <div class="flex justify-between mb-medium">
+        <h6 class="flex-1 font-bold mt-none items-center">LinkedIn Insights</h6>
+        <label class="toggleInput consentBanner__cookieConsent ml-auto">
+    <input
+        type="checkbox"
+        aria-label="LinkedIn Insights"
+                        name="linkedin_tag"
+    />
+    <span class="toggleInput__slider"></span>
+</label>
+    </div>
+    <p class="text-small mb-none">Tracks conversions, retargeting, and web analytics for LinkedIn ad campaigns, enhancing ad relevance and performance.</p>
+</div>
+                            <div class="consentBanner__cookie">
+    <div class="flex justify-between mb-medium">
+        <h6 class="flex-1 font-bold mt-none items-center">LinkedIn CAPI</h6>
+        <label class="toggleInput consentBanner__cookieConsent ml-auto">
+    <input
+        type="checkbox"
+        aria-label="LinkedIn CAPI"
+                        name="linkedin_capi"
+    />
+    <span class="toggleInput__slider"></span>
+</label>
+    </div>
+    <p class="text-small mb-none">Enhances LinkedIn advertising through server-side event tracking, offering more accurate measurement and personalization.</p>
+</div>
+                            <div class="consentBanner__cookie">
+    <div class="flex justify-between mb-medium">
+        <h6 class="flex-1 font-bold mt-none items-center">Google Ads Tag</h6>
+        <label class="toggleInput consentBanner__cookieConsent ml-auto">
+    <input
+        type="checkbox"
+        aria-label="Google Ads Tag"
+                        name="google_ads_tag"
+    />
+    <span class="toggleInput__slider"></span>
+</label>
+    </div>
+    <p class="text-small mb-none">Tracks ad performance and user engagement, helping deliver ads that are most useful to you.</p>
+</div>
+    </div>
+</details>
+</accordion-list>
+
+    </div>
+                <div class="mt-small mb-small">
+                    <label class="text-neutral-01 mb-none">
+                        <input type="radio" value="all" name="consentType">
+                        Accept all
+                    </label>
+                </div>
+            </div>
+            <button class="button button--primary button--block button--small" type="submit">Save Settings</button>
+        </form>
+    </div>
+</consent-banner>
+
+    
+    
+    
+        <dialog data-cancelable="true" id="sharingModal" class="dialog--small">
+                            <button type="reset" aria-label="Close dialog" class="dialog__buttonClose">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" width="100%" height="100%" 
+>
+    <use xlink:href="#x"></use>
+</svg>
+                </button>
+                        <form method="DIALOG" name="dialog-form-sharingModal">
+                
+                                    <h2 class="dialog__title js-dialogTitle">Share Knowledge, Get Respect!</h2>
+                
+                <article class="dialog__body"><div>
+        <p>Share on:</p>
+        <div class="iconButtonGrid mb-medium-large">
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.interaction-design.org/literature/article/personas-why-and-how-you-should-use-them?utm_source=linkedin&amp;utm_medium=share-button&amp;utm_campaign=%2Fliterature%2Farticle%2Fpersonas-why-and-how-you-should-use-them"
+                class="iconButtonGrid__button js-shareLink" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon iconButtonGrid__icon" 
+>
+    <use xlink:href="#brand-linkedin"></use>
+</svg>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?display=popup&u=https://www.interaction-design.org/literature/article/personas-why-and-how-you-should-use-them?utm_source=facebook&amp;utm_medium=share-button&amp;utm_campaign=%2Fliterature%2Farticle%2Fpersonas-why-and-how-you-should-use-them&quote=Another+great+UX+article%3A+Personas+%E2%80%93+A+Simple+Introduction"
+                class="iconButtonGrid__button js-shareLink" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon iconButtonGrid__icon" 
+>
+    <use xlink:href="#brand-facebook"></use>
+</svg>
+            </a>
+            <a href="https://x.com/share?url=https://www.interaction-design.org/literature/article/personas-why-and-how-you-should-use-them?utm_source=x&amp;utm_medium=share-button&amp;utm_campaign=%2Fliterature%2Farticle%2Fpersonas-why-and-how-you-should-use-them&text=Another+great+UX+article%3A+Personas+%E2%80%93+A+Simple+Introduction&hashtags=ux"
+                class="iconButtonGrid__button js-shareLink" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon iconButtonGrid__icon" 
+>
+    <use xlink:href="#brand-x"></use>
+</svg>
+            </a>
+            <a href="http://pinterest.com/pin/create/link/?url=https://www.interaction-design.org/literature/article/personas-why-and-how-you-should-use-them?utm_source=pinterest&amp;utm_medium=share-button&amp;utm_campaign=%2Fliterature%2Farticle%2Fpersonas-why-and-how-you-should-use-them"
+                class="iconButtonGrid__button js-shareLink" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon iconButtonGrid__icon" 
+>
+    <use xlink:href="#brand-pinterest"></use>
+</svg>
+            </a>
+        </div>
+        <p>or copy link</p>
+        <div class="inputGroup">
+            <input type="text" id="name" name="name" required maxlength="70" placeholder="https://www.interaction-design.org/literature/article/personas-why-and-how-you-should-use-them" value="https://www.interaction-design.org/literature/article/personas-why-and-how-you-should-use-them" disabled>
+            <div class="inputGroup__addon inputGroup__addon--noBorder">
+                <button type="button" class="button button--primary js-copyText" data-text-to-copy="https://www.interaction-design.org/literature/article/personas-why-and-how-you-should-use-them">Copy link</button>
+            </div>
+        </div>
+    </div></article>
+
+                            </form>
+
+            
+                    </dialog>
+            <dialog data-cancelable="true" id="citationWidget" class="dialog--large">
+                            <button type="reset" aria-label="Close dialog" class="dialog__buttonClose">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" width="100%" height="100%" 
+>
+    <use xlink:href="#x"></use>
+</svg>
+                </button>
+                        <form method="DIALOG" name="dialog-form-citationWidget">
+                
+                                    <h2 class="dialog__title js-dialogTitle">Cite according to academic standards</h2>
+                
+                <article class="dialog__body"><p>
+        Simply copy and paste the text below into your bibliographic reference list, onto your blog, or anywhere else.
+        You can also just hyperlink to this article.
+    </p>
+    <div class="citationSection js-citationSection">
+        <div class="row citationSection__header">
+            <div class="citationSection__selectorArea">
+                <label for="citationFormat" class="visually-hidden">Citation format</label>
+                <select class="citationSection__formatSelector" id="citationFormat">
+                                            <option value="APA">
+                            APA (recommended)
+                        </option>
+                                            <option value="MLA">
+                            MLA
+                        </option>
+                                            <option value="IEEE">
+                            IEEE
+                        </option>
+                                            <option value="ACM">
+                            ACM
+                        </option>
+                                    </select>
+                                    <input type="hidden" name="_token" value="X3kRe2XbKgLV6x9oGycXbP6gEWEB1VGhahAq7Xmg" autocomplete="off">                    <button class="link citationSection__helpLink" formmethod="POST" formaction="https://www.interaction-design.org/how-to-cite">What is this?</button>
+                    <input type="hidden" name="type" value="Article"/>
+                    <input type="hidden" name="id" value="130836"/>
+                            </div>
+            <div class="citationSection__copyButtonArea">
+                <button class="button citationSection__copyButton js-citationCopyButton" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" width="32" height="32"
+>
+    <use xlink:href="#copy"></use>
+</svg>
+                    Copy citation
+                </button>
+            </div>
+        </div>
+        <div class="col-12 citationSection__divider"></div>
+        <div class="col-12">
+
+            
+            
+            
+            <div id="APA" class="citationSection__text js-citationText">
+                Dam, R. F. and Teo, Y. S.
+                (2025, August 19).
+                <i>Personas – A Simple Introduction</i>.
+                IxDF - Interaction Design Foundation.
+                <span class="citationSection__referenceUrl js-referenceUrl"></span>
+            </div>
+
+            
+            
+            
+            <div id="MLA" class="citationSection__text hidden js-citationText">
+                Dam, Rikke Friis. and Teo, Yu Siang.
+                <i>“Personas – A Simple Introduction”</i>
+                IxDF - Interaction Design Foundation.
+                23 Jan. 2026
+                <span class="citationSection__referenceUrl js-referenceUrl"></span>
+            </div>
+
+            
+            
+            
+            <div id="IEEE" class="citationSection__text hidden js-citationText">
+                R. F. Dam. and Y. S. Teo.
+                <i>“Personas – A Simple Introduction”</i>
+                IxDF - Interaction Design Foundation.
+                <span class="citationSection__referenceUrl js-referenceUrl"></span>
+                (accessed Jan. 23, 2026).
+            </div>
+
+            
+            
+            
+            <div id="ACM" class="citationSection__text hidden js-citationText">
+                Rikke Friis Dam. and Yu Siang Teo.
+                2025.
+                <i>Personas – A Simple Introduction</i>
+                Retrieved January 23, 2026
+                from <span class="citationSection__referenceUrl js-referenceUrl"></span>
+            </div>
+            <div class="mt-medium" id="citationFullLinkContainer">
+                <input type="checkbox" id="citationFullLink"/>
+                <label for="citationFullLink">Cite selection</label>
+            </div>
+        </div>
+    </div>
+    <div class="inlineNotification hidden js-inlineNotification" role="tooltip">
+        Copied to clipboard!
+    </div></article>
+
+                            </form>
+
+            
+                    </dialog>
+            <dialog data-cancelable="true" id="roadblockModal">
+                            <button type="reset" aria-label="Close dialog" class="dialog__buttonClose">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+    class="svg-icon" width="100%" height="100%" 
+>
+    <use xlink:href="#x"></use>
+</svg>
+                </button>
+                        <form method="POST" name="dialog-form-roadblockModal" action="https://www.interaction-design.org/newsletter/subscribe-for-ebook">
+                 <input type="hidden" name="_token" value="X3kRe2XbKgLV6x9oGycXbP6gEWEB1VGhahAq7Xmg" autocomplete="off"> 
+                                    <h2 class="dialog__title js-dialogTitle">New to UX Design? We're Giving You a Free eBook!</h2>
+                
+                <article class="dialog__body"><div class="row">
+    <div class="col-md-4 sm-only:center">
+
+        <img class="roadblock__productImage"
+             alt="The Basics of User Experience Design"
+             data-src="https://public-images.interaction-design.org/literature/books/covers/v4/basics-of-ux-design.png">
+    </div>
+
+    <div class="col-md-8">
+
+        <p>
+            Download our free ebook “<i>The Basics of User Experience Design</i>”
+            to learn about core concepts of UX design.
+        </p>
+        <p>
+            In 9 chapters, we'll cover: conducting user interviews,
+            design thinking, interaction design, mobile UX design,
+            usability, UX research, and many more!
+        </p>
+
+        <div class="form__field">
+            <div class="inputGroup">
+                <input type="hidden" name="_token" value="X3kRe2XbKgLV6x9oGycXbP6gEWEB1VGhahAq7Xmg" autocomplete="off">                <label class="hidden" aria-hidden="true">Name
+    <input type="text" name="name" value="" aria-hidden="true" autocomplete="off">
+</label>
+                <input
+                        name="email"
+                        type="email"
+                        placeholder="Your email"
+                        required
+                        maxlength="100"
+                        autofocus
+                        autocomplete="email">
+
+                <div class="inputGroup__addon">
+                    <button type="submit" class="button button--primary" formmethod="POST"
+                            formaction="https://www.interaction-design.org/newsletter/subscribe-for-ebook">
+                        <span class="sm:hide">Download free ebook</span>
+                        <span class="sm:show">Go</span>
+                    </button>
+                </div>
+            </div>
+            <small class="error">A valid email address is required.</small>
+        </div>
+        <div class="mt-small">
+            <input type="hidden" name="subscribe_newsletter" value="0">
+<div class="checkboxWithHint">
+    <input type="checkbox" class="checkboxWithHint__checkbox" name="subscribe_newsletter" value="1" id="ebook-newsletter-dialog"
+    checked
+    />
+    <label for="ebook-newsletter-dialog">Get free UX design learning material every week</label>
+    <div class="arrowPointingMessage checkboxWithHint__message">
+        
+        <img class="p-none image image--tiny" src="https://assets.interaction-design.org/build/assets/checkbox-arrow-CU1HsvUn.svg" loading="lazy" alt="">
+        <div class="arrowPointingMessage__message">
+            <i class="text-serif">
+            <strong>329,171 designers</strong>
+            enjoy our newsletter—sure you don't want to receive it?
+        </i>
+        </div>
+    </div>
+</div>
+        </div>
+
+                    <div class="form__field mt-small">
+                <div
+    data-sitekey="0x4AAAAAABY_Hn_2YpySXd_5"
+            class="cf-turnstile" data-action="free-ebook-download"
+    ></div>
+
+                <span class="error"></span>
+            </div>
+            </div>
+</div></article>
+
+                            </form>
+
+            
+                    </dialog>
+        <link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/app-CWwHzvtS.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/preload-helper-DN51Ybus.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/button-BjbRRxXY.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/notification-B5TTRaXd.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/spinner-CLdCLIMy.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/cookie-BFQe4teI.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/auth-S67ULf_r.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/modalSearch-BpeFGrOA.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/breakpoint-urG6POAk.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/stickyToBottomContainer-DByvcwDi.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/httpClient-CuqvoJBq.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/tocContainer-JonSrmVA.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/dialog-CW9R7sFi.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/flip-B1IIYfMO.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/markupHelpers-B-h850f4.js" /><script type="module" src="https://assets.interaction-design.org/build/assets/app-CWwHzvtS.js"></script>
+    <link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/citationWidget-DS7Cuk3I.js" /><script type="module" src="https://assets.interaction-design.org/build/assets/citationWidget-DS7Cuk3I.js"></script>        <link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/consentBanner-DqTb80vQ.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/cookie-BFQe4teI.js" /><script type="module" src="https://assets.interaction-design.org/build/assets/consentBanner-DqTb80vQ.js"></script>        <link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/sharingPanel-BKct81c9.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/windowOpener-VLT4yaVB.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/copyToClipboard-Cc75DpqE.js" /><script type="module" src="https://assets.interaction-design.org/build/assets/sharingPanel-BKct81c9.js"></script>                    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer ></script>
+                <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.interaction-design.org/literature/article/personas-why-and-how-you-should-use-them"},"headline":"Personas – A Simple Introduction","description":"Creating personas helps you understand your users’ needs, experiences, behaviours and goals. Learn more about how they help you create great user experiences.","image":"https://public-images.interaction-design.org/og-images/article/f1f86e7e835328acb88c2fada1ac9329.jpg","publisher":{"@type":"Organization","name":"IxDF - Interaction Design Foundation","logo":{"@type":"ImageObject","url":"https://assets.interaction-design.org/build/assets/ixdf-logo-full-expanded-P3oiNsMU.svg"}},"datePublished":"2016-11-17T13:09:50+00:00","dateModified":"2026-01-09T00:38:49+00:00","author":[{"@type":"Person","name":"Rikke Friis Dam","url":"https://www.interaction-design.org/literature/author/rikke-1"},{"@type":"Person","name":"Teo Yu Siang","url":"https://www.interaction-design.org/literature/author/teo"}]}    </script>
+        <link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/__roadblock-Kz8dO6iX.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/cookie-BFQe4teI.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/debounce-Brf6PMz0.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/dialog-CW9R7sFi.js" /><script type="module" src="https://assets.interaction-design.org/build/assets/__roadblock-Kz8dO6iX.js"></script>                <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer ></script>
+        <link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/publication-BYs8ydqH.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/preload-helper-DN51Ybus.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/cookie-BFQe4teI.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/imageLightbox-TUgwiF0g.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/auth-S67ULf_r.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/tableOfContentsInjector-DSP2wIho.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/course-v1xBjDSM.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/_commonjsHelpers-BosuxZz1.js" /><link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/countdown-CmVz2Sgd.js" /><script type="module" src="https://assets.interaction-design.org/build/assets/publication-BYs8ydqH.js"></script>            <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer ></script>
+            <link rel="modulepreload" as="script" href="https://assets.interaction-design.org/build/assets/accordionList-CbQFqLf9.js" /><script type="module" src="https://assets.interaction-design.org/build/assets/accordionList-CbQFqLf9.js"></script>            <link rel="preload" as="style" href="https://assets.interaction-design.org/build/assets/iconButtonGrid-COeilXcn.css" /><link rel="stylesheet" href="https://assets.interaction-design.org/build/assets/iconButtonGrid-COeilXcn.css" />        <link rel="preload" as="style" href="https://assets.interaction-design.org/build/assets/citationWidget-DvJy8fAE.css" /><link rel="stylesheet" href="https://assets.interaction-design.org/build/assets/citationWidget-DvJy8fAE.css" />    <link rel="preload" as="style" href="https://assets.interaction-design.org/build/assets/search-B__CivbZ.css" /><link rel="stylesheet" href="https://assets.interaction-design.org/build/assets/search-B__CivbZ.css" />            </body>
+    </html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>CI/CD 1 - Building a basic pipleine with automated tests | Roehampton</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="CI/CD 1 - Building a basic pipleine with automated tests" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Hosts module content for computing at Roehampton." />
+<meta property="og:description" content="Hosts module content for computing at Roehampton." />
+<link rel="canonical" href="https://roehampton.github.io/module-content/software-engineering/week-11/lab/" />
+<meta property="og:url" content="https://roehampton.github.io/module-content/software-engineering/week-11/lab/" />
+<meta property="og:site_name" content="Roehampton" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="CI/CD 1 - Building a basic pipleine with automated tests" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Hosts module content for computing at Roehampton.","headline":"CI/CD 1 - Building a basic pipleine with automated tests","url":"https://roehampton.github.io/module-content/software-engineering/week-11/lab/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/module-content/assets/css/style.css?v=ea56b5ca3cc64b80129c924758c62c92b98b36d5">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/module-content/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+
+      <h1 id="cicd-1---building-a-basic-pipleine-with-automated-tests">CI/CD 1 - Building a basic pipleine with automated tests</h1>
+
+<h2 id="starter-resource">Starter resource</h2>
+
+<p>Intro to github actions: https://docs.github.com/en/actions/about-github-actions/understanding-github-actions</p>
+
+<h2 id="a-basic-github-action">A basic github action</h2>
+
+<ol>
+  <li>Create a new repo with a fresh copy of the scaffolding files OR use your lab work repo.</li>
+  <li>
+    <p>Create your first github action:</p>
+
+    <ul>
+      <li>
+        <p>settings → actions (left menu)</p>
+      </li>
+      <li>
+        <p>click ‘actions’ in top menu</p>
+      </li>
+      <li>
+        <p>Choose ‘manual workflow’ in the automation section</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p>This gives you a pre-made github action to try out. It is in the form a YML file for a basic hello world github action. Note the location of the file,  in <repo name="">/.github/workflows/manual.yml</repo></p>
+
+<ul>
+  <li>
+    <p>Commit this file to your repo (you can do this in the github UI)</p>
+  </li>
+  <li>
+    <p>go back to the ‘actions’ tab in the top menu to see your workflows in the left menu as below:</p>
+  </li>
+</ul>
+
+<p><img src="/module-content/software-engineering/week-11/lab/github-actions-manual1.png" alt="image" /></p>
+
+<ul>
+  <li>Click on ‘manual workflow’ (top of left hand column)</li>
+  <li>Click ‘run workflow’</li>
+</ul>
+
+<p>When you see the workflow having run successfully you’ll see this:</p>
+
+<p><img src="/module-content/software-engineering/week-11/lab/github-actions-manual2.png" alt="image" /></p>
+
+<ul>
+  <li>
+    <p>Click where it says ‘manual workflow’</p>
+  </li>
+  <li>
+    <p>Click at the side where it says ‘jobs’ → ‘greet’</p>
+  </li>
+</ul>
+
+<p>Now you will see a log of your action having run:  Open up the accordians to see the full log including the greeting as below:</p>
+
+<p><img src="/module-content/software-engineering/week-11/lab/github-actions-manual3.png" alt="image" /></p>
+
+<ul>
+  <li>
+    <p>Rerun it and you will see it first in the ‘queued’ state, then running</p>
+  </li>
+  <li>
+    <p>Go back to the actions tab, and you can re-run to greet yourself using a different argument.  Look carefully at the YML file to see how this works.</p>
+  </li>
+</ul>
+
+<p><img src="/module-content/software-engineering/week-11/lab/github-actions-manual4.png" alt="image" /></p>
+
+<h2 id="automatically-trigger-a-github-action">Automatically trigger a github action</h2>
+
+<ul>
+  <li>
+    <p>Ensure that the deploy branch exists and is up to date with main (it needs to have the .github/worflows directory</p>
+  </li>
+  <li>
+    <p>Switch to this branch and find the manual.yml file.</p>
+  </li>
+  <li>
+    <p>Copy the manual.yml file so it has a new name eg. on-push-deploy.yml</p>
+  </li>
+</ul>
+
+<p>You are going to amend the file so that the github action runs when anyone pushes to the deploy branch.</p>
+
+<p>Amend the ‘on’ section as follows, and change any other text as you think fit so that the messages etc make sense</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Controls when the action will run. Triggered by push to deploy branch
+on:
+  push:
+    branches:
+      - deploy
+      
+</code></pre></div></div>
+
+<p>The complete YAML file will be as below:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># This is a basic workflow that is triggered by a push to the deploy branch
+
+name: On push to deploy branch
+
+# Controls when the action will run. Triggered by push to deploy branch
+on:
+  push:
+    branches:
+      - deploy
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "greet"
+  greet:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Runs a single command using the runners shell
+    - name: Send message
+      run: echo "The deploy branch has been updated"
+
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>Go back to the actions tab to see your new action, it already ran because th e branch was updated when you edited the file!</p>
+  </li>
+  <li>
+    <p>Show you can update it from a push from your own environment by following these steps:</p>
+  </li>
+</ul>
+
+<ol>
+  <li>pull the deploy branch</li>
+  <li>update the README.md file</li>
+  <li>git add, git commit, git push</li>
+</ol>
+
+<p>Got to the tab for your workflow, you will see the action queued and eventually complete, with your commit tagged in, as below</p>
+
+<p><img src="/module-content/software-engineering/week-11/lab/github-actions-manual5.png" alt="image" /></p>
+
+<h4 id="now-you-know-the-basics-of-building-a-cicd-pipeline-with-github-actions">Now you know the basics of building a CICD pipeline with github actions</h4>
+
+<h2 id="automating-building-our-express-app-in-a-github-actions-container">Automating building our express app in a github actions container</h2>
+
+<p>In order to perform CI tests we need to build our app in a container and it.  Lets just do that bit first.</p>
+
+<p>First of all, lets keep it manually triggered while we do all of our testing.</p>
+
+<h4 id="lets-start-by-making-sure-that-we-can-simply-build-the-container-checkout-our-code-and-install-nodejs">Lets start by making sure that we can simply build the container, checkout our code and install node.js</h4>
+
+<p>Copy this code to a fresh file in your <code class="language-plaintext highlighter-rouge">&lt;repo name&gt;/.github/workflows/</code> directory. Make sure it has .yml as the suffix.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># This is a workflow that is manually triggered to test the docker build
+
+name: Manual workflow for docker
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "greet"
+  greet:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Runs a single command using the runners to check we are working ok
+    - name: check
+      run: echo "first job done!"
+    # Install checkout the repo
+    - uses: actions/checkout@v4
+    # get node js
+    - uses: actions/setup-node@v4
+    - name: check node
+      run: node –version
+</code></pre></div></div>
+
+<p>Check that you can run this github action without error by running the action manually and checking the output.</p>
+
+<h4 id="adding-secrets">Adding ‘secrets’</h4>
+
+<p>As we know, we must have private credentials in our github repro.  Github gives us a way to access credentials in our github action scripts via ‘secrets’.  We will simply for now put the whole .env file in one secret.</p>
+
+<ul>
+  <li>Go to ‘settings’ tab</li>
+  <li>Choose ‘secrets and variables’</li>
+  <li>choose ‘actions’</li>
+  <li>add a secret called ENV_FILE</li>
+</ul>
+
+<h4 id="amending-docker-composeyml">Amending docker-compose.yml</h4>
+
+<p>For test and deploy we can make some changes regarding how we build our containers.  For example, we don’t need phpmyadmin, we don’t need the supervisor to watch for filesystem changes, and we do want to preload some sample data in to our database.</p>
+
+<p>In your repo, add the following alternative docker compose configuration.  Give it a different filename for example: docker-compose-deploy.yml</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>version: '3.3'
+services:
+  web:
+    build:
+      context: ./
+    volumes:
+      - .:/src
+    command: node index.js
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+  db:
+    image: mysql
+    restart: always
+    env_file:
+      - ./.env
+    ports:
+      - "3308:3306"
+    volumes:
+      # Any .sql file in this directory will be included
+      - ./database-file:/docker-entrypoint-initdb.d
+
+</code></pre></div></div>
+
+<p><strong>Note</strong>:  that you will also have to create a new directory called ‘database-file’ and add the sd2-db.sql file to it. This will ensure that the test database table is loaded whenever the containers build.  Note that you can put any file with a .sql suffix here and the containers will try to load it.  But also note that you should not usually share your .sql dump file via git.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+# This is a workflow that is manually triggered to test the docker build
+
+name: Manual workflow for docker
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "greet"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Runs a single command using the runners to check we are working ok
+      - name: check
+        run: echo "first job done!"
+        # Install checkout the repo
+      - uses: actions/checkout@v4
+      # get node js
+      - uses: actions/setup-node@v4
+      - name: check node
+        run: node --version
+      - name: check dir
+        run: ls
+      - name: Create the .env file
+        run: echo "${{ secrets.ENV_FILE }}" &gt; .env
+      - name: Check
+        run: cat .env
+      - name: Install dependencies
+        run: npm install
+      - uses: hoverkraft-tech/compose-action@v2.0.1
+        with:
+          compose-file: "./docker-compose-deploy.yml"
+
+
+
+</code></pre></div></div>
+
+<p>Trigger this manually get it to run error-free.</p>
+
+<h2 id="adding-nightwatch-tests">Adding nightwatch tests</h2>
+
+<p>Your github action will be more useful if it runs some tests to ensure that the application is building correctly.  This is needed when you are working as a development team and changes may have unintended consequences when all the code is ‘integrated’.</p>
+
+<p>Here we will add basic funtional tests using nightwatch browser automation.</p>
+
+<h4 id="setting-up-nightwatch-locally">Setting up nightwatch locally</h4>
+
+<p>On your own computer, create or checkout a test branch from the branch you have just been working on so that the amended docker-compose file and github actions file exists.</p>
+
+<p>Follow these steps to set up nightwatch</p>
+
+<ul>
+  <li>run <code class="language-plaintext highlighter-rouge">npm init nightwatch</code>.  Do not choose react or android for now</li>
+  <li>Run the nightwatch examples by running: <code class="language-plaintext highlighter-rouge">npx nightwatch</code>. Get some successful results and read the tests and documentation:</li>
+</ul>
+
+<p>https://nightwatchjs.org/guide/ci-integrations/run-nightwatch-on-github-actions.html
+https://nightwatchjs.org/guide/quickstarts/create-and-run-a-nightwatch-test.html</p>
+
+<h4 id="add-some-basic-nightwatch-tests">Add some basic nightwatch tests</h4>
+
+<p>The following two extremely basic tests should pass for the scaffolding files with no amendments:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>describe('Basic pages', function() {
+    it('check the front page loads', function(browser) {
+      browser
+        .navigateTo('http://localhost:3000')
+        .waitForElementVisible('body')
+    }); 
+  });
+
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>describe('Basic pages', function() {
+    it('check the database page', function(browser) {
+      browser
+        .useXpath()
+        .navigateTo('http://localhost:3000/db_test')
+        .assert.textContains('/html/body/pre', 'xxx');
+    }); 
+  });
+
+</code></pre></div></div>
+
+<p>Add these in seperate files to a fresh directory called, for example, custom-tests</p>
+
+<p>Run these tests:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npx nightwatch custom-tests/
+</code></pre></div></div>
+
+<p>Add the following to the scripts section of your package.json file:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  "scripts": {
+    "start": "supervisor index.js",
+    "test": "nightwatch --env chrome ./custom-tests"
+  },
+
+</code></pre></div></div>
+
+<p>This will allow you to run the tests with the following command</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm test
+</code></pre></div></div>
+
+<p>Once you have got these tests to pass on your local computer with this command, we can try and add them into our github action.</p>
+
+<ol>
+  <li>
+    <p>Commit the necessary files to your branch.  These will be:</p>
+
+    <ul>
+      <li>the custom-tests directory with all its contents</li>
+      <li>the nightwatch.conf.js file</li>
+      <li>the updated  package.json and package-lock.json files</li>
+      <li>the nightwatch directory that was created on install of nightwatch</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Push these to yoru branch.  Now add installing dependencies and running nightwatch to your github action.  Complete file:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># This is a workflow that is manually triggered to test the docker build
+
+name: Manual workflow for docker
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "greet"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Runs a single command using the runners to check we are working ok
+      - name: check
+        run: echo "first job done!"
+        # Install checkout the repo
+      - uses: actions/checkout@v4
+      # get node js
+      - uses: actions/setup-node@v4
+      - name: check node
+        run: node --version
+      - name: check dir
+        run: ls
+      - name: Create the .env file
+        run: echo "$" &gt; .env
+      - name: Check
+        run: cat .env
+      - name: Install dependencies
+        run: npm install
+      - uses: hoverkraft-tech/compose-action@v2.0.1
+        with:
+          compose-file: "./docker-compose-deploy.yml"
+      - name: get dependencies for tests
+        run: sudo apt-get install xvfb
+      - name: run the nightwatch tests
+        run: xvfb-run --auto-servernum npm test -- --env chrome
+
+
+
+
+
+</code></pre></div></div>
+
+<p>Much more info:</p>
+
+<p>https://nightwatchjs.org/guide/ci-integrations/run-nightwatch-on-github-actions.html
+https://nightwatchjs.org/guide/quickstarts/create-and-run-a-nightwatch-test.html</p>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>

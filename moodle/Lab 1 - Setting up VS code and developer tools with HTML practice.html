@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Software Engineering Lab 1 – VS Code, developer tools and HTML | Roehampton</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Software Engineering Lab 1 – VS Code, developer tools and HTML" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Hosts module content for computing at Roehampton." />
+<meta property="og:description" content="Hosts module content for computing at Roehampton." />
+<link rel="canonical" href="https://roehampton.github.io/module-content/software-engineering/week-01/lab/Week1-lab1.html" />
+<meta property="og:url" content="https://roehampton.github.io/module-content/software-engineering/week-01/lab/Week1-lab1.html" />
+<meta property="og:site_name" content="Roehampton" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Software Engineering Lab 1 – VS Code, developer tools and HTML" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Hosts module content for computing at Roehampton.","headline":"Software Engineering Lab 1 – VS Code, developer tools and HTML","url":"https://roehampton.github.io/module-content/software-engineering/week-01/lab/Week1-lab1.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/module-content/assets/css/style.css?v=ea56b5ca3cc64b80129c924758c62c92b98b36d5">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/module-content/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+
+      <h1 id="software-engineering-lab-1--vs-code-developer-tools-and-html">Software Engineering Lab 1 – VS Code, developer tools and HTML</h1>
+
+<h2 id="vs-code-and-html-quick-start">VS Code and HTML Quick start</h2>
+
+<ol>
+  <li>Open VS Code</li>
+  <li>Access the start page as blow. You may need to choose ‘file’ -&gt; ‘new window’ in the top menu</li>
+</ol>
+
+<p><img src="/module-content/software-engineering/week-01/lab/VSCodeStart.png" alt="VS Code start" /></p>
+
+<ol>
+  <li>Click ‘open folder’</li>
+  <li>In the file explorer, create a new folder called SEModule in a location of your choice</li>
+  <li>Click ‘open’</li>
+  <li>You will ask if you ‘trust the authors’ of the file. Click ‘yes’</li>
+  <li>In the left hand column - the ‘explorer’ - you will see your folder.  The explorer is where you can manage the files for your VS Code project</li>
+  <li>Roll your mouse over the folder name until you see the new file icon appear as below</li>
+</ol>
+
+<p><img src="/module-content/software-engineering/week-01/lab/newFile.png" alt="VS Code start" /></p>
+
+<ol>
+  <li>Click on the new file icon and create a file called ‘test.html’</li>
+  <li>The file will open in the main window</li>
+  <li>Add the following HTML content to the file</li>
+</ol>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>My First Webpage<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Welcome to My Webpage<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Save the file - <strong>VS code generally does NOT have autosave</strong></p>
+
+<ol>
+  <li>Now view the HTML code rendered in the browser.  To do this,
+    <ul>
+      <li>open a browser window.</li>
+      <li>Type ctrl o (both keys held down at the same time)</li>
+      <li>Navigate to the .html file you have created</li>
+      <li>You should see the page rendered in your browser window</li>
+    </ul>
+  </li>
+  <li>Test your setup by changing the text from ‘welcome to my webpage’ to ‘welcome to my software engineering page’ or any other text of your choice.</li>
+  <li>Now go back to the browser window.  DO NOT OPEN A NEW WINDOW - you can simply refresh to see your changes.</li>
+  <li></li>
+</ol>
+
+<h3 id="developer-tools">Developer Tools</h3>
+
+<p>Using the browser developer tools (found in all browsers, but chrome is most commonly used) to debug and refine your front-end code is an essential skill.</p>
+
+<p><strong>Try it now:</strong></p>
+
+<p>In your browser window, <strong>right click</strong> in the page and choose ‘inspect’.<br />
+A set of windows will appear, probably at the bottom or perhaps to the right of your screen.  Here you will be able to examine the source code of your own page and ensure that it is as you expect. You can even find you can edit the markup, content and styles.</p>
+
+<p>Note that you can do this for any web page!!.  Your changes will only be visible on your own browser and will disappear after you refresh the page.</p>
+
+<p><img src="/module-content/software-engineering/week-01/lab/devtools.png" alt="devtools.png" /></p>
+
+<p>Reference:
+https://developer.chrome.com/docs/devtools/overview/</p>
+
+<h2 id="note-on-desktop-setup">Note on desktop setup</h2>
+
+<p>Your enjoyment writing code, and your productivity will be enhanced by an effective environment.</p>
+
+<p><img src="/module-content/software-engineering/week-01/lab/developers-desktop.png" alt="Developers Desktop" /></p>
+
+<p>Your desktop should look like the image above where:</p>
+
+<ul>
+  <li>Your code is visible in Visual Studio Code and you can edit it</li>
+  <li>You also have a browser window open.  <strong>You can see your changes by refreshing the browser without having to reopen the browser window</strong></li>
+  <li>You can use developer tools to check what the browser is rendering.  You can also use the tools there to check CSS and Javascript as well as other information related to the browser.  You will find out more about this further in this lab sheet.</li>
+  <li>You can use the VS code file explorer to check your file structure</li>
+</ul>
+
+<p>You may also have a terminal window open where you can use git and other command line tools which you will learn next week.</p>
+
+<p>** You are now ready to continue on with the rest of the lab.</p>
+
+<h2 id="html-exercises">HTML exercises</h2>
+
+<p><strong>Use our <a href="html-cheatsheet.md">cheatsheet</a> to help plus <a href="https://www.w3schools.com/tags/">W3 schools HTML reference</a> to find out about the available attributes and correct useage for tags.</strong></p>
+
+<h3 id="headings-and-paragraphs">Headings and Paragraphs</h3>
+
+<p>Expand the previous example with multiple headings and paragraphs.
+Notice that various heading levels to emphasize the importance of hierarchy.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Heading Levels<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Main Heading (Level 1)<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>This is the main content of the page.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Subheading (Level 2)<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Additional text for the subheading.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;h3&gt;</span>Sub-subheading (Level 3)<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;p&gt;</span>More text for the sub-subheading.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="images-and-file-paths">Images and file paths</h3>
+
+<p>Use the img tag to add images to your web page:</p>
+
+<p>See: <a href="https://www.w3schools.com/tags/tag_img.asp">W3 Schools Image tag reference</a>.</p>
+
+<p>You can add an image that is on the internet eg.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/500px-HTML5_logo_and_wordmark.svg.png"&gt;
+</code></pre></div></div>
+
+<p>Or display and image from your local file system (more common)</p>
+
+<p>To do this:</p>
+
+<ul>
+  <li>Add an image in the SAME directory as your .html file</li>
+  <li>Create an img tag where the src attribute is the file name.</li>
+</ul>
+
+<p>Use developer tools to peek into the HTML code that the browser ‘sees’.</p>
+
+<p>My window looks like this:</p>
+
+<p><img src="/module-content/software-engineering/week-01/lab/images-added.png" alt="Images added" /></p>
+
+<h3 id="hyperlinks">Hyperlinks</h3>
+
+<p>Create hyperlinks to navigate between pages. NOTE that you will first need to create <code class="language-plaintext highlighter-rouge">page1.html</code> and <code class="language-plaintext highlighter-rouge">page2.html</code>.  These will need to be in the same directory as your <code class="language-plaintext highlighter-rouge">index.html</code> file.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Hyperlinks<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Visit Other Pages<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"page1.html"</span><span class="nt">&gt;</span>Page 1<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"page2.html"</span><span class="nt">&gt;</span>Page 2<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>To master both images and hyperlinks, you will need to develop a good understanding of absolute and relative paths:</p>
+
+<p>see
+[W3 schools resource on file paths in HTML] (https://www.w3schools.com/html/html_filepaths.asp)</p>
+
+<p><strong>Most errors in linking to other pages or images are caused by errors in the file path in the src or href attribute.</strong></p>
+
+<h3 id="tables">Tables</h3>
+
+<p>Create a table with some data.  Note how the tags here need to be ‘nested’ correctly</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Table Example<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Student Information<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;table</span> <span class="na">border=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Name<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Age<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Grade<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;td&gt;</span>John<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>20<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>A<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Maria<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>22<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>B<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/table&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
