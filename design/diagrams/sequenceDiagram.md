@@ -1,70 +1,29 @@
-# StudyBuddy App – ER Diagram
+# StudyBuddy App – Sequence Diagram
 
 ```mermaid
-erDiagram
+sequenceDiagram
+    participant Student
+    participant App
+    participant Tutor
+    participant Database
 
-    USER {
-        string id PK
-        string name
-        string email
-        string password
-        string role
-    }
+    Student->>App: Login(email, password)
+    App->>Database: Verify credentials
+    Database-->>App: Auth success
+    App-->>Student: Login successful
 
-    STUDENT {
-        string user_id PK, FK
-        string grade_level
-    }
+    Student->>App: Join Study Group
+    App->>Database: Add student to group
+    Database-->>App: Group updated
+    App-->>Student: Confirmation
 
-    TUTOR {
-        string user_id PK, FK
-        string subject_expertise
-    }
+    Student->>App: Submit Assignment
+    App->>Database: Save submission
+    Database-->>App: Submission stored
 
-    STUDY_GROUP {
-        string id PK
-        string group_name
-        string subject
-        string created_by FK
-    }
-
-    STUDY_SESSION {
-        string id PK
-        date session_date
-        int duration
-        string group_id FK
-        string tutor_id FK
-    }
-
-    ASSIGNMENT {
-        string id PK
-        string title
-        date due_date
-        string session_id FK
-    }
-
-    SUBMISSION {
-        string id PK
-        string assignment_id FK
-        string student_id FK
-        date submitted_at
-        string grade
-    }
-
-    MESSAGE {
-        string id PK
-        string sender_id FK
-        string content
-        date timestamp
-    }
-
-    USER ||--|| STUDENT : is
-    USER ||--|| TUTOR : is
-    USER ||--o{ STUDY_GROUP : creates
-    STUDY_GROUP ||--o{ STUDY_SESSION : schedules
-    TUTOR ||--o{ STUDY_SESSION : conducts
-    STUDY_SESSION ||--o{ ASSIGNMENT : contains
-    ASSIGNMENT ||--o{ SUBMISSION : receives
-    STUDENT ||--o{ SUBMISSION : submits
-    USER ||--o{ MESSAGE : sends
+    App->>Tutor: Notify new submission
+    Tutor->>App: Grade assignment
+    App->>Database: Save grade
+    Database-->>App: Grade stored
+    App-->>Student: Grade notification
 ```
