@@ -2,12 +2,21 @@
 
 | Feature | Description |
 |---------|-------------|
-| User Registration | Allows students and tutors to create an account securely. |
-| Login System | Authenticates users using email and password. |
-| Profile Management | Users can update personal information and preferences. |
-| Study Groups | Students can join or create subject-based groups. |
-| Study Sessions | Tutors can schedule and manage live study sessions. |
-| Assignments | Tutors create assignments for students. |
-| Submissions | Students upload completed assignments for grading. |
-| Messaging | Enables communication between students and tutors. |
-| Notifications | Sends alerts for grades, sessions, and messages. |
+|Date and Time | 23/01/2026
+1:50 PM |
+| Project Name | Study Buddy |
+| Meeting Goal | • Agree code of conduct
+• Agree group name
+• Choose project |
+| Facilitator | Lan |
+| Note taker | Lan |
+| Attendees | Ali, Nilay, Lan, Maywon |
+| Roundtable Updates (each
+group member to contribute) | N/A |
+| Discussion points | .Gorup members/group name
+.Code of conduct
+.Github repository |
+| Actions (list tasks and assign a
+group member) | .Group + group name decided (all)
+.Code of conduct discussed and created (all)
+.Potential project choice discussed (all) |
