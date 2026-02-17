@@ -7,7 +7,7 @@ To support a productive and respectful working environment, our team agrees to f
 
 * Communicate clearly, respectfully, and professionally with all team members.
 * Ensure that everyone has the chance to share ideas, raise concerns, and give feedback.
-* Reply to messages and emails from teammates within a reasonable timeframe.
+* Reply to messages and emails from teammates within a //reasonable timeframe.
 
 ### Teamwork and Collaboration
 
@@ -17,7 +17,7 @@ To support a productive and respectful working environment, our team agrees to f
 
 ### Compliance with Rules and Policies
 
-* Follow all project-related rules and expectations outlined in this document and elsewhere.
+* Follow all project-related rules and expectations outlined in this document and //elsewhere.
 * Act in accordance with University policies and academic regulations at all times.
 
 ### Scrum Practices
@@ -60,7 +60,7 @@ We recognise that exceptional or emergency situations may occur. In such cases:
 
 The affected team member must inform the group as early as possible, preferably at least 24 hours in advance where feasible.
 
-Notification should be made via the agreed communication channel (e.g. Microsoft Teams, WhatsApp, or GitHub).
+Notification should be made via the agreed communication channel (e.g. Microsoft Teams, WhatsApp, or //GitHub).
 
 A brief explanation should be provided to allow the team to adapt plans accordingly.
 
