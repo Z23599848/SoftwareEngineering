@@ -52,6 +52,38 @@ The Scrum Master will conduct Weekly meeting at library. These updates will focu
 
 By following this code of conduct, we aim to create a respectful, inclusive, and efficient working environment where every team member feels supported and valued.
 
+Attendance, Availability & Exceptional Circumstances
+
+All team members are expected to attend scheduled lectures, labs, sprint reviews, and group presentations, particularly those that contribute to assessed coursework. Attendance is considered a shared responsibility, as the absence of a single member may negatively impact the group’s overall mark.
+
+We recognise that exceptional or emergency situations may occur. In such cases:
+
+The affected team member must inform the group as early as possible, preferably at least 24 hours in advance where feasible.
+
+Notification should be made via the agreed communication channel (e.g. Microsoft Teams, WhatsApp, or GitHub).
+
+A brief explanation should be provided to allow the team to adapt plans accordingly.
+
+Last-minute notifications should only occur in genuine emergencies.
+
+If a team member is unable to attend a critical assessed activity (e.g. presentation or sprint review):
+
+Responsibilities will be reallocated to ensure continuity.
+
+Supporting materials (slides, scripts, notes) must be shared in advance where possible.
+
+Another team member may be required to temporarily cover the missing role.
+
+Repeated absence without valid justification may result in:
+
+Reallocation of tasks,
+
+Reduced responsibility in future sprints,
+
+Documentation of the issue in meeting records and task boards,
+
+Escalation to the module tutor if necessary.
+
 ### Signed:
 - A G_Z23599848
 - Lan G.M_A00019111
