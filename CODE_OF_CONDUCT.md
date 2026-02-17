@@ -60,7 +60,7 @@ We recognise that exceptional or emergency situations may occur. In such cases:
 
 The affected team member must inform the group as early as possible, preferably at least 24 hours in advance where feasible.
 
-Notification should be made via the agreed communication channel (e.g. Microsoft Teams, WhatsApp, or 00 GitHub).
+Notification should be made via the agreed communication channel (WhatsApp).
 
 A brief explanation should be provided to allow the team to adapt plans accordingly.
 
