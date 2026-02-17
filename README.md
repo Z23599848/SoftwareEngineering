@@ -107,3 +107,72 @@ app/
 docker-compose.yml
 README.md
 
+Design & Analysis (Sprint 2)
+
+1. Refined Project Description
+
+StudyBuddy is a collaborative web-based application designed to support university students in organising their study activities, discovering compatible study partners, and maintaining productive peer-to-peer learning relationships.
+Following Sprint 1 feedback, the project scope has been refined to prioritise core academic collaboration features before introducing optional social or wellbeing enhancements.
+
+The application focuses on:
+
+Secure user authentication
+
+Creation of personalised study profiles
+
+Searching and matching students based on shared academic interests
+
+Managing study requests in a controlled and ethical manner
+
+This refinement ensures a realistic and achievable scope while maintaining strong educational and social value.
+
+2. Functional Scope (Sprint 2 Focus)
+
+Sprint 2 concentrates on requirements analysis and system design, preparing the project for full implementation in Sprint 3.
+
+Key functional areas analysed in this sprint:
+
+User registration and authentication
+
+Study profile creation and editing
+
+Study buddy discovery
+
+Sending, accepting, or rejecting study requests
+
+These features are formally documented through user stories, use case diagrams, and activity flows.
+
+3. Ethical and Professional Design Considerations
+
+The system design explicitly considers ethical responsibilities associated with student data, online interactions, and inclusivity.
+
+Key considerations include:
+
+Privacy-by-design principles
+
+Minimal data collection
+
+User consent and transparency
+
+Prevention of misuse or harassment
+
+Accessibility and fair matching logic
+
+Ethical considerations identified in Sprint 1 directly inform the design decisions documented in this sprint.
+
+4. Artefacts Produced in Sprint 2
+
+The following design artefacts have been produced to support Sprint 3 development:
+
+Use Case Diagram
+
+User Stories
+
+Activity Diagrams / Flowcharts
+
+Initial data and interaction modelling
+
+Updated Kanban board with Sprint 2 tickets
+
+All artefacts are aligned with Agile and industry-standard software engineering practices.
+
