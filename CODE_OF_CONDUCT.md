@@ -7,7 +7,7 @@ To support a productive and respectful working environment, our team agrees to f
 
 * Communicate clearly, respectfully, and professionally with all team members.
 * Ensure that everyone has the chance to share ideas, raise concerns, and give feedback.
-* Reply to messages and emails from teammates within a 00 reasonable timeframe.
+* Reply to messages and emails from teammates within a 24 hours.
 
 ### Teamwork and Collaboration
 
@@ -17,7 +17,7 @@ To support a productive and respectful working environment, our team agrees to f
 
 ### Compliance with Rules and Policies
 
-* Follow all project-related rules and expectations outlined in this document and 00 elsewhere.
+* Follow all project-related rules and expectations outlined in this document.
 * Act in accordance with University policies and academic regulations at all times.
 
 ### Scrum Practices
