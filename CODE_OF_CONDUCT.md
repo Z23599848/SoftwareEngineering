@@ -7,7 +7,7 @@ To support a productive and respectful working environment, our team agrees to f
 
 * Communicate clearly, respectfully, and professionally with all team members.
 * Ensure that everyone has the chance to share ideas, raise concerns, and give feedback.
-* Reply to messages and emails from teammates within a 24 hours.
+* Reply to messages and emails from teammates within a 24 hour period.
 
 ### Teamwork and Collaboration
 
@@ -23,7 +23,7 @@ To support a productive and respectful working environment, our team agrees to f
 ### Scrum Practices
 
 **1. Sprint Planning:**
-At the beginning of each week, the team will meet to decide which tasks will be completed during the sprint. Tasks will be estimated using story points. The Scrum Master role will rotate every two weeks.
+At the beginning of each week, the team will meet to decide which tasks will be completed during the sprint. Tasks will be designated by scrum master or chosen by group members.
 
 **2. Sprint Review:**
 At the end of each sprint, the team will review completed work, gather feedback, and identify improvements for upcoming sprints.
@@ -43,7 +43,7 @@ At the end of each sprint, the team will review completed work, gather feedback,
   * Evaluate completed work and request changes if required.
 
 **4. Daily Stand-ups:**
-The Scrum Master will conduct Weekly meeting at library. These updates will focus on completed work, current challenges, and any assistance required, while remaining flexible to students’ schedules.
+The Scrum Master can conduct Weekly meeting at library. These updates will focus on completed work, current challenges, and any assistance required, while remaining flexible to students’ schedules.
 
 ### Managing Non-Compliance
 
@@ -52,37 +52,37 @@ The Scrum Master will conduct Weekly meeting at library. These updates will focu
 
 By following this code of conduct, we aim to create a respectful, inclusive, and efficient working environment where every team member feels supported and valued.
 
-Attendance, Availability & Exceptional Circumstances
+### Attendance, Availability & Exceptional Circumstances
 
 All team members are expected to attend scheduled lectures, labs, sprint reviews, and group presentations, particularly those that contribute to assessed coursework. Attendance is considered a shared responsibility, as the absence of a single member may negatively impact the group’s overall mark.
 
 We recognise that exceptional or emergency situations may occur. In such cases:
 
-The affected team member must inform the group as early as possible, preferably at least 24 hours in advance where feasible.
+ * The affected team member must inform the group as early as possible, preferably at least 24 hours in advance where feasible.
 
-Notification should be made via the agreed communication channel (WhatsApp).
+ *Notification should be made via the agreed communication channel (WhatsApp).
 
-A brief explanation should be provided to allow the team to adapt plans accordingly.
+ *A brief explanation should be provided to allow the team to adapt plans accordingly.
 
-Last-minute notifications should only occur in genuine emergencies.
+ *Last-minute notifications should only occur in genuine emergencies.
 
 If a team member is unable to attend a critical assessed activity (e.g. presentation or sprint review):
 
-Responsibilities will be reallocated to ensure continuity.
+ *Responsibilities will be reallocated to ensure continuity.
 
-Supporting materials (slides, scripts, notes) must be shared in advance where possible.
+ *Supporting materials (slides, scripts, notes) must be shared in advance where possible.
 
-Another team member may be required to temporarily cover the missing role.
+ *Another team member may be required to temporarily cover the missing role.
 
 Repeated absence without valid justification may result in:
 
-Reallocation of tasks,
+ *Reallocation of tasks,
 
-Reduced responsibility in future sprints,
+ *Reduced responsibility in future sprints,
 
-Documentation of the issue in meeting records and task boards,
+ *Documentation of the issue in meeting records and task boards,
 
-Escalation to the module tutor if necessary.
+ *Escalation to the module tutor if necessary.
 
 ### Signed:
 - A G_Z23599848
