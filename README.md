@@ -4,7 +4,7 @@
 StudyBuddy is a group software engineering project designed to support university students in organising their study activities, connecting with peers, and improving collaboration and wellbeing.
 
 ## Project Status
-This project is currently in **Sprint 1**, focusing on planning, analysis, and development environment setup.
+This project is currently in **Sprint 2**, focusing on planning, analysis, and development environment setup.
 
 ## Technologies
 - Node.js
