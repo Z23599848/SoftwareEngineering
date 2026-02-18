@@ -43,7 +43,7 @@ At the end of each sprint, the team will review completed work, gather feedback,
   * Evaluate completed work and request changes if required.
 
 **4. Daily Stand-ups:**
-The Scrum Master can conduct Weekly meeting at library. These updates will focus on completed work, current challenges, and any assistance required, while remaining flexible to students’ schedules.
+The Scrum Master can conduct Weekly meetings at the library. These updates will focus on completed work, current challenges, and any assistance required, while remaining flexible to students’ schedules.
 
 ### Managing Non-Compliance
 
