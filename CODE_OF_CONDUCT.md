@@ -23,7 +23,7 @@ To support a productive and respectful working environment, our team agrees to f
 ### Scrum Practices
 
 **1. Sprint Planning:**
-At the beginning of each week, the team will meet to decide which tasks will be completed during the sprint. Tasks will be designated by scrum master or chosen by group members.
+Every timetabled lesson or whenever it is requested by a group member, the team will meet to decide which tasks will be completed during the sprint. Tasks will be designated by scrum master or chosen by group members.
 
 **2. Sprint Review:**
 At the end of each sprint, the team will review completed work, gather feedback, and identify improvements for upcoming sprints.
@@ -42,13 +42,13 @@ At the end of each sprint, the team will review completed work, gather feedback,
   * Communicate the project vision and objectives clearly to the team.
   * Evaluate completed work and request changes if required.
 
-**4. Daily Stand-ups:**
-The Scrum Master can conduct Weekly meetings at the library. These updates will focus on completed work, current challenges, and any assistance required, while remaining flexible to students’ schedules.
+**4. Weekly Stand-ups:**
+The Scrum Master can conduct Weekly meetings at the library or via Microsoft Teams. These meetings might focus on completed work, current challenges, and if any assistance is required, while remaining flexible to students’ schedules.
 
 ### Managing Non-Compliance
 
-* If a team member is unable to attend a meeting or lab, they will receive a summary of what was covered. Continued absence without prior communication may be reported to the module tutor.
-* Ongoing failure to complete assigned tasks or repeated actions that delay team progress will be discussed as a group, and appropriate steps will be taken to resolve the issue.
+* If a team member is unable to attend a meeting or lab, they can receive a summary of what was covered. Continued absence without prior communication may be reported to the module tutor.
+* Ongoing failure to complete assigned tasks or repeated actions that delay team progress will be discussed as a group, and appropriate steps will be taken to resolve the issue. This is discussed further [here](#attendance,-availability-&-exceptional-circumstances)
 
 By following this code of conduct, we aim to create a respectful, inclusive, and efficient working environment where every team member feels supported and valued.
 
@@ -58,7 +58,7 @@ All team members are expected to attend scheduled lectures, labs, sprint reviews
 
 We recognise that exceptional or emergency situations may occur. In such cases:
 
- * The affected team member must inform the group as early as possible, preferably at least 24 hours in advance where feasible.
+ * The affected team member must inform the group as early as possible, preferably at least 12 hours in advance where feasible.
    
  * Notification should be made via the agreed communication channel (WhatsApp).
    
