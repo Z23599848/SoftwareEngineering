@@ -50,6 +50,13 @@ The full ethical discussion, including IEEE-formatted references, has been share
 Sprint 2 focuses on refining requirements and producing design artefacts to prepare for implementation in Sprint 3.  
 All Sprint 2 deliverables are stored in the repository under `docs/sprint2/` to support review and demonstration.
 
+### Use Case Diagram
+The Use Case Diagram illustrates the primary interactions between users and the StudyBuddy system. 
+It defines the core system functionalities, including user registration, authentication, profile management,
+searching for study buddies, and sending or accepting study requests. 
+This diagram helps clarify system boundaries and supports requirement validation for Sprint 2.
+
+
 ### Sprint 2 Artefacts (Links)
 - **Project Summary (refined):** `docs/sprint2/project-summary.md`
 - **Prioritised User Stories:** `docs/sprint2/user-stories.md`
