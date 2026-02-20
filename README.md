@@ -62,6 +62,11 @@ It outlines the sequence of user actions and system responses, including input v
 checks, error handling, and successful account creation. The diagram ensures that all possible execution
 paths are clearly defined and supports the functional requirements identified for Sprint 2.
 
+# Registration Flowchart
+
+This flowchart represents the control flow of the user registration process
+within the StudyBuddy system. It complements the activity diagram by focusing
+on decision points and validation logic rather than system behaviour.
 
 ### Sprint 2 Artefacts (Links)
 - **Project Summary (refined):** `docs/sprint2/project-summary.md`
