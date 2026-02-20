@@ -56,6 +56,12 @@ It defines the core system functionalities, including user registration, authent
 searching for study buddies, and sending or accepting study requests. 
 This diagram helps clarify system boundaries and supports requirement validation for Sprint 2.
 
+### Activity Diagram – User Registration
+This activity diagram represents the workflow of the user registration process in the StudyBuddy system.
+It outlines the sequence of user actions and system responses, including input validation, duplicate email
+checks, error handling, and successful account creation. The diagram ensures that all possible execution
+paths are clearly defined and supports the functional requirements identified for Sprint 2.
+
 
 ### Sprint 2 Artefacts (Links)
 - **Project Summary (refined):** `docs/sprint2/project-summary.md`
