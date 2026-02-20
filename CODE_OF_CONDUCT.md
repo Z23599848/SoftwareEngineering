@@ -59,29 +59,21 @@ All team members are expected to attend scheduled lectures, labs, sprint reviews
 We recognise that exceptional or emergency situations may occur. In such cases:
 
  * The affected team member must inform the group as early as possible, preferably at least 12 hours in advance where feasible.
-   
  * Notification should be made via the agreed communication channel (WhatsApp).
-   
  * A brief explanation should be provided to allow the team to adapt plans accordingly.
-   
  * Last-minute notifications should only occur in genuine emergencies.
 
 If a team member is unable to attend a critical assessed activity (e.g. presentation or sprint review):
 
  * Responsibilities will be reallocated to ensure continuity.
-
  * Supporting materials (slides, scripts, notes) must be shared in advance where possible.
-
  * Another team member may be required to temporarily cover the missing role.
 
 Repeated absence without valid justification may result in:
 
  * Reallocation of tasks,
-
  * Reduced responsibility in future sprints,
-
  * Documentation of the issue in meeting records and task boards,
-
  * Escalation to the module tutor if necessary.
 
 ### Signed:
