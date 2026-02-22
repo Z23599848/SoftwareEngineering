@@ -1,67 +1,99 @@
-# StudyBuddy App – Class Diagram
+# Study Matching System - Class Diagram
 
 ```mermaid
 classDiagram
-    note "Core StudyBuddy System Structure"
 
-    User <|-- Student
-    User <|-- Tutor
+class Admin {
+  +UUID adminId
+  +String name
+  +String email
+  +suspendUser(u: User) void
+  +restoreUser(u: User) void
+  +removeProfile(p: StudyProfile) void
+}
 
-    class User{
-        +String id
-        +String name
-        +String email
-        +login()
-        +logout()
-        +updateProfile()
-    }
+class User {
+  +UUID userId
+  +String name
+  +String email
+  +String passwordHash
+  +DateTime createdAt
+  +AccountStatus status
+  +register() void
+  +login() bool
+  +updateProfile(p: StudyProfile) void
+}
 
-    class Student{
-        +String gradeLevel
-        +joinStudyGroup()
-        +trackProgress()
-        +submitAssignment()
-    }
+class StudyProfile {
+  +UUID profileId
+  +String subjectArea
+  +String availability
+  +String preferredStudyMethod
+  +String bio
+  +DateTime lastUpdated
+  +editDetails(...) void
+}
 
-    class Tutor{
-        +String subjectExpertise
-        +createSession()
-        +uploadMaterial()
-        +gradeAssignment()
-    }
+class StudyRequest {
+  +UUID requestId
+  +String message
+  +RequestStatus status
+  +DateTime createdAt
+  +DateTime respondedAt
+  +send() void
+  +accept() void
+  +reject() void
+  +cancel() void
+}
 
-    class StudyGroup{
-        +String groupName
-        +String subject
-        +createGroup()
-        +addMember()
-        +scheduleSession()
-    }
+class Notification {
+  +UUID notificationId
+  +String content
+  +NotificationType type
+  +DateTime createdAt
+  +DateTime readAt
+  +markRead() void
+}
 
-    class StudySession{
-        +Date sessionDate
-        +int duration
-        +startSession()
-        +endSession()
-    }
+class SearchCriteria {
+  +String subjectArea
+  +String availability
+  +String preferredStudyMethod
+}
 
-    class Assignment{
-        +String title
-        +Date dueDate
-        +submit()
-        +grade()
-    }
+class NotificationType {
+  <<enumeration>>
+  REQUEST_RECEIVED
+  REQUEST_ACCEPTED
+  REQUEST_REJECTED
+}
 
-    class Message{
-        +String content
-        +Date timestamp
-        +sendMessage()
-    }
+class RequestStatus {
+  <<enumeration>>
+  PENDING
+  ACCEPTED
+  REJECTED
+  CANCELLED
+}
 
-    Student --> StudyGroup : joins
-    Tutor --> StudySession : conducts
-    StudyGroup --> StudySession : schedules
-    Student --> Assignment : submits
-    Tutor --> Assignment : grades
-    User --> Message : sends
+class AccountStatus {
+  <<enumeration>>
+  ACTIVE
+  SUSPENDED
+}
+
+Admin ..> User : manages
+Admin ..> StudyProfile : moderates
+
+User "1" --> "0..1" StudyProfile
+User "1" --> "0..*" StudyRequest : sends
+StudyRequest --> RequestStatus
+User "1" --> "0..*" Notification : receives
+StudyRequest "0..*" --> "1" Notification : creates
+
+User ..> SearchCriteria : uses / filters
+
+User --> AccountStatus
+Notification --> NotificationType
+
 ```
