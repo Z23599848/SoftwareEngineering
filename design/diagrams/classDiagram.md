@@ -1,16 +1,11 @@
-# Study Matching System - Class Diagram
+## 📌 Class Diagram – StudyBuddy (Academic Version)
 
 ```mermaid
 classDiagram
 
-class Admin {
-  +UUID adminId
-  +String name
-  +String email
-  +suspendUser(u: User) void
-  +restoreUser(u: User) void
-  +removeProfile(p: StudyProfile) void
-}
+%% ========================
+%% Core Domain Classes
+%% ========================
 
 class User {
   +UUID userId
@@ -19,9 +14,15 @@ class User {
   +String passwordHash
   +DateTime createdAt
   +AccountStatus status
-  +register() void
-  +login() bool
-  +updateProfile(p: StudyProfile) void
+  +register()
+  +login()
+  +updateProfile()
+}
+
+class Admin {
+  +suspendUser(u: User)
+  +restoreUser(u: User)
+  +removeProfile(p: StudyProfile)
 }
 
 class StudyProfile {
@@ -31,7 +32,7 @@ class StudyProfile {
   +String preferredStudyMethod
   +String bio
   +DateTime lastUpdated
-  +editDetails(...) void
+  +editDetails()
 }
 
 class StudyRequest {
@@ -40,10 +41,10 @@ class StudyRequest {
   +RequestStatus status
   +DateTime createdAt
   +DateTime respondedAt
-  +send() void
-  +accept() void
-  +reject() void
-  +cancel() void
+  +send()
+  +accept()
+  +reject()
+  +cancel()
 }
 
 class Notification {
@@ -52,7 +53,7 @@ class Notification {
   +NotificationType type
   +DateTime createdAt
   +DateTime readAt
-  +markRead() void
+  +markRead()
 }
 
 class SearchCriteria {
@@ -61,12 +62,9 @@ class SearchCriteria {
   +String preferredStudyMethod
 }
 
-class NotificationType {
-  <<enumeration>>
-  REQUEST_RECEIVED
-  REQUEST_ACCEPTED
-  REQUEST_REJECTED
-}
+%% ========================
+%% Enumerations
+%% ========================
 
 class RequestStatus {
   <<enumeration>>
@@ -82,18 +80,30 @@ class AccountStatus {
   SUSPENDED
 }
 
-Admin ..> User : manages
-Admin ..> StudyProfile : moderates
+class NotificationType {
+  <<enumeration>>
+  REQUEST_RECEIVED
+  REQUEST_ACCEPTED
+  REQUEST_REJECTED
+}
 
-User "1" --> "0..1" StudyProfile
+%% ========================
+%% Relationships
+%% ========================
+
+User <|-- Admin
+
+User "1" *-- "0..1" StudyProfile : owns
+
 User "1" --> "0..*" StudyRequest : sends
-StudyRequest --> RequestStatus
+StudyRequest "0..*" --> "1" User : receiver
+
 User "1" --> "0..*" Notification : receives
-StudyRequest "0..*" --> "1" Notification : creates
 
-User ..> SearchCriteria : uses / filters
+StudyRequest ..> Notification : generates
+User ..> SearchCriteria : uses
 
-User --> AccountStatus
-Notification --> NotificationType
-
+User ..> AccountStatus
+StudyRequest ..> RequestStatus
+Notification ..> NotificationType
 ```
