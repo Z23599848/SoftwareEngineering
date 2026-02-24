@@ -1,7 +1,7 @@
-# Unimatch
+# Studdy Buddy
 
 ## Project Overview
-Unimatch is a group software engineering project designed to support university students in organising their study activities, connecting with peers, and improving collaboration and wellbeing.
+Studdy buddy is a group software engineering project designed to support university students in organising their study activities, connecting with peers, and improving collaboration and wellbeing.
 
 ## Project Status
 This project is currently in **Sprint 2**, focusing on planning, analysis, and development environment setup.
