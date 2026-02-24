@@ -48,7 +48,7 @@ The Scrum Master can conduct Weekly meetings at the library or via Microsoft Tea
 ### Managing Non-Compliance
 
 * If a team member is unable to attend a meeting or lab, they can receive a summary of what was covered. Continued absence without prior communication may be reported to the module tutor.
-* Ongoing failure to complete assigned tasks or repeated actions that delay team progress will be discussed as a group, and appropriate steps will be taken to resolve the issue. This is discussed further [here](#attendance-availability-&-exceptional-circumstances).
+* Ongoing failure to complete assigned tasks or repeated actions that delay team progress will be discussed as a group, and appropriate steps will be taken to resolve the issue. This is discussed further under ['Attendance, Availability & Exceptional Circumstances'](#attendance-availability-&-exceptional-circumstances).
 
 By following this code of conduct, we aim to create a respectful, inclusive, and efficient working environment where every team member feels supported and valued.
 
