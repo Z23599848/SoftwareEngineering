@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.2.2)  25 FEB 2026 20:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.2.2)  25 FEB 2026 20:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -167,7 +167,7 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count269
 \l__pdf_internal_box=\box50
 )
-No file main.aux.
+(./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -189,7 +189,7 @@ LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 Package hyperref Info: Link coloring OFF on input line 25.
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -203,6 +203,8 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 25.
 LaTeX Info: Redefining \pageref on input line 25.
 LaTeX Info: Redefining \nameref on input line 25.
+
+(./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
@@ -256,25 +258,29 @@ Try to go on, since this might almost work.
 (./sections/introduction.tex) (./sections/project_description.tex)
 (./sections/code_of_conduct.tex [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./sections/scrum_practic
-es.tex [2]) (./sections/ethical_issues.tex
-[3]) (./sections/user_stories.tex [4])
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (3.04028pt too wide) in paragraph at lines 25--25
+[]\OT1/cmr/bx/n/12 Attendance, Avail-abil-ity & Ex-cep-tional Cir-cum-stances 
+ []
+
+) (./sections/scrum_practices.tex [2]) (./sections/ethical_issues.tex [3])
+(./sections/user_stories.tex)
 No file main.bbl.
-[5] (./main.aux)
+[4] (./main.aux)
 
 Package rerunfilecheck Warning: File `main.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  7A6AB3406949298CF9B9CB431FCB2B4B;4187.
+(rerunfilecheck)             Before: 7A6AB3406949298CF9B9CB431FCB2B4B;4187
+(rerunfilecheck)             After:  E698171FAD13A2910A4D8EB0A00F85B1;4523.
  ) 
 Here is how much of TeX's memory you used:
- 7353 strings out of 480247
- 116695 string characters out of 5896152
- 405026 words of memory out of 5000000
- 25210 multiletter control sequences out of 15000+600000
+ 7380 strings out of 480247
+ 117049 string characters out of 5896152
+ 405256 words of memory out of 5000000
+ 25231 multiletter control sequences out of 15000+600000
  473849 words of font info for 43 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,6n,63p,632b,411s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -284,10 +290,10 @@ Here is how much of TeX's memory you used:
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on main.pdf (5 pages, 98775 bytes).
+Output written on main.pdf (4 pages, 98087 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 146 PDF objects out of 1000 (max. 8388607)
+ 127 compressed objects within 2 object streams
  29 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
