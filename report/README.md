@@ -95,6 +95,11 @@ Source: [classDiagram.md](../design/diagrams/classDiagram.md)
 <!-- START_CLASS_DIAGRAM -->
 ```mermaid
 classDiagram
+
+%% ========================
+%% Core Domain Classes
+%% ========================
+
 class User {
   +UUID userId
   +String name
@@ -106,11 +111,13 @@ class User {
   +login()
   +updateProfile()
 }
+
 class Admin {
   +suspendUser(u: User)
   +restoreUser(u: User)
   +removeProfile(p: StudyProfile)
 }
+
 class StudyProfile {
   +UUID profileId
   +String subjectArea
@@ -120,6 +127,7 @@ class StudyProfile {
   +DateTime lastUpdated
   +editDetails()
 }
+
 class StudyRequest {
   +UUID requestId
   +String message
@@ -131,6 +139,7 @@ class StudyRequest {
   +reject()
   +cancel()
 }
+
 class Notification {
   +UUID notificationId
   +String content
@@ -139,11 +148,17 @@ class Notification {
   +DateTime readAt
   +markRead()
 }
+
 class SearchCriteria {
   +String subjectArea
   +String availability
   +String preferredStudyMethod
 }
+
+%% ========================
+%% Enumerations
+%% ========================
+
 class RequestStatus {
   <<enumeration>>
   PENDING
@@ -151,24 +166,36 @@ class RequestStatus {
   REJECTED
   CANCELLED
 }
+
 class AccountStatus {
   <<enumeration>>
   ACTIVE
   SUSPENDED
 }
+
 class NotificationType {
   <<enumeration>>
   REQUEST_RECEIVED
   REQUEST_ACCEPTED
   REQUEST_REJECTED
 }
+
+%% ========================
+%% Relationships
+%% ========================
+
 User <|-- Admin
+
 User "1" *-- "0..1" StudyProfile : owns
+
 User "1" --> "0..*" StudyRequest : sends
 StudyRequest "0..*" --> "1" User : receiver
+
 User "1" --> "0..*" Notification : receives
+
 StudyRequest ..> Notification : generates
 User ..> SearchCriteria : uses
+
 User ..> AccountStatus
 StudyRequest ..> RequestStatus
 Notification ..> NotificationType
@@ -180,6 +207,7 @@ Source: [sequenceDiagram.md](../design/diagrams/sequenceDiagram.md)
 <!-- START_SEQUENCE_DIAGRAM -->
 ```mermaid
 sequenceDiagram
+
     actor UserA
     actor UserB
     participant Frontend
@@ -190,6 +218,9 @@ sequenceDiagram
     participant AcademicService
     participant MessagingService
     participant Database
+
+    %% --- USER REGISTRATION ---
+
     UserA->>Frontend: Sign up request
     Frontend->>API: POST /register
     API->>AuthService: Validate & hash password
@@ -197,6 +228,9 @@ sequenceDiagram
     Database-->>AuthService: Success
     AuthService-->>API: Auth token
     API-->>Frontend: Registration success + token
+
+    %% --- FOLLOW USER ---
+
     UserA->>Frontend: Follow UserB
     Frontend->>API: POST /follow
     API->>SocialService: Create follow relation
@@ -204,6 +238,9 @@ sequenceDiagram
     Database-->>SocialService: Success
     SocialService-->>API: Follow confirmed
     API-->>Frontend: Update UI
+
+    %% --- CREATE POST ---
+
     UserA->>Frontend: Create post
     Frontend->>API: POST /posts
     API->>SocialService: Validate & persist post
@@ -212,6 +249,9 @@ sequenceDiagram
     Database-->>SocialService: Success
     SocialService-->>API: Post created
     API-->>Frontend: Display post
+
+    %% --- JOIN STUDY SESSION ---
+
     UserA->>Frontend: Join study session
     Frontend->>API: POST /sessions/{id}/join
     API->>AcademicService: Validate capacity
@@ -219,6 +259,9 @@ sequenceDiagram
     Database-->>AcademicService: Success
     AcademicService-->>API: Joined
     API-->>Frontend: Confirmation
+
+    %% --- SEND MESSAGE ---
+
     UserA->>Frontend: Send message to UserB
     Frontend->>API: POST /messages
     API->>MessagingService: Route to conversation
@@ -226,6 +269,7 @@ sequenceDiagram
     Database-->>MessagingService: Stored
     MessagingService-->>API: Delivered
     API-->>Frontend: Message sent
+
     MessagingService-->>UserB: Real-time notification (WebSocket)
 ```
 <!-- END_SEQUENCE_DIAGRAM -->
@@ -235,42 +279,71 @@ Source: [edr_diagram.md](../design/diagrams/edr_diagram.md)
 <!-- START_ER_DIAGRAM -->
 ```mermaid
 erDiagram
+
+    %% --- CORE STRUCTURE ---
+
     UNIVERSITY ||--o{ DEPARTMENT : has
     UNIVERSITY ||--o{ USER : enrolls
+
     DEPARTMENT ||--o{ COURSE : offers
     DEPARTMENT ||--o{ USER : belongs_to
+
     USER ||--o{ ENROLLMENT : registers
     COURSE ||--o{ ENROLLMENT : includes
+
     USER ||--o{ USER_SKILL : has
     SKILL ||--o{ USER_SKILL : referenced_by
+
+    %% --- PROJECTS ---
+
     COURSE ||--o{ PROJECT : contains
     PROJECT ||--o{ PROJECT_MEMBER : has
     USER ||--o{ PROJECT_MEMBER : participates
+
+    %% --- STUDY SESSIONS ---
+
     USER ||--o{ STUDY_SESSION : creates
     STUDY_SESSION ||--o{ SESSION_PARTICIPANT : includes
     USER ||--o{ SESSION_PARTICIPANT : joins
+
+    %% --- SOCIAL FOLLOW SYSTEM ---
+
     USER ||--o{ FOLLOW : follows
     USER ||--o{ FOLLOW : is_followed_by
+
+    %% --- SOCIAL POSTS ---
+
     USER ||--o{ POST : creates
     POST ||--o{ MEDIA : contains
     POST ||--o{ COMMENT : has
     USER ||--o{ COMMENT : writes
     POST ||--o{ POST_LIKE : receives
     USER ||--o{ POST_LIKE : gives
+
+    %% --- MESSAGING SYSTEM ---
+
     USER ||--o{ CONVERSATION_PARTICIPANT : joins
     CONVERSATION ||--o{ CONVERSATION_PARTICIPANT : includes
     CONVERSATION ||--o{ MESSAGE : contains
     USER ||--o{ MESSAGE : sends
+
+
+    %% =========================
+    %% ====== ENTITIES =========
+    %% =========================
+
     UNIVERSITY {
         int university_id PK
         string name
         string location
     }
+
     DEPARTMENT {
         int department_id PK
         int university_id FK
         string name
     }
+
     USER {
         int user_id PK
         int university_id FK
@@ -283,12 +356,14 @@ erDiagram
         string bio
         datetime created_at
     }
+
     COURSE {
         int course_id PK
         int department_id FK
         string course_code
         string course_name
     }
+
     ENROLLMENT {
         int enrollment_id PK
         int user_id FK
@@ -296,15 +371,18 @@ erDiagram
         string semester
         string year
     }
+
     SKILL {
         int skill_id PK
         string skill_name
     }
+
     USER_SKILL {
         int user_id FK
         int skill_id FK
         string proficiency_level
     }
+
     PROJECT {
         int project_id PK
         int course_id FK
@@ -312,11 +390,13 @@ erDiagram
         string description
         datetime deadline
     }
+
     PROJECT_MEMBER {
         int project_id FK
         int user_id FK
         string role
     }
+
     STUDY_SESSION {
         int session_id PK
         int created_by FK
@@ -325,16 +405,19 @@ erDiagram
         datetime scheduled_time
         int max_participants
     }
+
     SESSION_PARTICIPANT {
         int session_id FK
         int user_id FK
         string status
     }
+
     FOLLOW {
         int follower_id FK
         int following_id FK
         datetime created_at
     }
+
     POST {
         int post_id PK
         int user_id FK
@@ -342,12 +425,14 @@ erDiagram
         string visibility
         datetime created_at
     }
+
     MEDIA {
         int media_id PK
         int post_id FK
         string media_url
         string media_type
     }
+
     COMMENT {
         int comment_id PK
         int post_id FK
@@ -355,21 +440,25 @@ erDiagram
         string content
         datetime created_at
     }
+
     POST_LIKE {
         int user_id FK
         int post_id FK
         datetime created_at
     }
+
     CONVERSATION {
         int conversation_id PK
         string conversation_type
         datetime created_at
     }
+
     CONVERSATION_PARTICIPANT {
         int conversation_id FK
         int user_id FK
         datetime joined_at
     }
+
     MESSAGE {
         int message_id PK
         int conversation_id FK
@@ -381,10 +470,122 @@ erDiagram
 ```
 <!-- END_ER_DIAGRAM -->
 
-### 6.4 Design Diagrams (Images)
-- **Use Case Diagram:** ![Use Case](../design/diagrams/Use%20case%20diagram%20for%20StudyBuddy%20system.png)
-- **Activity Diagram:** ![Activity Diagram](../design/diagrams/activitydiagram.png)
-- **System Flowchart:** ![Flowchart](../design/flowcharts/flowchrt.png)
+### 6.4 Use Case Diagram (Mermaid)
+Source: [useCaseDiagram.md](../design/diagrams/useCaseDiagram.md)
+<!-- START_USE_CASE_DIAGRAM -->
+```mermaid
+graph TD
+    subgraph Actors
+        Student[Student User]
+        Admin[System Administrator]
+    end
+
+    subgraph "Core Functionality"
+        UC1(Create/Edit Profile)
+        UC2(Login/Secure Account)
+        UC3(Search by Module)
+        UC4(View User Profiles)
+        UC5(Send Study Request)
+        UC6(Accept/Decline Requests)
+    end
+
+    subgraph "Advanced Features"
+        UC7(Dashboard Overview)
+        UC8(Filter by Availability)
+        UC9(Leave Ratings & Feedback)
+        UC10(Report/Block User)
+    end
+
+    subgraph "Admin Powers"
+        UC11(Moderate Content)
+        UC12(Suspend/Restore Users)
+    end
+
+    Student --> UC1
+    Student --> UC2
+    Student --> UC3
+    Student --> UC4
+    Student --> UC5
+    Student --> UC6
+    Student --> UC7
+    Student --> UC8
+    Student --> UC9
+    Student --> UC10
+
+    Admin --> UC11
+    Admin --> UC12
+    Admin --> UC2
+```
+<!-- END_USE_CASE_DIAGRAM -->
+
+### 6.5 Activity Diagram (Mermaid)
+Source: [activityDiagram.md](../design/diagrams/activityDiagram.md)
+<!-- START_ACTIVITY_DIAGRAM -->
+```mermaid
+stateDiagram-v2
+    [*] --> Login
+    Login --> Dashboard
+    
+    state Dashboard {
+        [*] --> ViewStatus
+        ViewStatus --> SearchForModule
+    }
+
+    Dashboard --> SearchResults: Enter Module Code
+    
+    state SearchResults {
+        [*] --> ListStudents
+        ListStudents --> ApplyFilters
+        ApplyFilters --> ListStudents: Update Results
+    }
+
+    SearchResults --> ProfileView: Click User
+    
+    state ProfileView {
+        [*] --> CheckDetails
+        CheckDetails --> Decision
+        Decision --> SendRequest: Interested
+        Decision --> SearchResults: Not Interested
+    }
+
+    SendRequest --> PendingApproval
+    PendingApproval --> [*]
+```
+<!-- END_ACTIVITY_DIAGRAM -->
+
+### 6.6 System Flowchart (Mermaid)
+Source: [flowchart.md](../design/diagrams/flowchart.md)
+<!-- START_FLOWCHART -->
+```mermaid
+flowchart LR
+    User([User]) --> Browser[Web Browser]
+    
+    subgraph "Client Side"
+        Browser --> Frontend[React/JS Frontend]
+    end
+
+    subgraph "Server Side"
+        Frontend --> API[Express API Gateway]
+        
+        subgraph Services
+            API --> Auth[Auth Service]
+            API --> UserS[User/Social Service]
+            API --> Acad[Academic/Match Service]
+        end
+        
+        subgraph Storage
+            Auth --> DB[(MySQL Database)]
+            UserS --> DB
+            Acad --> DB
+        end
+    end
+
+    subgraph "External"
+        Auth --> Email[Email Server]
+        Acad --> Notify[Notification System]
+    end
+```
+<!-- END_FLOWCHART -->
 
 ---
 

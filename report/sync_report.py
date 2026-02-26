@@ -12,7 +12,10 @@ def sync_diagrams():
     mappings = {
         'CLASS_DIAGRAM': 'classDiagram.md',
         'SEQUENCE_DIAGRAM': 'sequenceDiagram.md',
-        'ER_DIAGRAM': 'edr_diagram.md'
+        'ER_DIAGRAM': 'edr_diagram.md',
+        'USE_CASE_DIAGRAM': 'useCaseDiagram.md',
+        'ACTIVITY_DIAGRAM': 'activityDiagram.md',
+        'FLOWCHART': 'flowchart.md'
     }
     
     for tag, filename in mappings.items():
