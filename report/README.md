@@ -1,13 +1,40 @@
 # StudyBuddy: Software Engineering Project Report
 
+## Document Control
+| Version | Date | Description | Author |
+| :--- | :--- | :--- | :--- |
+| 1.0 | 25 Feb 2026 | Initial Markdown Consolidation | Group 777 |
+| 1.1 | 25 Feb 2026 | Professional formatting & Glossary added | Group 777 |
+
+## Table of Contents
+1. [Executive Summary](#executive-summary)
+2. [Group Details](#group-details)
+3. [Project Description](#1-project-description)
+4. [Team Code of Conduct](#2-team-code-of-conduct)
+5. [Scrum Practices](#3-scrum-practices)
+6. [Ethical Issues](#4-ethical-issues)
+7. [User Stories](#5-user-stories)
+8. [Diagrams](#6-diagrams)
+9. [Glossary of Terms](#glossary-of-terms)
+10. [Project Links](#7-project-links)
+
+---
+
+## Executive Summary
+StudyBuddy is an innovative study-matching platform designed to enhance the academic experience of university students. By providing a secure environment for peer-to-peer collaboration, scheduling, and wellbeing support, the system addresses the common challenges of social isolation and academic pressure. This report outlines the technical architecture, ethical considerations, and user-centric design principles that form the foundation of the StudyBuddy project.
+
+---
+
 ## Group Details
 **Group Name:** Group 777
-**Group Members:**
-- Ali Ganji (Z23599848)
-- Nilay Oral (Z23607537)
-- Leilani Grogan-Mowatt (A00019111)
-- Maywon Niazi (Z22525705)
-- Tavishi Lamba (A00019627)
+
+| Name | Student ID | Role |
+| :--- | :--- | :--- |
+| Ali Ganji | Z23599848 | Scrum Master / Lead Developer |
+| Nilay Oral | Z23607537 | Project Owner / UX Designer |
+| Leilani Grogan-Mowatt | A00019111 | Quality Assurance / Documentation |
+| Maywon Niazi | Z22525705 | Backend Developer |
+| Tavishi Lamba | A00019627 | Frontend Developer |
 
 ---
 
@@ -75,16 +102,20 @@ StudyBuddy is designed to be ethically grounded and aligned with professional st
 ---
 
 ## 5. User Stories
-- **US1 – Create profile:** Create a profile with course, year, and modules.
-- **US2 – Login to account:** Secure profile and activity.
-- **US3 – Search by module:** Find someone studying the same subject.
-- **US4 – View user profiles:** Decide if a student is a good match.
-- **US5 – Send study request:** Organise a study session.
-- **US6 – Accept or decline requests:** Control who you study with.
-- **US7 – Dashboard:** See upcoming sessions and pending requests.
-- **US8 – Filter by availability:** Find someone free at similar times.
-- **US9 – Ratings and feedback:** Leave feedback after a session.
-- **US10 – Report or block a user:** Safety against inappropriate behavior.
+The following user stories define the core functional requirements of the StudyBuddy system, formatted using the standard *As a... I want... So that...* template.
+
+| ID | Story | Value |
+| :--- | :--- | :--- |
+| **US1** | Create a profile with course, year, and modules | To help others find relevant study partners. |
+| **US2** | Secure login to account | To protect profile and activity data. |
+| **US3** | Search for buddies by module code | To find peers studying the same subjects. |
+| **US4** | View detailed user profiles | To assess compatibility for collaboration. |
+| **US5** | Send study request notifications | To initiate and organize study sessions. |
+| **US6** | Accept or decline incoming requests | To maintain control over study partnerships. |
+| **US7** | Centralized dashboard for sessions | To manage study plans and pending requests easily. |
+| **US8** | Filter searches by student availability | To find partners with matching schedules. |
+| **US9** | Leave peer ratings and feedback | To build trust and community reliability. |
+| **US10** | Report or block inappropriate users | To ensure a safe and respectful environment. |
 
 ---
 
@@ -586,6 +617,19 @@ flowchart LR
     end
 ```
 <!-- END_FLOWCHART -->
+
+---
+
+---
+
+## Glossary of Terms
+| Term | Definition |
+| :--- | :--- |
+| **US** | User Story: A tool used in Agile software development to capture a description of a software feature from an end-user perspective. |
+| **GDPR** | General Data Protection Regulation: A legal framework that sets guidelines for the collection and processing of personal information. |
+| **IEEE** | Institute of Electrical and Electronics Engineers: The organization responsible for standardizing formatting in technical reports. |
+| **WCAG** | Web Content Accessibility Guidelines: Part of a series of web accessibility guidelines published by the Web Accessibility Initiative (WAI). |
+| **Mermaid** | A JavaScript-based diagramming and charting tool that renders Markdown-inspired text definitions to create and modify diagrams dynamically. |
 
 ---
 
